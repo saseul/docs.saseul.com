@@ -20,16 +20,16 @@ For official notifications : [SASEUL Notice](https://t.me/saseul_notice){:target
 Documents
 =========
 
-[Node Operation](https://test.docs.saseul.com/posts/node-operation/){:target="_blank"}
+[Node Operation](/posts/02-node-operation/){:target="_blank"}
 ---------------------------------------------------------------------------------------
 
-[Command Line Interface](https://test.docs.saseul.com/posts/command-line-interface/){:target="_blank"}
+[Command Line Interface](/posts/03-command-line-interface/){:target="_blank"}
 -------------------------------------------------------------------------------------------------------
 
-[RPC API](https://test.docs.saseul.com/posts/rpc-api/){:target="_blank"}
+[RPC API](/posts/04-rpc-api/){:target="_blank"}
 -------------------------------------------------------------------------
 
-[System Contracts And Requests](https://test.docs.saseul.com/posts/system-contracts-and-requests/){:target="_blank"}
+[System Contracts And Requests](/posts/05-system-contracts-and-requests/){:target="_blank"}
 ---------------------------------------------------------------------------------------------------------------------
 
 Links

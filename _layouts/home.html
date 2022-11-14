@@ -38,14 +38,8 @@ layout: page
   {% endfor %}
 {% endif %}
 
-<h1>{{ site.data.locales[site.lang].tabs.categories | default: site.tabs.title }}</h1>
-{% include categories.html %}
-
 <h1>{{ site.data.locales[site.lang].tabs.archives | default: site.tabs.title }}</h1>
 {% include archives.html %}
-
-<h1>{{ site.data.locales[site.lang].tabs.about | default: site.tabs.title }}</h1>
-{% include about.html %}
 
 <h1>{{ site.data.locales[site.lang].tabs.tags | default: site.tabs.title }}</h1>
 {% include tags.html %}
