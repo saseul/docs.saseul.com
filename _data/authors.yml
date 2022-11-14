@@ -1,0 +1,41 @@
+## Template › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/advanced-usage.md#setting-author-url
+# -------------------------------------
+# {author_id}:
+#   name: {full name}
+#   twitter: {twitter_of_author}
+#   url: {homepage_of_author}
+# -------------------------------------
+
+cotes:
+  name: Cotes Chung
+  twitter: cotes2020
+  url: https://github.com/cotes2020/
+
+sille_bille:
+  name: Dinesh Prasanth Moluguwan Krishnamoorthy
+  twitter: dinesh_MKD
+  url: https://github.com/SilleBille/
+
+Artifriends:
+  name: Artifriends Inc
+  web: https://artifriends.com/
+  github: https://github.com/Artifriends-inc
+  youtube: https://www.youtube.com/channel/UCvyondLDBxdqcZpqp1T1QhQ
+  twitter: https://twitter.com/artifriends_inc
+  facebook: https://www.facebook.com/artifriends.af
+
+Saseul:
+  name: Saseul
+  web: https://saseul.com/ ](https://saseul.com/index.html?handler=Main)
+  github: https://github.com/saseul ](https://github.com/saseul)
+  telegram: https://t.me/saseul_notice
+  npm: https://www.npmjs.com/package/saseul
+  twitter: https://twitter.com/SaseulOfficial
+  facebook: https://www.facebook.com/SaseulOfficial/
+  linkedin: https://www.linkedin.com/in/saseul/
+  instagram: https://www.instagram.com/Saseul_Official/
+  whitepaper: https://drive.google.com/file/d/1y_bbVADXGcfdvuqI-HA4_Xz-ulh8TlMD/view
+
+help:
+  name: ArtiFriends
+  url: https://artifriends.com

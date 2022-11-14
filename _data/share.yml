@@ -1,0 +1,36 @@
+#  Sharing options at the bottom of the post.
+#  Icons from <https://fontawesome.com/>
+
+platforms:
+  -
+    type: Twitter
+    icon: "fab fa-twitter"
+    link: "https://twitter.com/SaseulOfficial"
+  -
+    type: Facebook
+    icon: "fab fa-facebook-square"
+    link: "https://www.facebook.com/SaseulOfficial/"
+  -
+    type: Telegram
+    icon: "fab fa-telegram"
+    link: "https://t.me/saseul_notice"
+
+  # Uncomment below if you need to.
+  # -
+  #   type: Linkedin
+  #   icon: "fab fa-linkedin"
+  #   link: "https://www.linkedin.com/in/saseul/"
+  #
+  # -
+  #   type: Weibo
+  #   icon: "fab fa-weibo"
+  #   link: "http://service.weibo.com/share/share.php?title=TITLE&url=URL"
+  #- Web: [https://saseul.com/](https://saseul.com/index.html?handler=Main)
+  #- Github: [https://github.com/saseul](https://github.com/saseul)
+  #- Telegram: [https://t.me/saseul_notice](https://t.me/saseul_notice)
+  #- npm: [https://www.npmjs.com/package/saseul](https://www.npmjs.com/package/saseul)
+  #- Twitter: [https://twitter.com/SaseulOfficial](https://twitter.com/SaseulOfficial)
+  #- Facebook: [https://www.facebook.com/SaseulOfficial/](https://www.facebook.com/SaseulOfficial/)
+  #- Linkedin: [https://www.linkedin.com/in/saseul/](https://www.linkedin.com/in/saseul/) (Not Available)
+  #- Instagram: [https://www.instagram.com/Saseul_Official/](https://www.instagram.com/Saseul_Official/)
+  #- Whitepaper : [https://drive.google.com/file/d/1y_bbVADXGcfdvuqI-HA4_Xz-ulh8TlMD/view](https://drive.google.com/file/d/1y_bbVADXGcfdvuqI-HA4_Xz-ulh8TlMD/view)
