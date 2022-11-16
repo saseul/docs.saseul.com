@@ -633,22 +633,6 @@ $sidebar-display: "sidebar-display";
   z-index: 99;
   //background: var(--sidebar-bg);
 
-  .sidebar-background {
-    position: fixed;
-    height: 100%;
-    width: 100%;
-    z-index: -1;
-    background: url("/assets/img/background/sidebar-bg.jpg") center center no-repeat;
-    background-size: cover;
-  }/* .sidebar-background */
-
-  .slider-transbox {
-    height: 100%;
-    width: 100%;
-    background: linear-gradient(to top, #074689, 20%, #000000);
-    opacity: 0.9;
-  }/* .slider-transbox */
-
   /* Hide scrollbar for Chrome, Safari and Opera */
   &::-webkit-scrollbar {
     display: none;
@@ -714,11 +698,6 @@ $sidebar-display: "sidebar-display";
 
     a {
       @extend %clickable-transition;
-
-      font-weight: 700;
-      font-size: 24px;
-      letter-spacing: 1px;
-      color: rgba(255, 255, 255, 0.99);
     }
 
     img {
@@ -944,7 +923,6 @@ $sidebar-display: "sidebar-display";
 
     font: 600 32px/44px apparat-semicond;
 
-    padding-top: 25px;
     padding-left: 18px;
     margin-bottom: 16px;
     cursor: pointer;
@@ -960,14 +938,6 @@ $sidebar-display: "sidebar-display";
     @extend %heading;
     @extend %section;
     @extend %anchor;
-
-    border-left: 1px solid rgba(223, 223, 223, 0.3);
-    font: normal normal 500 20px/28px apparat-semicond;
-    padding-top: 10px;
-    padding-left: 15px;
-    margin-left: 22px;
-    height: 50px;
-    cursor: pointer;
   }
 
   .post-page-subitem:hover {
@@ -1406,8 +1376,8 @@ nav[data-toggle=toc] .nav-link.active:hover {
   Responsive Design:
 
  {sidebar, content, panel} >= 1120px screen width
- {sidebar, content} >= 850px screen width
- {content} <= 849px screen width
+ {sidebar, content} >= 1050px screen width
+ {content} <= 1049px screen width
 
 */
 
@@ -1476,7 +1446,7 @@ nav[data-toggle=toc] .nav-link.active:hover {
 }
 
 /* hide sidebar and panel */
-@media all and (max-width: 849px) {
+@media all and (max-width: 1049px) {
   @mixin slide($append: null) {
     $basic: transform 0.5s ease;
 
@@ -1490,21 +1460,6 @@ nav[data-toggle=toc] .nav-link.active:hover {
   html,
   body {
     overflow-x: clip;
-  }
-
-  .post {
-    h1 {
-      padding-top: 0px;
-      margin-top: 116px;
-    }
-
-    h2,
-    h3,
-    h4,
-    h5 {
-      padding-top: 0px;
-      margin-top: 40px;
-    }
   }
 
   #topbar,
@@ -1534,8 +1489,9 @@ nav[data-toggle=toc] .nav-link.active:hover {
   #main #core-wrapper {
     flex: 0 0 100%;
     max-width: 100%;
-    margin-top: 48px;
+    margin-top: -100px;
   }
+
   #main #panel-wrapper {
     flex: 0 0 100%;
     max-width: 100%;
@@ -1569,7 +1525,6 @@ nav[data-toggle=toc] .nav-link.active:hover {
 
     transform: translateX(-#{100%}); /* hide */
     -webkit-transform: translateX(-#{100%});
-    width: 100%;
 
     .cursor {
       transition: none;
@@ -1640,7 +1595,7 @@ nav[data-toggle=toc] .nav-link.active:hover {
       margin-top: 3rem;
     }
   }
-} /* max-width: 849px */
+} /* max-width: 1049px */
 
 @media all and (max-width: 767px) {
   #search-trigger {
@@ -1657,7 +1612,7 @@ nav[data-toggle=toc] .nav-link.active:hover {
 }
 
 /* Sidebar is visible */
-@media all and (min-width: 850px) {
+@media all and (min-width: 1050px) {
   /* Solved jumping scrollbar */
   html {
     overflow-y: scroll;
@@ -1733,7 +1688,7 @@ nav[data-toggle=toc] .nav-link.active:hover {
 }
 
 /* Compact icons in sidebar & panel hidden */
-@media all and (min-width: 850px) and (max-width: 1199px) {
+@media all and (min-width: 1050px) and (max-width: 1199px) {
   #sidebar {
     width: $sidebar-width-large;
 

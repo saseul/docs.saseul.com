@@ -41,13 +41,13 @@ $(function() {
 
         windowXWidth = window.innerWidth;
 
-        if(windowXWidth > 850 && MobileMeasurementHelper.getTempRow() !== null) {
+        if(windowXWidth > 1049 && MobileMeasurementHelper.getTempRow() !== null) {
             tempPannelWrapper = $(MobileMeasurementHelper.getPannelWrapper()).clone(true)[0];
             MobileMeasurementHelper.coreWrapper().after(tempPannelWrapper);
             MobileMeasurementHelper.getTempRow().remove();
             MobileMeasurementHelper.setPannelWrapper(tempPannelWrapper);
             MobileMeasurementHelper.setTempRow(null);
-        } else if(windowXWidth <= 850 && MobileMeasurementHelper.getTempRow() === null) {
+        } else if(windowXWidth <= 1049 && MobileMeasurementHelper.getTempRow() === null) {
             rowElement = document.createElement('div');
             rowElement.className = "row";
 
