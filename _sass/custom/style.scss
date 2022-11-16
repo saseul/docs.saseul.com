@@ -90,20 +90,13 @@ img.icon {
 
 
 #sidebar {
+  background: url("/assets/img/background/sidebar-bg-2.png");
+  background-position-x: center;
+  background-position-y: bottom;
+
   ul, li {
     padding: 0;
     margin: 0;
-  }
-
-  .sidebar-background {
-    position: fixed;
-    height: 100%;
-    width: 100%;
-    z-index: -1;
-    background: url("/assets/img/background/sidebar-bg-2.png");
-    background-position-x: center;
-    background-position-y: bottom;
-    background-size: cover;
   }
 
   .slider-transbox {
