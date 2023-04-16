@@ -9,17 +9,8 @@
 <!-- BS-toc.js will be loaded at medium priority -->
 <script src="{{ site.data.assets[origin].bootstrap-toc.js | relative_url }}"></script>
 
-<div id="toc-wrapper" class="pl-0">
-  <div class="dropdown-container">
-    {{- site.data.locales[site.lang].panel.toc -}}
-    <i class="fa fa-angle-down"></i>
-  </div>
+<div id="toc-wrapper" class="pl-0 pr-4 mb-5">
+  <div class="panel-heading pl-3 pt-2 mb-2">{{- site.data.locales[site.lang].panel.toc -}}</div>
   <nav id="toc" data-toggle="toc"></nav>
 </div>
 {% endif %}
-
-<script>
-  $('.dropdown-container').on('click', (event) => {
-    $('.dropdown-container').toggleClass('active');
-  });
-</script>

@@ -3,7 +3,7 @@
 -->
 
 <div id="topbar-wrapper">
-  <div id="topbar" class="d-flex align-items-center justify-content-between h-100 pl-md-4 pr-md-4">
+  <div id="topbar" class="container d-flex align-items-center justify-content-between h-100 pl-3 pr-3 pl-md-4 pr-md-4">
     <span id="breadcrumb">
 
     {% assign paths = page.url | split: '/' %}
@@ -28,6 +28,13 @@
           {% if page.collection == 'tabs' %}
             <span>{{ site.data.locales[site.lang].tabs[item] | default: page.title }}</span>
           {% else %}
+            {% if page.layout == 'post' %}
+              <span>
+                <a href="/categories/{{ page.categories[0] | slugify | url_encode }}">
+                  {{ page.categories[0] }}
+                </a>
+              </span>
+            {% endif %}
             <span>{{ page.title }}</span>
           {% endif %}
 
@@ -59,98 +66,12 @@
     </div>
 
     <i id="search-trigger" class="fas fa-search fa-fw"></i>
-    <div class="search-wrapper">
-
-      <span id="search-wrapper" class="align-items-center">
-          <i class="fas fa-search fa-fw"></i>
-          <input class="form-control" id="search-input" type="search"
-                 aria-label="search" autocomplete="off" placeholder="{{ site.data.locales[site.lang].search.hint | capitalize }}...">
-          <span id="search-cancel" >{{ site.data.locales[site.lang].search.cancel }}</span>
-        </span>
-
-    </div>
-
-    <div class="mobile_mask"></div>
-    <div class="mobile_slider">
-      <div class="slider_container">
-        <div class="slider_item topbar_mobile_artifriendsTap" style="padding: 0 20px">
-          <img class="topbar_snsImg" src="/assets/img/af-w.png"
-               style="max-width: none; width: 20px"
-               onclick="window.open('https://artifriends.com')"
-               id="topbar_mobile_img_artifriends"/>
-        </div>
-        <div class="slider_item topbar_mobile_dockerTab" style="padding: 0 20px">
-          <img class="topbar_snsImg" src="/assets/img/docker-w.png"
-               style="max-width: none; width: 20px"
-               onclick="window.open('https://hub.docker.com/r/artifriends/saseul-network')"
-               id="topbar_mobile_img_docker"/>
-        </div>
-        <div class="slider_item topbar_mobile_githubTap" style="padding: 0 20px">
-          <img class="topbar_snsImg" src="/assets/img/github-w.png"
-               style="max-width: none; width: 20px"
-               onclick="window.open('https://github.com/saseul')"
-               id="topbar_mobile_img_github"/>
-        </div>
-        <div class="slider_item topbar_mobile_guardeeTap" style="padding: 0 20px">
-          <img class="topbar_snsImg" src="/assets/img/guardee-w.png"
-               style="max-width: none; width: 20px"
-               id="topbar_mobile_img_guardee"/>
-        </div>
-        <div class="slider_item topbar_mobile_npmTap" style="padding: 0 20px">
-          <img class="topbar_snsImg" src="/assets/img/npm-w.png"
-               style="max-width: none; width: 20px"
-               onclick="window.open('https://www.npmjs.com/package/saseul')"
-               id="topbar_mobile_img_npm"/>
-        </div>
-        <div class="slider_item topbar_mobile_saseulTap" style="padding: 0 20px">
-          <img class="topbar_snsImg" src="/assets/img/saseul-w.png"
-               style="max-width: none; width: 20px"
-               onclick="window.open('https://explorer.saseul.com')"
-               id="topbar_mobile_img_saseul"/>
-        </div>
-        <div class="slider_item topbar_mobile_whitepaperTap" style="padding: 0 20px">
-          <img class="topbar_snsImg" src="/assets/img/wp-w.png"
-               style="max-width: none; width: 20px"
-               onclick="window.open('https://drive.google.com/file/d/1y_bbVADXGcfdvuqI-HA4_Xz-ulh8TlMD/view?usp=sharing')"
-               id="topbar_mobile_img_whitepaper"/>
-        </div>
-        <div class="slider_item topbar_mobile_telegramTap" style="padding: 0 20px">
-          <img class="topbar_snsImg" src="/assets/img/telegram-w.png"
-               style="max-width: none; width: 20px"
-               onclick="window.open('https://t.me/s/saseul_notice')"
-               id="topbar_mobile_img_Telegram"/>
-        </div>
-      </div>
-    </div>
-
-  </div>
-
-  <script type="module" src="{{ '/assets/js/dist/slider.js' | relative_url }}"></script>
-
-  <script type="module">
-
-    import { Slider } from "/assets/js/dist/slider.js";
-
-    const SliderHelper = (function () {
-      let mobileSlider;
-      let targetElement;
-
-      targetElement = document.querySelector('.mobile_slider');
-      mobileSlider = new Slider(targetElement, {direction: "column", isToggleButton: true, isExpand: true});
-
-      return {
-        mobileSlider: mobileSlider
-      };
-
-    }());
-
-    (function (){
-      SliderHelper.mobileSlider.render();
-
-    })();
-
-  </script>
-
+    <span id="search-wrapper" class="align-items-center">
+      <i class="fas fa-search fa-fw"></i>
+      <input class="form-control" id="search-input" type="search"
+        aria-label="search" autocomplete="off" placeholder="{{ site.data.locales[site.lang].search.hint | capitalize }}...">
+    </span>
+    <span id="search-cancel" >{{ site.data.locales[site.lang].search.cancel }}</span>
   </div>
 
 </div>

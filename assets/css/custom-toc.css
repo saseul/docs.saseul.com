@@ -1,5 +1,0 @@
-@media all and (max-width: 849px) {
-    nav[data-toggle=toc] .nav-link+ul {
-        display: block;
-    }
-}

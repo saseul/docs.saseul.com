@@ -3,4 +3,5 @@
 .jekyll-cache
 .sass-cache
 Gemfile.lock
-_site
+node_modules
+package-lock.json

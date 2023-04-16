@@ -4,7 +4,7 @@ layout: page
 ---
 
 {% assign pinned = site.posts | where: "pin", "true" %}
-{% assign default = site.posts | where_exp: "item", "item.hidden != true" %}
+{% assign default = site.posts | where_exp: "item", "item.pin != true and item.hidden != true" %}
 
 {% assign posts = "" | split: "" %}
 
@@ -38,11 +38,116 @@ layout: page
   {% endfor %}
 {% endif %}
 
-<h1>{{ site.data.locales[site.lang].tabs.archives | default: site.tabs.title }}</h1>
-{% include archives.html %}
+<div id="upper-post">
+  <div id="upper-title">
+    <div class="upper-title-image">
+      <img src="/assets/custom/saseul-characters.png" alt="home-images">
+    </div>
+    <div class="upper-title-text">
+      <span>SASEUL Developer Guide</span>
+    </div>
+  </div>
 
-<h1>{{ site.data.locales[site.lang].tabs.tags | default: site.tabs.title }}</h1>
-{% include tags.html %}
+  <div id="upper-menu">
+    <div id="upper-algorithms" class="upper-menu-item" onclick="window.open('https://saseul.com');">
+      <div class="upper-menu-image">
+        <img src="/assets/custom/icon-algorithms.png">
+      </div>
+      <div class="upper-menu-text">
+        <span>SASEUL Website</span>
+      </div>
+    </div>
+
+    <div id="upper-installation" class="upper-menu-item" onclick="window.open('https://hub.docker.com/r/artifriends/saseul-network');">
+      <div class="upper-menu-image">
+        <img src="/assets/custom/icon-installation.png">
+      </div>
+      <div class="upper-menu-text">
+        <span>Node Installation</span>
+      </div>
+    </div>
+
+    <div id="upper-explorer" class="upper-menu-item" onclick="window.open('https://explorer.saseul.com');">
+      <div class="upper-menu-image">
+        <img src="/assets/custom/icon-explorer.png">
+      </div>
+      <div class="upper-menu-text">
+        <span>Block Explorer</span>
+      </div>
+    </div>
+
+    <div id="upper-wallet" class="upper-menu-item" onclick="window.open('https://applink.guardee.io/');">
+      <div class="upper-menu-image">
+        <img src="/assets/custom/icon-wallet.png">
+      </div>
+      <div class="upper-menu-text">
+        <span>Guardee Wallet</span>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<hr>
+
+<div id="post-list">
+
+  <h1 class="post-title">Recent Posts</h1>
+
+{% for post in posts %}
+
+  <div class="post-preview">
+    <h1>
+      <a href="{{ post.url | relative_url }}">
+        {% for category in post.categories %}
+        {{ category }}
+        {%- unless forloop.last -%},{%- endunless -%}
+        {% endfor %} /
+        {{ post.title }}
+      </a>
+    </h1>
+
+    <div class="post-content">
+      <p>
+        {% include no-linenos.html content=post.content %}
+        {{ content | markdownify | strip_html | truncate: 200 | escape }}
+      </p>
+    </div>
+
+    <div class="post-meta text-muted d-flex">
+      <div class="mr-auto">
+
+        <!-- posted date -->
+        <i class="far fa-calendar fa-fw"></i>
+        {% include datetime.html date=post.date %}
+
+        <!-- categories -->
+        {% if post.categories.size > 0 %}
+          <i class="far fa-folder-open fa-fw"></i>
+          <span>
+          {% for category in post.categories %}
+            {{ category }}
+            {%- unless forloop.last -%},{%- endunless -%}
+          {% endfor %}
+          </span>
+        {% endif %}
+
+      </div>
+
+      {% if post.pin %}
+      <div class="pin">
+        <i class="fas fa-thumbtack fa-fw"></i>
+        <span>{{ site.data.locales[site.lang].post.pin_prompt }}</span>
+      </div>
+      {% endif %}
+
+    </div> <!-- .post-meta -->
+
+  </div> <!-- .post-review -->
+
+{% endfor %}
+
+</div> <!-- #post-list -->
 
 {% if paginator.total_pages > 0 %}
   {% include post-paginator.html %}

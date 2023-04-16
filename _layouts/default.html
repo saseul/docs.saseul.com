@@ -14,7 +14,7 @@ layout: compress
 {% endcapture %}
 
 <!-- `site.alt_lang` can specify a language different from the UI -->
-<html lang="{{ site.alt_lang | default: site.lang }}"{{ 'data-mode=light' }}>
+<html lang="{{ site.alt_lang | default: site.lang }}"{{ prefer_mode }}>
 
   {% include head.html %}
 
@@ -24,13 +24,12 @@ layout: compress
 
     {% include topbar.html %}
 
-    <div id="main-wrapper" class="d-flex">
-      <div id="main" class="container">
+    <div id="main-wrapper" class="d-flex justify-content-center">
+      <div id="main" class="container pl-xl-4 pr-xl-4">
         {{ content }}
       </div>
 
       {% include search-results.html %}
-      <script src="{{ '/assets/js/dist/measure-mobile.js' | relative_url }}"></script>
 
     </div> <!-- #main-wrapper -->
 

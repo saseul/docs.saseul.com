@@ -15,12 +15,11 @@
 {% if page.layout == 'post' or page.layout == 'page' %}
   <!-- image lazy-loading & popup & clipboard -->
   {% assign _urls = site.data.assets[origin].magnific-popup.js
-      | append: ',' | append: site.data.assets[origin].lozad.js
+      | append: ',' | append: site.data.assets[origin].lazysizes.js
       | append: ',' | append: site.data.assets[origin].clipboard.js
   %}
 
   {% include jsdelivr-combine.html urls=_urls %}
-
 {% endif %}
 
 {% if page.layout == 'home'
@@ -83,6 +82,7 @@
 <!-- commons -->
 
 <script src="{{ site.data.assets[origin].bootstrap.js | relative_url }}"></script>
+<script src="/assets/js/custom.js"></script>
 
 {% if jekyll.environment == 'production' %}
   <!-- PWA -->

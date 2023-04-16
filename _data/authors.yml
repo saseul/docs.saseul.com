@@ -6,16 +6,6 @@
 #   url: {homepage_of_author}
 # -------------------------------------
 
-cotes:
-  name: Cotes Chung
-  twitter: cotes2020
-  url: https://github.com/cotes2020/
-
-sille_bille:
-  name: Dinesh Prasanth Moluguwan Krishnamoorthy
-  twitter: dinesh_MKD
-  url: https://github.com/SilleBille/
-
 Artifriends:
   name: Artifriends Inc
   web: https://artifriends.com/
@@ -26,8 +16,8 @@ Artifriends:
 
 Saseul:
   name: Saseul
-  web: https://saseul.com/ ](https://saseul.com/index.html?handler=Main)
-  github: https://github.com/saseul ](https://github.com/saseul)
+  web: https://saseul.com/
+  github: https://github.com/saseul
   telegram: https://t.me/saseul_notice
   npm: https://www.npmjs.com/package/saseul
   twitter: https://twitter.com/SaseulOfficial

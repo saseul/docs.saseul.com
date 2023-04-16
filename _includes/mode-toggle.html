@@ -22,9 +22,6 @@
           }
         }
       }
-      else {
-          this.setLight();
-      }
 
       let self = this;
 
@@ -51,7 +48,7 @@
 
     } /* constructor() */
 
-    get sysDarkPrefers() { return window.matchMedia("(prefers-color-scheme: light)"); }
+    get sysDarkPrefers() { return window.matchMedia("(prefers-color-scheme: dark)"); }
 
     get isSysDarkPrefer() { return this.sysDarkPrefers.matches; }
 
@@ -59,7 +56,7 @@
 
     get isLightMode() { return this.mode === ModeToggle.LIGHT_MODE; }
 
-    get hasMode() { return this.mode !== null; }
+    get hasMode() { return this.mode != null; }
 
     get mode() { return sessionStorage.getItem(ModeToggle.MODE_KEY); }
 
@@ -102,9 +99,9 @@
 
   function flipMode() {
     if (toggle.hasMode) {
-      if (!toggle.isSysDarkPrefer) {
+      if (toggle.isSysDarkPrefer) {
         if (toggle.isLightMode) {
-          toggle.setDark();
+          toggle.clearMode();
         } else {
           toggle.setLight();
         }
@@ -118,7 +115,7 @@
       }
 
     } else {
-      if (!toggle.isSysDarkPrefer) {
+      if (toggle.isSysDarkPrefer) {
         toggle.setLight();
       } else {
         toggle.setDark();

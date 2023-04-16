@@ -10,8 +10,7 @@
   --main-border-color: rgb(44, 45, 45);
 
   /* Common color */
-  //--text-color: rgb(175, 176, 177);
-  --text-color: rgb(255, 255, 255);
+  --text-color: rgb(175, 176, 177);
   --text-muted-color: rgb(107, 116, 124);
   --heading-color: #cccccc;
   --blockquote-border-color: rgb(66, 66, 66);
@@ -27,27 +26,27 @@
   --label-color: rgb(108, 117, 125);
   --checkbox-color: rgb(118, 120, 121);
   --checkbox-checked-color: var(--link-color);
+  --img-bg: radial-gradient(circle, rgb(22, 22, 24) 0%, rgb(32, 32, 32) 100%);
+  --shimmer-bg:
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(58, 55, 55, 0.4) 50%,
+      rgba(255, 255, 255, 0) 100%
+    );
 
   /* Sidebar */
-  //--sidebar-bg: radial-gradient(circle, #242424 0%, #1d1f27 100%);
-  //--sidebar-muted-color: rgb(255, 255, 255);
-  //--sidebar-active-color: rgb(255, 255, 255, 0.8);
-  //--nav-cursor-color: rgb(183, 182, 182);
-  //--sidebar-btn-bg: rgb(117, 116, 116, 0.2);
-  --sidebar-bg: #eeeeee;
-  --sidebar-muted-color: rgb(255, 255, 255);
-  --sidebar-menu-active-color: white;
-  --sidebar-active-color: #424242;
-  --nav-cursor-color: #757575;
-  --sidebar-btn-bg: white;
+  --sidebar-bg: radial-gradient(circle, #242424 0%, #1d1f27 100%);
+  --sidebar-muted-color: #6d6c6b;
+  --sidebar-active-color: rgb(255, 255, 255, 0.8);
+  --nav-cursor-color: rgb(183, 182, 182);
+  --sidebar-btn-bg: rgb(117, 116, 116, 0.2);
 
   /* Topbar */
   --topbar-text-color: var(--text-color);
   --topbar-wrapper-bg: rgb(39, 40, 43);
-  --select-search-wrapper-bg: rgb(22, 22, 27);
   --search-wrapper-bg: rgb(34, 34, 39);
   --search-wrapper-border-color: rgb(34, 34, 39);
-  --select-search-icon-color: #ffffff;
   --search-icon-color: rgb(100, 102, 105);
   --input-focus-border-color: rgb(112, 114, 115);
 
@@ -74,7 +73,6 @@
   --card-bg: rgb(39, 40, 43);
   --card-border-color: rgb(53, 53, 60);
   --card-box-shadow: var(--main-bg);
-  --preview-img-bg: radial-gradient(circle, rgb(22, 22, 24) 0%, rgb(32, 32, 32) 100%);
   --kbd-wrap-color: #6a6a6a;
   --kbd-text-color: #d3d3d3;
   --kbd-bg-color: #242424;
@@ -105,8 +103,14 @@
   --timeline-year-dot-color: var(--timeline-color);
 
   .post img[data-src] {
-    -webkit-filter: brightness(95%);
-    filter: brightness(95%);
+    &.lazyloaded {
+      -webkit-filter: brightness(95%);
+      filter: brightness(95%);
+    }
+  }
+
+  .light {
+    display: none;
   }
 
   hr {
