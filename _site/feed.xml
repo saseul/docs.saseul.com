@@ -1,0 +1,242 @@
+
+
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <id>https://docs.saseul.com/</id>
+  <title>SASEUL Docs</title>
+  <subtitle>SASEUL development documentation | docs.saseul.com</subtitle>
+  <updated>2023-04-18T01:01:06+09:00</updated>
+  <author>
+    <name>SASEUL, ArtiFriends Inc.</name>
+    <uri>https://docs.saseul.com/</uri>
+  </author>
+  <link rel="self" type="application/atom+xml" href="https://docs.saseul.com/feed.xml"/>
+  <link rel="alternate" type="text/html" hreflang="en"
+    href="https://docs.saseul.com/"/>
+  <generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator>
+  <rights> © 2023 SASEUL, ArtiFriends Inc. </rights>
+  <icon>/assets/img/favicons/favicon.ico</icon>
+  <logo>/assets/img/favicons/favicon-96x96.png</logo>
+
+
+  
+  <entry>
+    <title>System Method</title>
+    <link href="https://docs.saseul.com/posts/09-system-method/" rel="alternate" type="text/html" title="System Method" />
+    <published>2023-04-16T09:00:00+09:00</published>
+  
+    <updated>2023-04-16T09:00:00+09:00</updated>
+  
+    <id>https://docs.saseul.com/posts/09-system-method/</id>
+    <content src="https://docs.saseul.com/posts/09-system-method/" />
+    <author>
+      <name>help</name>
+    </author>
+
+  
+    
+    <category term="Smart Contract" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      Getting Started
+
+SASEUL has built-in smart contracts that is ready-to-run out of the box. In fact, even generating the genesis block of the main chain is done by one of the system smart contracts. These system contracts and requests provides developers basic interfaces on SASEUL blockchain.
+
+System Contracts
+
+Executing system contracts commit transactions based on the registered codes and end u...
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
+    <title>Operator</title>
+    <link href="https://docs.saseul.com/posts/08-operator/" rel="alternate" type="text/html" title="Operator" />
+    <published>2023-04-14T09:00:00+09:00</published>
+  
+    <updated>2023-04-14T09:00:00+09:00</updated>
+  
+    <id>https://docs.saseul.com/posts/08-operator/</id>
+    <content src="https://docs.saseul.com/posts/08-operator/" />
+    <author>
+      <name>help</name>
+    </author>
+
+  
+    
+    <category term="Smart Contract" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      Summary
+
+This document is based on the specification of SASEUL JS. 
+The SASEUL main network is currently using version 0.2.0, and we plan to support additional operators through patches.
+
+
+  A method is a collection of operators.
+  A method is executed only when the “condition” statement is true.
+  Execution methods can modify status data through the “update” statement.
+  Query methods can defi...
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
+    <title>Overview</title>
+    <link href="https://docs.saseul.com/posts/07-overview/" rel="alternate" type="text/html" title="Overview" />
+    <published>2023-04-13T09:00:00+09:00</published>
+  
+    <updated>2023-04-13T09:00:00+09:00</updated>
+  
+    <id>https://docs.saseul.com/posts/07-overview/</id>
+    <content src="https://docs.saseul.com/posts/07-overview/" />
+    <author>
+      <name>help</name>
+    </author>
+
+  
+    
+    <category term="Smart Contract" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      SASEUL Smart Contract
+
+The SASEUL engine provides one system contract and one base method (Genesis) by default. 
+Methods included in the system contract can only be executed by the Genesis address.
+
+Create the system contract by using the “Register” method in the “Genesis” method 
+and creating other system methods with the “Register” method. 
+Then, create a “Publish” method to allow network par...
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
+    <title>Specification</title>
+    <link href="https://docs.saseul.com/posts/06-specification/" rel="alternate" type="text/html" title="Specification" />
+    <published>2023-04-11T09:00:00+09:00</published>
+  
+    <updated>2023-04-11T09:00:00+09:00</updated>
+  
+    <id>https://docs.saseul.com/posts/06-specification/</id>
+    <content src="https://docs.saseul.com/posts/06-specification/" />
+    <author>
+      <name>help</name>
+    </author>
+
+  
+    
+    <category term="SASEUL JS" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      Quick Start
+
+npm
+
+$ npm install saseul
+
+
+const SASEUL = require('saseul');
+let key = SASEUL.Sign.keyPair();
+console.dir(key);
+... 
+
+
+Browser
+
+...
+
+&amp;lt;script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"&amp;gt;&amp;lt;/script&amp;gt;
+&amp;lt;script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tweetnacl/1.0.2/nacl.min.js"&amp;gt;&amp;lt;/scri...
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
+    <title>Overview</title>
+    <link href="https://docs.saseul.com/posts/05-overview/" rel="alternate" type="text/html" title="Overview" />
+    <published>2023-04-10T09:00:00+09:00</published>
+  
+    <updated>2023-04-10T09:00:00+09:00</updated>
+  
+    <id>https://docs.saseul.com/posts/05-overview/</id>
+    <content src="https://docs.saseul.com/posts/05-overview/" />
+    <author>
+      <name>help</name>
+    </author>
+
+  
+    
+    <category term="SASEUL JS" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      SaseulJS
+
+SaseulJS is a toolkit for developing decentralized applications based on the SASEUL blockchain engine.
+You can use this toolkit to create and send transactions and requests to the SASEUL network.
+You can also create and register smart contracts that operate on the SASEUL network.
+
+If you need information about SASEUL, you can refer to the link below.
+
+
+  SASEUL Website: https://saseul...
+    </summary>
+  
+
+  </entry>
+
+</feed>
+
+
