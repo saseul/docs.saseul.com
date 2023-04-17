@@ -17,7 +17,7 @@ System Contracts
 
 Executing system contracts commit transactions based on the registered codes and end up with causing change of status.
 
-**Genesis**
+Genesis
 -----------
 
 Initiate the main chain of the Saseul blockchain.
@@ -26,7 +26,7 @@ The first node of the network which started as a genesis node can execute this c
 
 ### Request Parameters
 
-| **Parameter**     | **Requirements**   | **Type** | **Maxlength** | **Description** |
+| Parameter     | Requirements   | Type | Maxlength | Description |
 |:------------------|:-------------------|:---------|:--------------|:----------------|
 | type              | mandatory          | String   |               | "Genesis"       |
 | network\_address  | mandatory          | String   |               | 44              |
@@ -40,7 +40,7 @@ A network manager can execute this contract to make the given smart contarct cod
 
 ### Request Parameters
 
-| **Parameter** | **Requirements**   | **Type** | **Maxlength** | **Description** |
+| Parameter | Requirements   | Type | Maxlength | Description |
 |:--------------|:-------------------|:---------|:--------------|:----------------|
 | type          | mandatory          | String   |               | "Register"      |
 | code          | mandatory          | String   |               | 65536           |
@@ -54,7 +54,7 @@ A network manager can execute this contract to remove its network manager privil
 
 ### Request Parameters
 
-| **Parameter** | **Requirements**   | **Type** | **Maxlength** | **Description** |
+| Parameter | Requirements   | Type | Maxlength | Description |
 |:--------------|:-------------------|:---------|:--------------|:----------------|
 | type          | mandatory          | String   |               | "Revoke"        |
 
@@ -67,7 +67,7 @@ If the executor is one of the network addresses of the SASEUL node, it can execu
 
 ### Request Parameters
 
-| **Parameter** | **Requirements**   | **Type** | **Maxlength** | **Description** |
+| Parameter | Requirements   | Type | Maxlength | Description |
 |:--------------|:-------------------|:---------|:--------------|:----------------|
 | type          | mandatory          | String   |               | "Grant"         |
 
@@ -78,7 +78,7 @@ A network manager can execute this contract to generate a transaction without ma
 
 ### Request Parameters
 
-| **Parameter** | **Requirements**   | **Type** | **Maxlength** | **Description** |
+| Parameter | Requirements   | Type | Maxlength | Description |
 |:--------------|:-------------------|:---------|:--------------|:----------------|
 | type          | mandatory          | String   |               | "Oracle"        |
 | code          | mandatory          | String   |               | 65536           |
@@ -90,14 +90,14 @@ System Requests
 
 System requests provide methods to query data from block data and status.
 
-**GetBlock**
+GetBlock
 ------------
 
 Get main chain block information by block hash or height.
 
 ### Request Parameters
 
-| **Parameter** | **Requirements** | **Type** | **Maxlength** | **Description**                        |
+| Parameter | Requirements | Type | Maxlength | Description                        |
 |:--------------|:-----------------|:---------|:--------------|:---------------------------------------|
 | type          | mandatory        | String   |               | "GetBlock"                             |
 | target        | optional         | String   | 78            | block hash or height                   |
@@ -216,14 +216,14 @@ Get main chain block information by block hash or height.
 }
 ```
 
-**ListBlock**
+ListBlock
 -------------
 
 Get array list of main chain block information.
 
 ### Request Parameters
 
-| **Parameter** | **Requirements** | **Type** | **Maxlength** | **Description**                                                      |
+| Parameter | Requirements | Type | Maxlength | Description                                                      |
 |:--------------|:-----------------|:---------|:--------------|:---------------------------------------------------------------------|
 | type          | mandatory        | String   |               | "ListBlock"                                                          |
 | height        | optional         | Int      | 16            | block number                                                         |
@@ -276,14 +276,14 @@ Get array list of main chain block information.
 }
 ```
 
-**BlockCount**
+BlockCount
 --------------
 
 Get total count of the main chain blocks.
 
 ### Request Parameters
 
-| **Parameter** | **Requirements** | **Type** | **Maxlength** | **Description**                        |
+| Parameter | Requirements | Type | Maxlength | Description                        |
 |:--------------|:-----------------|:---------|:--------------|:---------------------------------------|
 | type          | mandatory        | String   |               | "BlockCount"                           |
 | target        | optional         | String   | 78            | block hash or height                   |
@@ -299,14 +299,14 @@ Get total count of the main chain blocks.
 }
 ```
 
-**GetTransaction**
+GetTransaction
 ------------------
 
 Get transaction information by transaction hash.
 
 ### Request Parameters
 
-| **Parameter** | **Requirements** | **Type** | **Maxlength** | **Description**                        |
+| Parameter | Requirements | Type | Maxlength | Description                        |
 |:--------------|:-----------------|:---------|:--------------|:---------------------------------------|
 | type          | mandatory        | String   |               | "GetTransaction"                       |
 | target        | optional         | String   | 78            | transaction hash                       |
@@ -331,14 +331,14 @@ Get transaction information by transaction hash.
 }
 ```
 
-**ListTransaction**
+ListTransaction
 -------------------
 
 Get array list of transaction information.
 
 ### Request Parameters
 
-| **Parameter** | **Requirements** | **Type** | **Maxlength** | **Description**                                                     |
+| Parameter | Requirements | Type | Maxlength | Description                                                     |
 |:--------------|:-----------------|:---------|:--------------|:--------------------------------------------------------------------|
 | type          | mandatory        | String   |               | "ListTransaction"                                                   |
 | address       | optional         | String   | 44            |                                                                     |
@@ -389,14 +389,14 @@ Get array list of transaction information.
 }
 ```
 
-**TransactionCount**
+TransactionCount
 --------------------
 
 Get total count of transactions.
 
 ### Request Parameters
 
-| **Parameter** | **Requirements** | **Type** | **Maxlength** | **Description**                                                    |
+| Parameter | Requirements | Type | Maxlength | Description                                                    |
 |:--------------|:-----------------|:---------|:--------------|:-------------------------------------------------------------------|
 | type          | mandatory        | String   |               | "TransactionCount"                                                 |
 
@@ -410,14 +410,14 @@ Get total count of transactions.
 }
 ```
 
-**GetCode**
+GetCode
 -----------
 
 Get registered code of a request or contract by contract index hash.
 
 ### Request Parameters
 
-| **Parameter** | **Requirements** | **Type** | **Maxlength** | **Description**                                                |
+| Parameter | Requirements | Type | Maxlength | Description                                                |
 |:--------------|:-----------------|:---------|:--------------|:---------------------------------------------------------------|
 | type          | mandatory        | String   |               | "GetCode"                                                      |
 | ctype         | optional         | String   | 10            | selected value : contract, request<br>default value : contract |
@@ -435,14 +435,14 @@ Get registered code of a request or contract by contract index hash.
 }
 ```
 
-**ListCode**
+ListCode
 ------------
 
 Get array list of registered contracts and requests.
 
 ### Request Parameters
 
-| **Parameter** | **Requirements** | **Type** | **Maxlength** | **Description**                                                |
+| Parameter | Requirements | Type | Maxlength | Description                                                |
 |:--------------|:-----------------|:---------|:--------------|:---------------------------------------------------------------|
 | type          | mandatory        | String   |               | "ListCode"                                                     |
 | page          | optional         | Int      | 16            | Page Number of the list.<br>default value : 1                  |
@@ -467,14 +467,14 @@ Get array list of registered contracts and requests.
 }
 ```
 
-**CodeCount**
+CodeCount
 -------------
 
 Get total count of registered contracts and requests.
 
 ### Request Parameters
 
-| **Parameter** | **Requirements** | **Type** | **Maxlength** | **Description**                               |
+| Parameter | Requirements | Type | Maxlength | Description                               |
 |:--------------|:-----------------|:---------|:--------------|:----------------------------------------------|
 | type          | mandatory        | String   |               | "CodeCount"                                   |
 
@@ -491,14 +491,14 @@ Get total count of registered contracts and requests.
 }
 ```
 
-**GetResourceBlock**
+GetResourceBlock
 --------------------
 
 Get resource chain block information by block hash or height.
 
 ### Request Parameters
 
-| **Parameter** | **Requirements** | **Type** | **Maxlength** | **Description**    |
+| Parameter | Requirements | Type | Maxlength | Description    |
 |:--------------|:-----------------|:---------|:--------------|:-------------------|
 | type          | mandatory        | String   |               | "GetResourceBlock" |
 | target        | optional         | String   | 78            | block hash         |
@@ -542,14 +542,14 @@ Get resource chain block information by block hash or height.
 }
 ```
 
-**ListResourceBlock**
+ListResourceBlock
 ---------------------
 
 Get array list of resource chain block information.
 
 ### Request Parameters
 
-| **Parameter** | **Requirements** | **Type** | **Maxlength** | **Description**                                                |
+| Parameter | Requirements | Type | Maxlength | Description                                                |
 |:--------------|:-----------------|:---------|:--------------|:---------------------------------------------------------------|
 | type          | mandatory        | String   |               | "ListResourceBlock"                                            |
 | page          | optional         | Int      | 16            | Page Number of the list.<br>default value : 1                  |
@@ -605,14 +605,14 @@ Get array list of resource chain block information.
 }
 ```
 
-**ResourceBlockCount**
+ResourceBlockCount
 ----------------------
 
 Get total count of the resource chain blocks.
 
 ### Request Parameters
 
-| **Parameter** | **Requirements** | **Type** | **Maxlength** | **Description**                                               |
+| Parameter | Requirements | Type | Maxlength | Description                                               |
 |:--------------|:-----------------|:---------|:--------------|:--------------------------------------------------------------|
 | type          | mandatory        | String   |               | "ResourceBlockCount"                                          |
 
@@ -626,14 +626,14 @@ Get total count of the resource chain blocks.
 }
 ```
 
-**GetBlocks**
+GetBlocks
 -------------
 
 Get array list of maximum 256 main blocks searched from the given block height.
 
 ### Request Parameters
 
-| **Parameter** | **Requirements** | **Type** | **Maxlength** | **Description** |
+| Parameter | Requirements | Type | Maxlength | Description |
 |:--------------|:-----------------|:---------|:--------------|:----------------|
 | type          | mandatory        | String   |               | "GetBlocks"     |
 | target        | optional         | Int      | 16            | block height    |
@@ -679,14 +679,14 @@ Get array list of maximum 256 main blocks searched from the given block height.
 }
 ```
 
-**GetResourceBlocks**
+GetResourceBlocks
 ---------------------
 
 Get array list of maximum 256 resource blocks searched from the given block height.
 
 ### Request Parameter
 
-| **Parameter** | **Requirements** | **Type** | **Maxlength** | **Description**        |
+| Parameter | Requirements | Type | Maxlength | Description        |
 |:--------------|:-----------------|:---------|:--------------|:-----------------------|
 | type          | mandatory        | String   |               | "GetResourceBlocks"    |
 | target        | optional         | Int      | 16            | resource block height  |
@@ -756,14 +756,14 @@ Get array list of maximum 256 resource blocks searched from the given block heig
 }
 ```
 
-**GetResource**
+GetResource
 ---------------
 
 Get resource amount of the given address.
 
 ### Request Parameters
 
-| **Parameter** | **Requirements** | **Type** | **Maxlength** | **Description**                       |
+| Parameter | Requirements | Type | Maxlength | Description                       |
 |:--------------|:-----------------|:---------|:--------------|:--------------------------------------|
 | type          | mandatory        | String   |               | "GetResource"                         |
 | address       | mandatory        | String   | 44            | address where the resource is stored  |

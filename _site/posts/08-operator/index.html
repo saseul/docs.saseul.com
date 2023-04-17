@@ -978,30 +978,6 @@
       
 
     
-      
-
-      
-      
-
-      
-      
-      
-
-      
-
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-
-    
 
     
 
@@ -1095,8 +1071,8 @@
 
 <!-- return element -->
 <span class="readtime" data-toggle="tooltip" data-placement="bottom"
-  title="605 words">
-  <em>3 min</em> read</span>
+  title="2294 words">
+  <em>12 min</em> read</span>
 
     </div>
 
@@ -1123,31 +1099,11 @@ The SASEUL main network is currently using version 0.2.0, and we plan to support
 
 <h2 id="saseulsmartcontractoperatorcondition"><span class="mr-2">SASEUL.SmartContract.Operator.condition</span><a href="#saseulsmartcontractoperatorcondition" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
+<p>If all the conditions specified in this function are true, the method is executed, and if any condition is false, an error message is displayed.</p>
+
 <ul>
   <li>function (condition, err_msg)</li>
 </ul>
-
-<div class="table-wrapper"><table>
-  <thead>
-    <tr>
-      <th style="text-align: left"><strong>Parameter</strong></th>
-      <th style="text-align: left"><strong>Type</strong></th>
-      <th style="text-align: left"><strong>Description</strong></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align: left">condition</td>
-      <td style="text-align: left"> </td>
-      <td style="text-align: left">If this value is true, it will be executed.</td>
-    </tr>
-    <tr>
-      <td style="text-align: left">err_msg</td>
-      <td style="text-align: left">String</td>
-      <td style="text-align: left"> </td>
-    </tr>
-  </tbody>
-</table></div>
 
 <div class="language-javascript highlighter-rouge"><div class="code-header">
         <span data-label-text="JavaScript"><i class="fas fa-code small"></i></span>
@@ -1177,26 +1133,11 @@ The SASEUL main network is currently using version 0.2.0, and we plan to support
 
 <h2 id="saseulsmartcontractoperatorresponse"><span class="mr-2">SASEUL.SmartContract.Operator.response</span><a href="#saseulsmartcontractoperatorresponse" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
+<p>The result of this function becomes the return value of the method.</p>
+
 <ul>
   <li>function (response)</li>
 </ul>
-
-<div class="table-wrapper"><table>
-  <thead>
-    <tr>
-      <th style="text-align: left"><strong>Parameter</strong></th>
-      <th style="text-align: left"><strong>Type</strong></th>
-      <th style="text-align: left"><strong>Description</strong></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align: left">response</td>
-      <td style="text-align: left">Any</td>
-      <td style="text-align: left"> </td>
-    </tr>
-  </tbody>
-</table></div>
 
 <div class="language-javascript highlighter-rouge"><div class="code-header">
         <span data-label-text="JavaScript"><i class="fas fa-code small"></i></span>
@@ -1232,8 +1173,10 @@ The SASEUL main network is currently using version 0.2.0, and we plan to support
 
 <h2 id="saseulsmartcontractoperatorweight"><span class="mr-2">SASEUL.SmartContract.Operator.weight</span><a href="#saseulsmartcontractoperatorweight" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
+<p>Returns the weight of the executed transaction.</p>
+
 <ul>
-  <li>Returns the weight of the executed transaction.</li>
+  <li>function ()</li>
 </ul>
 
 <div class="language-javascript highlighter-rouge"><div class="code-header">
@@ -1248,49 +1191,32 @@ The SASEUL main network is currently using version 0.2.0, and we plan to support
 
 <h2 id="saseulsmartcontractoperatorif"><span class="mr-2">SASEUL.SmartContract.Operator.if</span><a href="#saseulsmartcontractoperatorif" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
+<p>If “condition” is true, return if_true, otherwise return if_false.</p>
+
 <ul>
   <li>function (condition, if_true, if_false)</li>
 </ul>
 
-<div class="table-wrapper"><table>
-  <thead>
-    <tr>
-      <th style="text-align: left"><strong>Parameter</strong></th>
-      <th style="text-align: left"><strong>Type</strong></th>
-      <th style="text-align: left"><strong>Description</strong></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align: left">condition</td>
-      <td style="text-align: left"> </td>
-      <td style="text-align: left">If this value is true, return if_true, otherwise return if_false.</td>
-    </tr>
-    <tr>
-      <td style="text-align: left">if_true</td>
-      <td style="text-align: left"> </td>
-      <td style="text-align: left"> </td>
-    </tr>
-    <tr>
-      <td style="text-align: left">if_false</td>
-      <td style="text-align: left"> </td>
-      <td style="text-align: left"> </td>
-    </tr>
-  </tbody>
-</table></div>
-
 <div class="language-javascript highlighter-rouge"><div class="code-header">
         <span data-label-text="JavaScript"><i class="fas fa-code small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
+4
+5
+6
 </pre></td><td class="rouge-code"><pre><span class="p">...</span>
-<span class="nx">next</span> <span class="o">=</span> <span class="nx">op</span><span class="p">.</span><span class="k">if</span><span class="p">(</span><span class="nx">min_condition</span><span class="p">,</span> <span class="dl">'</span><span class="s1">0.0000001</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">0</span><span class="dl">'</span><span class="p">);</span>
+<span class="nx">result</span> <span class="o">=</span> <span class="nx">op</span><span class="p">.</span><span class="k">if</span><span class="p">(</span><span class="kc">true</span><span class="p">,</span> <span class="dl">'</span><span class="s1">0.1</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">0.3</span><span class="dl">'</span><span class="p">);</span>
 <span class="p">...</span>
+
+<span class="c1">// result = '0.1'</span>
+<span class="c1">// Results are not directly expressed in JavaScript, but are computed only within the SASEUL Engine.</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <h2 id="saseulsmartcontractoperatorand"><span class="mr-2">SASEUL.SmartContract.Operator.and</span><a href="#saseulsmartcontractoperatorand" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
+<p>It is the ‘and’ functionality in most programming languages.</p>
+
 <ul>
   <li>function ([value1, value2, …])</li>
 </ul>
@@ -1300,13 +1226,21 @@ The SASEUL main network is currently using version 0.2.0, and we plan to support
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
+4
+5
+6
 </pre></td><td class="rouge-code"><pre><span class="p">...</span>
-<span class="nx">next</span> <span class="o">=</span> <span class="nx">op</span><span class="p">.</span><span class="nx">and</span><span class="p">([</span><span class="kc">true</span><span class="p">,</span> <span class="kc">false</span><span class="p">,</span> <span class="kc">false</span><span class="p">]);</span>
+<span class="nx">result</span> <span class="o">=</span> <span class="nx">op</span><span class="p">.</span><span class="nx">and</span><span class="p">([</span><span class="kc">true</span><span class="p">,</span> <span class="kc">false</span><span class="p">]);</span>
 <span class="p">...</span>
+
+<span class="c1">// result = false</span>
+<span class="c1">// Results are not directly expressed in JavaScript, but are computed only within the SASEUL Engine.</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <h2 id="saseulsmartcontractoperatoror"><span class="mr-2">SASEUL.SmartContract.Operator.or</span><a href="#saseulsmartcontractoperatoror" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
+<p>It is the ‘or’ functionality in most programming languages.</p>
+
 <ul>
   <li>function ([value1, value2, …])</li>
 </ul>
@@ -1316,16 +1250,40 @@ The SASEUL main network is currently using version 0.2.0, and we plan to support
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
+4
+5
+6
 </pre></td><td class="rouge-code"><pre><span class="p">...</span>
-<span class="nx">next</span> <span class="o">=</span> <span class="nx">op</span><span class="p">.</span><span class="nx">or</span><span class="p">([</span><span class="kc">true</span><span class="p">,</span> <span class="kc">false</span><span class="p">,</span> <span class="kc">false</span><span class="p">]);</span>
+<span class="nx">result</span> <span class="o">=</span> <span class="nx">op</span><span class="p">.</span><span class="nx">or</span><span class="p">([</span><span class="kc">false</span><span class="p">,</span> <span class="nx">op</span><span class="p">.</span><span class="nx">and</span><span class="p">([</span><span class="kc">true</span><span class="p">,</span> <span class="kc">true</span><span class="p">])]);</span>
 <span class="p">...</span>
+
+<span class="c1">// result = true</span>
+<span class="c1">// Results are not directly expressed in JavaScript, but are computed only within the SASEUL Engine.</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <h2 id="saseulsmartcontractoperatorget"><span class="mr-2">SASEUL.SmartContract.Operator.get</span><a href="#saseulsmartcontractoperatorget" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
+<p>If the obj value is an array, it returns the value of obj[key].</p>
+
 <ul>
   <li>function (obj, key)</li>
 </ul>
+
+<div class="language-javascript highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre></td><td class="rouge-code"><pre><span class="p">...</span>
+<span class="nx">result</span> <span class="o">=</span> <span class="nx">op</span><span class="p">.</span><span class="kd">get</span><span class="p">({</span><span class="dl">"</span><span class="s2">a</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">b</span><span class="dl">"</span><span class="p">},</span> <span class="dl">"</span><span class="s2">a</span><span class="dl">"</span><span class="p">);</span>
+<span class="p">...</span>
+
+<span class="c1">// result = 'b'</span>
+<span class="c1">// Results are not directly expressed in JavaScript, but are computed only within the SASEUL Engine.</span>
+</pre></td></tr></tbody></table></code></div></div>
 
 <p><br /></p>
 
@@ -1333,6 +1291,8 @@ The SASEUL main network is currently using version 0.2.0, and we plan to support
 
 <h2 id="saseulsmartcontractoperatoradd"><span class="mr-2">SASEUL.SmartContract.Operator.add</span><a href="#saseulsmartcontractoperatoradd" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
+<p>It returns the result of adding up all the values.</p>
+
 <ul>
   <li>function ([value1, value2, …])</li>
 </ul>
@@ -1342,13 +1302,21 @@ The SASEUL main network is currently using version 0.2.0, and we plan to support
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
+4
+5
+6
 </pre></td><td class="rouge-code"><pre><span class="p">...</span>
-<span class="nx">next</span> <span class="o">=</span> <span class="nx">op</span><span class="p">.</span><span class="nx">add</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]);</span>
+<span class="nx">result</span> <span class="o">=</span> <span class="nx">op</span><span class="p">.</span><span class="nx">add</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]);</span>
 <span class="p">...</span>
+
+<span class="c1">// result = 6</span>
+<span class="c1">// Results are not directly expressed in JavaScript, but are computed only within the SASEUL Engine.</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <h2 id="saseulsmartcontractoperatorsub"><span class="mr-2">SASEUL.SmartContract.Operator.sub</span><a href="#saseulsmartcontractoperatorsub" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
+<p>It returns the value obtained by subtracting all the remaining values from the first value.</p>
+
 <ul>
   <li>function ([value1, value2, …])</li>
 </ul>
@@ -1358,13 +1326,21 @@ The SASEUL main network is currently using version 0.2.0, and we plan to support
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
+4
+5
+6
 </pre></td><td class="rouge-code"><pre><span class="p">...</span>
-<span class="nx">next</span> <span class="o">=</span> <span class="nx">op</span><span class="p">.</span><span class="nx">sub</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">]);</span>
+<span class="nx">result</span> <span class="o">=</span> <span class="nx">op</span><span class="p">.</span><span class="nx">sub</span><span class="p">([</span><span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="nx">op</span><span class="p">.</span><span class="nx">add</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">])]);</span>
 <span class="p">...</span>
+
+<span class="c1">// result = 1</span>
+<span class="c1">// Results are not directly expressed in JavaScript, but are computed only within the SASEUL Engine.</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <h2 id="saseulsmartcontractoperatormul"><span class="mr-2">SASEUL.SmartContract.Operator.mul</span><a href="#saseulsmartcontractoperatormul" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
+<p>It returns the result of multiplying all the values.</p>
+
 <ul>
   <li>function ([value1, value2, …])</li>
 </ul>
@@ -1374,13 +1350,21 @@ The SASEUL main network is currently using version 0.2.0, and we plan to support
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
+4
+5
+6
 </pre></td><td class="rouge-code"><pre><span class="p">...</span>
-<span class="nx">next</span> <span class="o">=</span> <span class="nx">op</span><span class="p">.</span><span class="nx">mul</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]);</span>
+<span class="nx">result</span> <span class="o">=</span> <span class="nx">op</span><span class="p">.</span><span class="nx">mul</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]);</span>
 <span class="p">...</span>
+
+<span class="c1">// result = 120</span>
+<span class="c1">// Results are not directly expressed in JavaScript, but are computed only within the SASEUL Engine.</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <h2 id="saseulsmartcontractoperatordiv"><span class="mr-2">SASEUL.SmartContract.Operator.div</span><a href="#saseulsmartcontractoperatordiv" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
+<p>It returns the value obtained by dividing all the remaining values from the first value.</p>
+
 <ul>
   <li>function ([value1, value2, …])</li>
 </ul>
@@ -1390,13 +1374,21 @@ The SASEUL main network is currently using version 0.2.0, and we plan to support
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
+4
+5
+6
 </pre></td><td class="rouge-code"><pre><span class="p">...</span>
-<span class="nx">next</span> <span class="o">=</span> <span class="nx">op</span><span class="p">.</span><span class="nx">div</span><span class="p">([</span><span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">]);</span>
+<span class="nx">result</span> <span class="o">=</span> <span class="nx">op</span><span class="p">.</span><span class="nx">div</span><span class="p">([</span><span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">]);</span>
 <span class="p">...</span>
+
+<span class="c1">// result = 1</span>
+<span class="c1">// Results are not directly expressed in JavaScript, but are computed only within the SASEUL Engine.</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <h2 id="saseulsmartcontractoperatorprecise_add"><span class="mr-2">SASEUL.SmartContract.Operator.precise_add</span><a href="#saseulsmartcontractoperatorprecise_add" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
+<p>It returns the value obtained by adding two numbers with consideration of precision based on the scale.</p>
+
 <ul>
   <li>function (left, right, scale)</li>
 </ul>
@@ -1406,13 +1398,21 @@ The SASEUL main network is currently using version 0.2.0, and we plan to support
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
+4
+5
+6
 </pre></td><td class="rouge-code"><pre><span class="p">...</span>
-<span class="nx">next</span> <span class="o">=</span> <span class="nx">op</span><span class="p">.</span><span class="nx">precise_add</span><span class="p">(</span><span class="mf">1.15</span><span class="p">,</span> <span class="mf">2.567</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
+<span class="nx">result</span> <span class="o">=</span> <span class="nx">op</span><span class="p">.</span><span class="nx">precise_add</span><span class="p">(</span><span class="mf">1.15</span><span class="p">,</span> <span class="mf">2.567</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
 <span class="p">...</span>
+
+<span class="c1">// result = 3.717</span>
+<span class="c1">// Results are not directly expressed in JavaScript, but are computed only within the SASEUL Engine.</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <h2 id="saseulsmartcontractoperatorprecise_sub"><span class="mr-2">SASEUL.SmartContract.Operator.precise_sub</span><a href="#saseulsmartcontractoperatorprecise_sub" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
+<p>It returns the value obtained by subtracting two numbers with consideration of precision based on the scale.</p>
+
 <ul>
   <li>function (left, right, scale)</li>
 </ul>
@@ -1422,13 +1422,21 @@ The SASEUL main network is currently using version 0.2.0, and we plan to support
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
+4
+5
+6
 </pre></td><td class="rouge-code"><pre><span class="p">...</span>
-<span class="nx">next</span> <span class="o">=</span> <span class="nx">op</span><span class="p">.</span><span class="nx">precise_sub</span><span class="p">(</span><span class="mf">6.15</span><span class="p">,</span> <span class="mf">2.567</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
+<span class="nx">result</span> <span class="o">=</span> <span class="nx">op</span><span class="p">.</span><span class="nx">precise_sub</span><span class="p">(</span><span class="mf">6.15</span><span class="p">,</span> <span class="mf">2.567</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
 <span class="p">...</span>
+
+<span class="c1">// result = 3.583</span>
+<span class="c1">// Results are not directly expressed in JavaScript, but are computed only within the SASEUL Engine.</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <h2 id="saseulsmartcontractoperatorprecise_mul"><span class="mr-2">SASEUL.SmartContract.Operator.precise_mul</span><a href="#saseulsmartcontractoperatorprecise_mul" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
+<p>It returns the value obtained by multiplying two numbers with consideration of precision based on the scale.</p>
+
 <ul>
   <li>function (left, right, scale)</li>
 </ul>
@@ -1438,13 +1446,21 @@ The SASEUL main network is currently using version 0.2.0, and we plan to support
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
+4
+5
+6
 </pre></td><td class="rouge-code"><pre><span class="p">...</span>
-<span class="nx">next</span> <span class="o">=</span> <span class="nx">op</span><span class="p">.</span><span class="nx">precise_mul</span><span class="p">(</span><span class="mf">6.15</span><span class="p">,</span> <span class="mf">2.567</span><span class="p">,</span> <span class="mi">5</span><span class="p">);</span>
+<span class="nx">result</span> <span class="o">=</span> <span class="nx">op</span><span class="p">.</span><span class="nx">precise_mul</span><span class="p">(</span><span class="mf">6.15</span><span class="p">,</span> <span class="mf">2.567</span><span class="p">,</span> <span class="mi">5</span><span class="p">);</span>
 <span class="p">...</span>
+
+<span class="c1">// result = 15.78705</span>
+<span class="c1">// Results are not directly expressed in JavaScript, but are computed only within the SASEUL Engine.</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <h2 id="saseulsmartcontractoperatorprecise_div"><span class="mr-2">SASEUL.SmartContract.Operator.precise_div</span><a href="#saseulsmartcontractoperatorprecise_div" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
+<p>It returns the value obtained by dividing two numbers with consideration of precision based on the scale.</p>
+
 <ul>
   <li>function (left, right, scale)</li>
 </ul>
@@ -1454,12 +1470,20 @@ The SASEUL main network is currently using version 0.2.0, and we plan to support
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
+4
+5
+6
 </pre></td><td class="rouge-code"><pre><span class="p">...</span>
-<span class="nx">next</span> <span class="o">=</span> <span class="nx">op</span><span class="p">.</span><span class="nx">precise_div</span><span class="p">(</span><span class="mf">2.15</span><span class="p">,</span> <span class="mf">2.567</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
+<span class="nx">result</span> <span class="o">=</span> <span class="nx">op</span><span class="p">.</span><span class="nx">precise_div</span><span class="p">(</span><span class="mf">2.15</span><span class="p">,</span> <span class="mf">2.567</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
 <span class="p">...</span>
+
+<span class="c1">// result = 0.838</span>
+<span class="c1">// Results are not directly expressed in JavaScript, but are computed only within the SASEUL Engine.</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <h2 id="saseulsmartcontractoperatorscale"><span class="mr-2">SASEUL.SmartContract.Operator.scale</span><a href="#saseulsmartcontractoperatorscale" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<p>It returns the scale of the value.</p>
 
 <ul>
   <li>function (value)</li>
@@ -1470,9 +1494,15 @@ The SASEUL main network is currently using version 0.2.0, and we plan to support
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
+4
+5
+6
 </pre></td><td class="rouge-code"><pre><span class="p">...</span>
-<span class="nx">val</span> <span class="o">=</span> <span class="nx">op</span><span class="p">.</span><span class="nx">scale</span><span class="p">(</span><span class="mf">2.15</span><span class="p">);</span>
+<span class="nx">result</span> <span class="o">=</span> <span class="nx">op</span><span class="p">.</span><span class="nx">scale</span><span class="p">(</span><span class="mf">2.15</span><span class="p">);</span>
 <span class="p">...</span>
+
+<span class="c1">// result = 2</span>
+<span class="c1">// Results are not directly expressed in JavaScript, but are computed only within the SASEUL Engine.</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p><br /></p>
@@ -1480,6 +1510,8 @@ The SASEUL main network is currently using version 0.2.0, and we plan to support
 <h1 id="castoperator">CastOperator</h1>
 
 <h2 id="saseulsmartcontractoperatorget_type"><span class="mr-2">SASEUL.SmartContract.Operator.get_type</span><a href="#saseulsmartcontractoperatorget_type" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<p>It returns the data type of the value.</p>
 
 <ul>
   <li>function (obj)</li>
@@ -1490,13 +1522,21 @@ The SASEUL main network is currently using version 0.2.0, and we plan to support
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
+4
+5
+6
 </pre></td><td class="rouge-code"><pre><span class="p">...</span>
-<span class="nx">result</span> <span class="o">=</span> <span class="nx">op</span><span class="p">.</span><span class="nx">get_type</span><span class="p">(</span><span class="dl">"</span><span class="s2">string</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">result</span> <span class="o">=</span> <span class="nx">op</span><span class="p">.</span><span class="nx">get_type</span><span class="p">(</span><span class="dl">"</span><span class="s2">a</span><span class="dl">"</span><span class="p">);</span>
 <span class="p">...</span>
+
+<span class="c1">// result = "string"</span>
+<span class="c1">// Results are not directly expressed in JavaScript, but are computed only within the SASEUL Engine.</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <h2 id="saseulsmartcontractoperatoris_numeric"><span class="mr-2">SASEUL.SmartContract.Operator.is_numeric</span><a href="#saseulsmartcontractoperatoris_numeric" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
+<p>It returns true if the data type of the value can be represented as a number.</p>
+
 <ul>
   <li>function (vars)</li>
 </ul>
@@ -1506,13 +1546,21 @@ The SASEUL main network is currently using version 0.2.0, and we plan to support
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
+4
+5
+6
 </pre></td><td class="rouge-code"><pre><span class="p">...</span>
 <span class="nx">result</span> <span class="o">=</span> <span class="nx">op</span><span class="p">.</span><span class="nx">is_numeric</span><span class="p">([</span><span class="mf">1.5</span><span class="p">]);</span>
 <span class="p">...</span>
+
+<span class="c1">// result = true</span>
+<span class="c1">// Results are not directly expressed in JavaScript, but are computed only within the SASEUL Engine.</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <h2 id="saseulsmartcontractoperatoris_int"><span class="mr-2">SASEUL.SmartContract.Operator.is_int</span><a href="#saseulsmartcontractoperatoris_int" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
+<p>It returns true if the data type of the value is ‘int’.</p>
+
 <ul>
   <li>function (vars)</li>
 </ul>
@@ -1522,13 +1570,21 @@ The SASEUL main network is currently using version 0.2.0, and we plan to support
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
+4
+5
+6
 </pre></td><td class="rouge-code"><pre><span class="p">...</span>
 <span class="nx">result</span> <span class="o">=</span> <span class="nx">op</span><span class="p">.</span><span class="nx">is_int</span><span class="p">([</span><span class="mi">2</span><span class="p">]);</span>
 <span class="p">...</span>
+
+<span class="c1">// result = true</span>
+<span class="c1">// Results are not directly expressed in JavaScript, but are computed only within the SASEUL Engine.</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <h2 id="saseulsmartcontractoperatoris_string"><span class="mr-2">SASEUL.SmartContract.Operator.is_string</span><a href="#saseulsmartcontractoperatoris_string" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
+<p>It returns true if the data type of the value is ‘string’.</p>
+
 <ul>
   <li>function (vars)</li>
 </ul>
@@ -1538,13 +1594,21 @@ The SASEUL main network is currently using version 0.2.0, and we plan to support
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
+4
+5
+6
 </pre></td><td class="rouge-code"><pre><span class="p">...</span>
 <span class="nx">result</span> <span class="o">=</span> <span class="nx">op</span><span class="p">.</span><span class="nx">is_string</span><span class="p">([</span><span class="dl">"</span><span class="s2">string</span><span class="dl">"</span><span class="p">]);</span>
 <span class="p">...</span>
+
+<span class="c1">// result = true</span>
+<span class="c1">// Results are not directly expressed in JavaScript, but are computed only within the SASEUL Engine.</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <h2 id="saseulsmartcontractoperatoris_null"><span class="mr-2">SASEUL.SmartContract.Operator.is_null</span><a href="#saseulsmartcontractoperatoris_null" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
+<p>It returns true if the value is null.</p>
+
 <ul>
   <li>function (vars)</li>
 </ul>
@@ -1554,13 +1618,21 @@ The SASEUL main network is currently using version 0.2.0, and we plan to support
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
+4
+5
+6
 </pre></td><td class="rouge-code"><pre><span class="p">...</span>
 <span class="nx">result</span> <span class="o">=</span> <span class="nx">op</span><span class="p">.</span><span class="nx">is_null</span><span class="p">([</span><span class="kc">null</span><span class="p">]);</span>
 <span class="p">...</span>
+
+<span class="c1">// result = true</span>
+<span class="c1">// Results are not directly expressed in JavaScript, but are computed only within the SASEUL Engine.</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <h2 id="saseulsmartcontractoperatoris_bool"><span class="mr-2">SASEUL.SmartContract.Operator.is_bool</span><a href="#saseulsmartcontractoperatoris_bool" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
+<p>It returns true if the data type of the value is ‘bool’.</p>
+
 <ul>
   <li>function (vars)</li>
 </ul>
@@ -1570,13 +1642,21 @@ The SASEUL main network is currently using version 0.2.0, and we plan to support
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
+4
+5
+6
 </pre></td><td class="rouge-code"><pre><span class="p">...</span>
-<span class="nx">result</span> <span class="o">=</span> <span class="nx">op</span><span class="p">.</span><span class="nx">is_bool</span><span class="p">([</span><span class="kc">true</span><span class="p">]);</span>
+<span class="nx">result</span> <span class="o">=</span> <span class="nx">op</span><span class="p">.</span><span class="nx">is_bool</span><span class="p">([</span><span class="kc">false</span><span class="p">]);</span>
 <span class="p">...</span>
+
+<span class="c1">// result = true</span>
+<span class="c1">// Results are not directly expressed in JavaScript, but are computed only within the SASEUL Engine.</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <h2 id="saseulsmartcontractoperatoris_array"><span class="mr-2">SASEUL.SmartContract.Operator.is_array</span><a href="#saseulsmartcontractoperatoris_array" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
+<p>It returns true if the data type of the value is ‘array’ or ‘object’.</p>
+
 <ul>
   <li>function (vars)</li>
 </ul>
@@ -1586,13 +1666,21 @@ The SASEUL main network is currently using version 0.2.0, and we plan to support
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
+4
+5
+6
 </pre></td><td class="rouge-code"><pre><span class="p">...</span>
 <span class="nx">result</span> <span class="o">=</span> <span class="nx">op</span><span class="p">.</span><span class="nx">is_array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]]);</span>
 <span class="p">...</span>
+
+<span class="c1">// result = true</span>
+<span class="c1">// Results are not directly expressed in JavaScript, but are computed only within the SASEUL Engine.</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <h2 id="saseulsmartcontractoperatoris_double"><span class="mr-2">SASEUL.SmartContract.Operator.is_double</span><a href="#saseulsmartcontractoperatoris_double" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
+<p>It returns true if the data type of the value is ‘double’.</p>
+
 <ul>
   <li>function (vars)</li>
 </ul>
@@ -1602,9 +1690,15 @@ The SASEUL main network is currently using version 0.2.0, and we plan to support
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
+4
+5
+6
 </pre></td><td class="rouge-code"><pre><span class="p">...</span>
 <span class="nx">result</span> <span class="o">=</span> <span class="nx">op</span><span class="p">.</span><span class="nx">is_double</span><span class="p">([</span><span class="mf">1.2</span><span class="p">]);</span>
 <span class="p">...</span>
+
+<span class="c1">// result = true</span>
+<span class="c1">// Results are not directly expressed in JavaScript, but are computed only within the SASEUL Engine.</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p><br /></p>
@@ -1613,6 +1707,8 @@ The SASEUL main network is currently using version 0.2.0, and we plan to support
 
 <h2 id="saseulsmartcontractoperatoreq"><span class="mr-2">SASEUL.SmartContract.Operator.eq</span><a href="#saseulsmartcontractoperatoreq" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
+<p>It returns true if the two values are equal.</p>
+
 <ul>
   <li>function (left, right)</li>
 </ul>
@@ -1622,13 +1718,21 @@ The SASEUL main network is currently using version 0.2.0, and we plan to support
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
+4
+5
+6
 </pre></td><td class="rouge-code"><pre><span class="p">...</span>
-<span class="nx">result</span> <span class="o">=</span> <span class="nx">op</span><span class="p">.</span><span class="nx">eq</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">);</span>
+<span class="nx">result</span> <span class="o">=</span> <span class="nx">op</span><span class="p">.</span><span class="nx">eq</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
 <span class="p">...</span>
+
+<span class="c1">// result = true</span>
+<span class="c1">// Results are not directly expressed in JavaScript, but are computed only within the SASEUL Engine.</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <h2 id="saseulsmartcontractoperatorne"><span class="mr-2">SASEUL.SmartContract.Operator.ne</span><a href="#saseulsmartcontractoperatorne" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
+<p>It returns true if the two values are different.</p>
+
 <ul>
   <li>function (left, right)</li>
 </ul>
@@ -1638,13 +1742,21 @@ The SASEUL main network is currently using version 0.2.0, and we plan to support
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
+4
+5
+6
 </pre></td><td class="rouge-code"><pre><span class="p">...</span>
-<span class="nx">result</span> <span class="o">=</span> <span class="nx">op</span><span class="p">.</span><span class="nx">ne</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">);</span>
+<span class="nx">result</span> <span class="o">=</span> <span class="nx">op</span><span class="p">.</span><span class="nx">ne</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
 <span class="p">...</span>
+
+<span class="c1">// result = true</span>
+<span class="c1">// Results are not directly expressed in JavaScript, but are computed only within the SASEUL Engine.</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <h2 id="saseulsmartcontractoperatorgt"><span class="mr-2">SASEUL.SmartContract.Operator.gt</span><a href="#saseulsmartcontractoperatorgt" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
+<p>It returns true if the value on the left is greater than the value on the right.</p>
+
 <ul>
   <li>function (left, right)</li>
 </ul>
@@ -1654,13 +1766,21 @@ The SASEUL main network is currently using version 0.2.0, and we plan to support
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
+4
+5
+6
 </pre></td><td class="rouge-code"><pre><span class="p">...</span>
-<span class="nx">result</span> <span class="o">=</span> <span class="nx">op</span><span class="p">.</span><span class="nx">gt</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">);</span>
+<span class="nx">result</span> <span class="o">=</span> <span class="nx">op</span><span class="p">.</span><span class="nx">gt</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
 <span class="p">...</span>
+
+<span class="c1">// result = true</span>
+<span class="c1">// Results are not directly expressed in JavaScript, but are computed only within the SASEUL Engine.</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <h2 id="saseulsmartcontractoperatorlt"><span class="mr-2">SASEUL.SmartContract.Operator.lt</span><a href="#saseulsmartcontractoperatorlt" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
+<p>It returns true if the value on the right is greater than the value on the left.</p>
+
 <ul>
   <li>function (left, right)</li>
 </ul>
@@ -1670,13 +1790,21 @@ The SASEUL main network is currently using version 0.2.0, and we plan to support
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
+4
+5
+6
 </pre></td><td class="rouge-code"><pre><span class="p">...</span>
-<span class="nx">result</span> <span class="o">=</span> <span class="nx">op</span><span class="p">.</span><span class="nx">lt</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">);</span>
+<span class="nx">result</span> <span class="o">=</span> <span class="nx">op</span><span class="p">.</span><span class="nx">lt</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span>
 <span class="p">...</span>
+
+<span class="c1">// result = true</span>
+<span class="c1">// Results are not directly expressed in JavaScript, but are computed only within the SASEUL Engine.</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <h2 id="saseulsmartcontractoperatorgte"><span class="mr-2">SASEUL.SmartContract.Operator.gte</span><a href="#saseulsmartcontractoperatorgte" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
+<p>It returns true if the value on the left is greater than or equal to the value on the right.</p>
+
 <ul>
   <li>function (left, right)</li>
 </ul>
@@ -1686,13 +1814,21 @@ The SASEUL main network is currently using version 0.2.0, and we plan to support
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
+4
+5
+6
 </pre></td><td class="rouge-code"><pre><span class="p">...</span>
-<span class="nx">result</span> <span class="o">=</span> <span class="nx">op</span><span class="p">.</span><span class="nx">gte</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">);</span>
+<span class="nx">result</span> <span class="o">=</span> <span class="nx">op</span><span class="p">.</span><span class="nx">gte</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
 <span class="p">...</span>
+
+<span class="c1">// result = true</span>
+<span class="c1">// Results are not directly expressed in JavaScript, but are computed only within the SASEUL Engine.</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <h2 id="saseulsmartcontractoperatorlte"><span class="mr-2">SASEUL.SmartContract.Operator.lte</span><a href="#saseulsmartcontractoperatorlte" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
+<p>It returns true if the value on the right is greater than or equal to the value on the left.</p>
+
 <ul>
   <li>function (left, right)</li>
 </ul>
@@ -1702,12 +1838,20 @@ The SASEUL main network is currently using version 0.2.0, and we plan to support
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
+4
+5
+6
 </pre></td><td class="rouge-code"><pre><span class="p">...</span>
-<span class="nx">result</span> <span class="o">=</span> <span class="nx">op</span><span class="p">.</span><span class="nx">lte</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">);</span>
+<span class="nx">result</span> <span class="o">=</span> <span class="nx">op</span><span class="p">.</span><span class="nx">lte</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
 <span class="p">...</span>
+
+<span class="c1">// result = true</span>
+<span class="c1">// Results are not directly expressed in JavaScript, but are computed only within the SASEUL Engine.</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <h2 id="saseulsmartcontractoperatorin"><span class="mr-2">SASEUL.SmartContract.Operator.in</span><a href="#saseulsmartcontractoperatorin" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<p>It returns true if the target is an element in the cases array.</p>
 
 <ul>
   <li>function (target, cases)</li>
@@ -1718,9 +1862,15 @@ The SASEUL main network is currently using version 0.2.0, and we plan to support
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
+4
+5
+6
 </pre></td><td class="rouge-code"><pre><span class="p">...</span>
 <span class="nx">result</span> <span class="o">=</span> <span class="nx">op</span><span class="p">.</span><span class="k">in</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="p">[</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">]);</span>
 <span class="p">...</span>
+
+<span class="c1">// result = true</span>
+<span class="c1">// Results are not directly expressed in JavaScript, but are computed only within the SASEUL Engine.</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p><br /></p>
@@ -1728,24 +1878,358 @@ The SASEUL main network is currently using version 0.2.0, and we plan to support
 <h1 id="readwriteoperator">ReadWriteOperator</h1>
 
 <h4 id="saseulsmartcontractoperatorload_param"><span class="mr-2">SASEUL.SmartContract.Operator.load_param</span><a href="#saseulsmartcontractoperatorload_param" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+
+<p>It returns a specific value of a signed transaction.</p>
+
+<ul>
+  <li>function (target)</li>
+</ul>
+
+<div class="language-json highlighter-rouge"><div class="code-header">
+        <span data-label-text="JSON"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre><span class="p">{</span><span class="w">
+  </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Send"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"to"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;ADDRESS&gt;"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5000"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre></td></tr></tbody></table></code></div></div>
+
+<div class="language-javascript highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre></td><td class="rouge-code"><pre><span class="p">...</span>
+<span class="nx">result</span> <span class="o">=</span> <span class="nx">op</span><span class="p">.</span><span class="nx">load_param</span><span class="p">(</span><span class="dl">"</span><span class="s2">amount</span><span class="dl">"</span><span class="p">);</span>
+<span class="p">...</span>
+
+<span class="c1">// result = "5000"</span>
+<span class="c1">// Results are not directly expressed in JavaScript, but are computed only within the SASEUL Engine.</span>
+</pre></td></tr></tbody></table></code></div></div>
+
 <h4 id="saseulsmartcontractoperatorread_universal"><span class="mr-2">SASEUL.SmartContract.Operator.read_universal</span><a href="#saseulsmartcontractoperatorread_universal" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+
+<p>It returns the value stored in the “Universal Status” data.</p>
+
+<ul>
+  <li>function (attr, key, default)</li>
+</ul>
+
+<div class="language-javascript highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre></td><td class="rouge-code"><pre><span class="p">...</span>
+<span class="nx">result</span> <span class="o">=</span> <span class="nx">op</span><span class="p">.</span><span class="nx">read_universal</span><span class="p">(</span><span class="dl">"</span><span class="s2">balance</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">&lt;ADDRESS&gt;</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">0</span><span class="dl">"</span><span class="p">);</span>
+
+<span class="nx">response</span> <span class="o">=</span> <span class="nx">op</span><span class="p">.</span><span class="nx">response</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
+<span class="nx">method</span><span class="p">.</span><span class="nx">addExecution</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
+<span class="p">...</span>
+
+<span class="c1">// result = (The balance data of an address.)</span>
+<span class="c1">// Results are not directly expressed in JavaScript, but are computed only within the SASEUL Engine.</span>
+</pre></td></tr></tbody></table></code></div></div>
+
 <h4 id="saseulsmartcontractoperatorread_local"><span class="mr-2">SASEUL.SmartContract.Operator.read_local</span><a href="#saseulsmartcontractoperatorread_local" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+
+<p>It returns the value stored in the “Local Status” data.</p>
+
+<ul>
+  <li>function (attr, key, default)</li>
+</ul>
+
+<div class="language-javascript highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre></td><td class="rouge-code"><pre><span class="p">...</span>
+<span class="nx">result</span> <span class="o">=</span> <span class="nx">op</span><span class="p">.</span><span class="nx">read_local</span><span class="p">(</span><span class="dl">"</span><span class="s2">genesis</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">00</span><span class="dl">"</span><span class="p">);</span>
+
+<span class="nx">response</span> <span class="o">=</span> <span class="nx">op</span><span class="p">.</span><span class="nx">response</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
+<span class="nx">method</span><span class="p">.</span><span class="nx">addExecution</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
+<span class="p">...</span>
+
+<span class="c1">// result = true</span>
+<span class="c1">// Results are not directly expressed in JavaScript, but are computed only within the SASEUL Engine.</span>
+</pre></td></tr></tbody></table></code></div></div>
+
 <h4 id="saseulsmartcontractoperatorwrite_universal"><span class="mr-2">SASEUL.SmartContract.Operator.write_universal</span><a href="#saseulsmartcontractoperatorwrite_universal" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+
+<p>(Only in the Update statement within the method) It stores a value in the “Universal Status” data space during the processing of the contract.</p>
+
+<ul>
+  <li>function (attr, key, value)</li>
+</ul>
+
+<div class="language-javascript highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre><span class="p">...</span>
+<span class="nx">update</span> <span class="o">=</span> <span class="nx">op</span><span class="p">.</span><span class="nx">write_universal</span><span class="p">(</span><span class="dl">"</span><span class="s2">balance</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">&lt;ADDRESS&gt;</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">5000</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">method</span><span class="p">.</span><span class="nx">addUpdate</span><span class="p">(</span><span class="nx">update</span><span class="p">);</span>
+<span class="p">...</span>
+</pre></td></tr></tbody></table></code></div></div>
+
 <h4 id="saseulsmartcontractoperatorwrite_local"><span class="mr-2">SASEUL.SmartContract.Operator.write_local</span><a href="#saseulsmartcontractoperatorwrite_local" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+
+<p>(Only in the Update statement within the method) It stores a value in the “Local Status” data space during the processing of the contract.</p>
+
+<ul>
+  <li>function (attr, key, value)</li>
+</ul>
+
+<div class="language-javascript highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre><span class="p">...</span>
+<span class="nx">update</span> <span class="o">=</span> <span class="nx">op</span><span class="p">.</span><span class="nx">write_local</span><span class="p">(</span><span class="dl">"</span><span class="s2">genesis</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">00</span><span class="dl">"</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+<span class="nx">method</span><span class="p">.</span><span class="nx">addUpdate</span><span class="p">(</span><span class="nx">update</span><span class="p">);</span>
+<span class="p">...</span>
+</pre></td></tr></tbody></table></code></div></div>
 
 <p><br /></p>
 
 <h1 id="utiloperator">UtilOperator</h1>
 
 <h4 id="saseulsmartcontractoperatorconcat"><span class="mr-2">SASEUL.SmartContract.Operator.concat</span><a href="#saseulsmartcontractoperatorconcat" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+
+<p>It returns a concatenated string of the given strings.</p>
+
+<ul>
+  <li>function ([string1, string2, …])</li>
+</ul>
+
+<div class="language-javascript highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre></td><td class="rouge-code"><pre><span class="p">...</span>
+<span class="nx">result</span> <span class="o">=</span> <span class="nx">op</span><span class="p">.</span><span class="nx">concat</span><span class="p">([</span><span class="dl">'</span><span class="s1">Lo</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">rem Ipsum</span><span class="dl">'</span><span class="p">]);</span>
+<span class="p">...</span>
+
+<span class="c1">// result = 'Lorem Ipsum'</span>
+<span class="c1">// Results are not directly expressed in JavaScript, but are computed only within the SASEUL Engine.</span>
+</pre></td></tr></tbody></table></code></div></div>
+
 <h4 id="saseulsmartcontractoperatorstrlen"><span class="mr-2">SASEUL.SmartContract.Operator.strlen</span><a href="#saseulsmartcontractoperatorstrlen" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+
+<p>It returns the length of the given string.</p>
+
+<ul>
+  <li>function (string)</li>
+</ul>
+
+<div class="language-javascript highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre></td><td class="rouge-code"><pre><span class="p">...</span>
+<span class="nx">result</span> <span class="o">=</span> <span class="nx">op</span><span class="p">.</span><span class="nx">strlen</span><span class="p">(</span><span class="dl">'</span><span class="s1">Lorem Ipsum</span><span class="dl">'</span><span class="p">);</span>
+<span class="p">...</span>
+
+<span class="c1">// result = 11</span>
+<span class="c1">// Results are not directly expressed in JavaScript, but are computed only within the SASEUL Engine.</span>
+</pre></td></tr></tbody></table></code></div></div>
+
 <h4 id="saseulsmartcontractoperatorreg_match"><span class="mr-2">SASEUL.SmartContract.Operator.reg_match</span><a href="#saseulsmartcontractoperatorreg_match" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
-<h4 id="saseulsmartcontractoperatorencode_json"><span class="mr-2">SASEUL.SmartContract.Operator.encode_json</span><a href="#saseulsmartcontractoperatorencode_json" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+
+<p>It checks the string with the given regular expression and returns the result.</p>
+
+<ul>
+  <li>function (regexp, string)</li>
+  <li>```javascript
+…
+result = op.reg_match(‘/^[A-Za-z_0-9]+$/’, ‘Lorem Ipsum’);
+…</li>
+</ul>
+
+<p>// result = true
+// Results are not directly expressed in JavaScript, but are computed only within the SASEUL Engine.</p>
+<div class="language-plaintext highlighter-rouge"><div class="code-header">
+        <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+</pre></td><td class="rouge-code"><pre>
+#### SASEUL.SmartContract.Operator.encode_json
+
+It returns the JSON string converted from the given value.
+
+- function (obj)
+
+```javascript
+...
+result = op.encode_json({});
+...
+
+// result = '{}'
+// Results are not directly expressed in JavaScript, but are computed only within the SASEUL Engine.
+</pre></td></tr></tbody></table></code></div></div>
+
 <h4 id="saseulsmartcontractoperatordecode_json"><span class="mr-2">SASEUL.SmartContract.Operator.decode_json</span><a href="#saseulsmartcontractoperatordecode_json" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+
+<p>It returns the decoded value from the given JSON</p>
+
+<ul>
+  <li>function (json)</li>
+</ul>
+
+<div class="language-javascript highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre></td><td class="rouge-code"><pre><span class="p">...</span>
+<span class="nx">result</span> <span class="o">=</span> <span class="nx">op</span><span class="p">.</span><span class="nx">decode_json</span><span class="p">(</span><span class="dl">'</span><span class="s1">{}</span><span class="dl">'</span><span class="p">);</span>
+<span class="p">...</span>
+
+<span class="c1">// result = {}</span>
+<span class="c1">// Results are not directly expressed in JavaScript, but are computed only within the SASEUL Engine.</span>
+</pre></td></tr></tbody></table></code></div></div>
+
 <h4 id="saseulsmartcontractoperatorhash"><span class="mr-2">SASEUL.SmartContract.Operator.hash</span><a href="#saseulsmartcontractoperatorhash" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+
+<p>It returns the result of hashing the given value with SHA-256.</p>
+
+<ul>
+  <li>function ([value1, value2, …])</li>
+</ul>
+
+<div class="language-javascript highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre></td><td class="rouge-code"><pre><span class="p">...</span>
+<span class="nx">result</span> <span class="o">=</span> <span class="nx">op</span><span class="p">.</span><span class="nx">hash</span><span class="p">([</span><span class="dl">'</span><span class="s1">Lorem Ipsum</span><span class="dl">'</span><span class="p">]);</span>
+<span class="p">...</span>
+
+<span class="c1">// result = (hash of ['Lorem Ipsum'])</span>
+<span class="c1">// Results are not directly expressed in JavaScript, but are computed only within the SASEUL Engine.</span>
+</pre></td></tr></tbody></table></code></div></div>
+
 <h4 id="saseulsmartcontractoperatorshort_hash"><span class="mr-2">SASEUL.SmartContract.Operator.short_hash</span><a href="#saseulsmartcontractoperatorshort_hash" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+
+<p>It returns the result of hashing the given value with SHA-256 and then RIPEMD-160.</p>
+
+<ul>
+  <li>function ([value1, value2, …])</li>
+</ul>
+
+<div class="language-javascript highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre></td><td class="rouge-code"><pre><span class="p">...</span>
+<span class="nx">result</span> <span class="o">=</span> <span class="nx">op</span><span class="p">.</span><span class="nx">short_hash</span><span class="p">([</span><span class="dl">'</span><span class="s1">Lorem Ipsum</span><span class="dl">'</span><span class="p">]);</span>
+<span class="p">...</span>
+
+<span class="c1">// result = (short_hash of ['Lorem Ipsum'])</span>
+<span class="c1">// Results are not directly expressed in JavaScript, but are computed only within the SASEUL Engine.</span>
+</pre></td></tr></tbody></table></code></div></div>
+
 <h4 id="saseulsmartcontractoperatorid_hash"><span class="mr-2">SASEUL.SmartContract.Operator.id_hash</span><a href="#saseulsmartcontractoperatorid_hash" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
-<h4 id="saseulsmartcontractoperatorsign_verify"><span class="mr-2">SASEUL.SmartContract.Operator.sign_verify</span><a href="#saseulsmartcontractoperatorsign_verify" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+
+<p>It calculates the address hash from the given value and returns the result.</p>
+
+<ul>
+  <li>function ([value1, value2, …])</li>
+</ul>
+
+<div class="language-javascript highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre></td><td class="rouge-code"><pre><span class="p">...</span>
+<span class="nx">result</span> <span class="o">=</span> <span class="nx">op</span><span class="p">.</span><span class="nx">id_hash</span><span class="p">([</span><span class="dl">'</span><span class="s1">Lorem Ipsum</span><span class="dl">'</span><span class="p">]);</span>
+<span class="p">...</span>
+
+<span class="c1">// result = (id_hash of ['Lorem Ipsum'])</span>
+<span class="c1">// Results are not directly expressed in JavaScript, but are computed only within the SASEUL Engine.</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<p>It returns true if the target is an element in the cases array.</p>
+
+<ul>
+  <li>function (target, cases)</li>
+</ul>
+
+<div class="language-javascript highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre></td><td class="rouge-code"><pre><span class="p">...</span>
+<span class="nx">result</span> <span class="o">=</span> <span class="nx">op</span><span class="p">.</span><span class="k">in</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="p">[</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">]);</span>
+<span class="p">...</span>
+
+<span class="c1">// result = true</span>
+<span class="c1">// Results are not directly expressed in JavaScript, but are computed only within the SASEUL Engine.</span>
+</pre></td></tr></tbody></table></code></div></div>
 
 </div>
 
