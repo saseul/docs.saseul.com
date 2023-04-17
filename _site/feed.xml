@@ -4,7 +4,7 @@
   <id>https://docs.saseul.com/</id>
   <title>SASEUL Docs</title>
   <subtitle>SASEUL development documentation | docs.saseul.com</subtitle>
-  <updated>2023-04-18T03:05:54+09:00</updated>
+  <updated>2023-04-18T03:07:08+09:00</updated>
   <author>
     <name>SASEUL, ArtiFriends Inc.</name>
     <uri>https://docs.saseul.com/</uri>
@@ -24,7 +24,7 @@
     <link href="https://docs.saseul.com/posts/09-system-method/" rel="alternate" type="text/html" title="System Method" />
     <published>2023-04-16T09:00:00+09:00</published>
   
-    <updated>2023-04-16T09:00:00+09:00</updated>
+    <updated>2023-04-18T03:06:23+09:00</updated>
   
     <id>https://docs.saseul.com/posts/09-system-method/</id>
     <content src="https://docs.saseul.com/posts/09-system-method/" />
@@ -64,7 +64,7 @@ Executing system contracts commit transactions based on the registered codes and
     <link href="https://docs.saseul.com/posts/08-operator/" rel="alternate" type="text/html" title="Operator" />
     <published>2023-04-14T09:00:00+09:00</published>
   
-    <updated>2023-04-14T09:00:00+09:00</updated>
+    <updated>2023-04-18T03:06:23+09:00</updated>
   
     <id>https://docs.saseul.com/posts/08-operator/</id>
     <content src="https://docs.saseul.com/posts/08-operator/" />
