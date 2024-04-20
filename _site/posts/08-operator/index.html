@@ -53,7 +53,7 @@
 <meta name="twitter:site" content="@saseul" />
 <meta name="twitter:creator" content="@ArtiFriends" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"ArtiFriends","url":"https://artifriends.com"},"dateModified":"2023-04-14T09:00:00+09:00","datePublished":"2023-04-14T09:00:00+09:00","description":"Summary","headline":"Operator","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/08-operator/"},"url":"http://localhost:4000/posts/08-operator/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"ArtiFriends","url":"https://artifriends.com"},"dateModified":"2023-04-18T03:07:59+09:00","datePublished":"2023-04-14T09:00:00+09:00","description":"Summary","headline":"Operator","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/08-operator/"},"url":"http://localhost:4000/posts/08-operator/"}</script>
 <!-- End Jekyll SEO tag -->
 
   
@@ -254,6 +254,34 @@
             
             <div class="post-page-subitem" onclick="location.href='/posts/09-system-method/'">
             System Method
+            </div>
+            
+          </div>
+        
+
+      
+
+        
+        
+
+        
+        
+
+        
+          <div class="post-toc-group">
+            <div class="post-page-item" onclick="location.href='/categories/updates/'">
+              Updates
+            </div>
+
+            
+
+            
+            <div class="post-page-subitem" onclick="location.href='/posts/01-explorer/'">
+            Block Explorer
+            </div>
+            
+            <div class="post-page-subitem" onclick="location.href='/posts/02-sdk/'">
+            SDK
             </div>
             
           </div>
@@ -1019,6 +1047,26 @@
     </span>
 
     <!-- lastmod date -->
+    
+    <span>
+      Updated
+      <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em class=""
+    data-ts="1681754879"
+    data-df="ll"
+    data-toggle="tooltip" data-placement="bottom">
+  Apr 18, 2023
+</em>
+
+    </span>
     
 
   
@@ -2578,7 +2626,27 @@ result = op.encode_json({});
         
         
         
+      <li><a href="/posts/02-sdk/">SDK</a></li>
+      
+        
+        
+        
+      <li><a href="/posts/01-explorer/">Block Explorer</a></li>
+      
+        
+        
+        
+      <li><a href="/posts/07-examples/">Examples</a></li>
+      
+        
+        
+        
       <li><a href="/posts/06-specification/">Specification</a></li>
+      
+        
+        
+        
+      <li><a href="/posts/08-operator/">Operator</a></li>
       
     </ul>
   </div> <!-- #access-lastmod -->
@@ -2611,10 +2679,6 @@ result = op.encode_json({});
     
     
     
-      
-        
-        
-
   
     
     
@@ -2624,13 +2688,6 @@ result = op.encode_json({});
         
         
 
-  
-    
-    
-    
-    
-      
-    
   
     
     
@@ -2650,6 +2707,11 @@ result = op.encode_json({});
     
     
     
+  
+    
+    
+    
+    
       
     
   
@@ -2663,7 +2725,72 @@ result = op.encode_json({});
     
     
       
+        
+        
+
+  
     
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
   
     
     
@@ -2691,6 +2818,12 @@ result = op.encode_json({});
     
       
       <a class="post-tag" href="/tags/smart-contract/">Smart Contract</a>
+    
+      
+      <a class="post-tag" href="/tags/updates/">updates</a>
+    
+      
+      <a class="post-tag" href="/tags/explorer/">explorer</a>
     
 
     </div>
@@ -2743,6 +2876,32 @@ result = op.encode_json({});
 
 
 
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
 
 
   
@@ -2975,7 +3134,7 @@ SASEUL has built-in smart contracts that is ready-to-run out of the box. In fact
       
       
       <div class="card">
-        <a href="/posts/07-examples/">
+        <a href="/posts/02-sdk/">
           <div class="card-body">
             <!--
   Date format snippet
@@ -2987,13 +3146,13 @@ SASEUL has built-in smart contracts that is ready-to-run out of the box. In fact
 
 
 <em class="small"
-    data-ts="1713621600"
+    data-ts="1713630600"
     data-df="ll"
     >
-  Apr 20, 2024
+  Apr 21, 2024
 </em>
 
-            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>Examples</h3>
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>SDK</h3>
             <div class="text-muted small">
               <p>
                 
@@ -3002,11 +3161,21 @@ SASEUL has built-in smart contracts that is ready-to-run out of the box. In fact
 
 
 
-                In a decentralized environment, there is no way to verify whether the information held by a node is up-to-date or not.
+                
+  
+    Link: saseul js npm
+  
+  
+    See also: SASEUL JS - Overview
+  
 
-Therefore, it is recommended to set multiple endpoints.
 
-For practical code e...
+v2.8.0 (2024. 4. 19)
+
+
+  Improved RPC functions
+  Added algorithm for making simultaneous requests to multiple endpoints
+  ...
               </p>
             </div>
           </div>
@@ -3084,10 +3253,6 @@ For practical code e...
     
     
     
-      
-        
-        
-
   
     
     
@@ -3097,13 +3262,6 @@ For practical code e...
         
         
 
-  
-    
-    
-    
-    
-      
-    
   
     
     
@@ -3123,6 +3281,11 @@ For practical code e...
     
     
     
+  
+    
+    
+    
+    
       
     
   
@@ -3136,7 +3299,72 @@ For practical code e...
     
     
       
+        
+        
+
+  
     
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
   
     
     
@@ -3164,6 +3392,12 @@ For practical code e...
     
       
       <a class="post-tag" href="/tags/smart-contract/">Smart Contract</a>
+    
+      
+      <a class="post-tag" href="/tags/updates/">updates</a>
+    
+      
+      <a class="post-tag" href="/tags/explorer/">explorer</a>
     
 
     </div>

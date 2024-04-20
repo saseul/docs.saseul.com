@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>SASEUL Docs</title>
   <subtitle>SASEUL development documentation | docs.saseul.com</subtitle>
-  <updated>2024-04-21T01:25:54+09:00</updated>
+  <updated>2024-04-21T01:59:55+09:00</updated>
   <author>
     <name>SASEUL, ArtiFriends Inc.</name>
     <uri>http://localhost:4000/</uri>
@@ -17,6 +17,104 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>SDK</title>
+    <link href="http://localhost:4000/posts/02-sdk/" rel="alternate" type="text/html" title="SDK" />
+    <published>2024-04-21T01:30:00+09:00</published>
+  
+    <updated>2024-04-21T01:30:00+09:00</updated>
+  
+    <id>http://localhost:4000/posts/02-sdk/</id>
+    <content src="http://localhost:4000/posts/02-sdk/" />
+    <author>
+      <name>help</name>
+    </author>
+
+  
+    
+    <category term="Updates" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      
+  
+    Link: saseul js npm
+  
+  
+    See also: SASEUL JS - Overview
+  
+
+
+v2.8.0 (2024. 4. 19)
+
+
+  Improved RPC functions
+  Added algorithm for making simultaneous requests to multiple endpoints
+  Added example code
+  Fixed error issues
+
+
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
+    <title>Block Explorer</title>
+    <link href="http://localhost:4000/posts/01-explorer/" rel="alternate" type="text/html" title="Block Explorer" />
+    <published>2024-04-21T01:00:00+09:00</published>
+  
+    <updated>2024-04-21T01:00:00+09:00</updated>
+  
+    <id>http://localhost:4000/posts/01-explorer/</id>
+    <content src="http://localhost:4000/posts/01-explorer/" />
+    <author>
+      <name>help</name>
+    </author>
+
+  
+    
+    <category term="Updates" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      
+  Link: SASEUL Block Explorer
+
+
+v1.5.16 (2024. 4. 12)
+
+
+  Improved peer search algorithm
+  Enhanced network information display speed
+  Fixed an issue where the UI was not correctly displayed on mobile
+  Now you can see more accurate Node numbers in statistical information
+  Added Difficulty graph
+  Added address search feature and address details page
+  UI improved to view only Send, Refine, ...
+    </summary>
+  
+
+  </entry>
 
   
   <entry>
@@ -66,7 +164,7 @@ Set the endpoint, then inquire the round information, and request the block info
     <link href="http://localhost:4000/posts/09-system-method/" rel="alternate" type="text/html" title="System Method" />
     <published>2023-04-16T09:00:00+09:00</published>
   
-    <updated>2023-04-16T09:00:00+09:00</updated>
+    <updated>2023-04-18T03:06:23+09:00</updated>
   
     <id>http://localhost:4000/posts/09-system-method/</id>
     <content src="http://localhost:4000/posts/09-system-method/" />
@@ -106,7 +204,7 @@ Executing system contracts commit transactions based on the registered codes and
     <link href="http://localhost:4000/posts/08-operator/" rel="alternate" type="text/html" title="Operator" />
     <published>2023-04-14T09:00:00+09:00</published>
   
-    <updated>2023-04-14T09:00:00+09:00</updated>
+    <updated>2023-04-18T03:07:59+09:00</updated>
   
     <id>http://localhost:4000/posts/08-operator/</id>
     <content src="http://localhost:4000/posts/08-operator/" />
@@ -138,99 +236,6 @@ The SASEUL main network is currently using version 0.2.0, and we plan to support
   A method is executed only when the “condition” statement is true.
   Execution methods can modify status data through the “update” statement.
   Query methods can defi...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>Overview</title>
-    <link href="http://localhost:4000/posts/07-overview/" rel="alternate" type="text/html" title="Overview" />
-    <published>2023-04-13T09:00:00+09:00</published>
-  
-    <updated>2023-04-13T09:00:00+09:00</updated>
-  
-    <id>http://localhost:4000/posts/07-overview/</id>
-    <content src="http://localhost:4000/posts/07-overview/" />
-    <author>
-      <name>help</name>
-    </author>
-
-  
-    
-    <category term="Smart Contract" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      SASEUL Smart Contract
-
-The SASEUL engine provides one system contract and one base method (Genesis) by default. 
-Methods included in the system contract can only be executed by the Genesis address.
-
-Create the system contract by using the “Register” method in the “Genesis” method 
-and creating other system methods with the “Register” method. 
-Then, create a “Publish” method to allow network par...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>Specification</title>
-    <link href="http://localhost:4000/posts/06-specification/" rel="alternate" type="text/html" title="Specification" />
-    <published>2023-04-11T09:00:00+09:00</published>
-  
-    <updated>2024-04-20T22:00:00+09:00</updated>
-  
-    <id>http://localhost:4000/posts/06-specification/</id>
-    <content src="http://localhost:4000/posts/06-specification/" />
-    <author>
-      <name>help</name>
-    </author>
-
-  
-    
-    <category term="SASEUL JS" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      Quick Start
-
-npm
-
-$ npm install saseul
-
-
-const SASEUL = require('saseul');
-let key = SASEUL.Sign.keyPair();
-console.dir(key);
-... 
-
-
-Browser
-
-...
-
-&amp;lt;script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"&amp;gt;&amp;lt;/script&amp;gt;
-&amp;lt;script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tweetnacl/1.0.2/nacl.min.js"&amp;gt;&amp;lt;/scri...
     </summary>
   
 
