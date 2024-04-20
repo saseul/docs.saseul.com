@@ -45,7 +45,7 @@ const resource = [
 const allowedDomains = [
     
 
-    'docs.saseul.com',
+    'localhost:4000',
 
     
 

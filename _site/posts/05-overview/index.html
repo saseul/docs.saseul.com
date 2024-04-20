@@ -43,8 +43,8 @@
 <meta property="og:locale" content="en" />
 <meta name="description" content="SaseulJS" />
 <meta property="og:description" content="SaseulJS" />
-<link rel="canonical" href="https://docs.saseul.com/posts/05-overview/" />
-<meta property="og:url" content="https://docs.saseul.com/posts/05-overview/" />
+<link rel="canonical" href="http://localhost:4000/posts/05-overview/" />
+<meta property="og:url" content="http://localhost:4000/posts/05-overview/" />
 <meta property="og:site_name" content="SASEUL Docs" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2023-04-10T09:00:00+09:00" />
@@ -53,7 +53,7 @@
 <meta name="twitter:site" content="@saseul" />
 <meta name="twitter:creator" content="@ArtiFriends" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"ArtiFriends","url":"https://artifriends.com"},"dateModified":"2023-04-10T09:00:00+09:00","datePublished":"2023-04-10T09:00:00+09:00","description":"SaseulJS","headline":"Overview","mainEntityOfPage":{"@type":"WebPage","@id":"https://docs.saseul.com/posts/05-overview/"},"url":"https://docs.saseul.com/posts/05-overview/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"ArtiFriends","url":"https://artifriends.com"},"dateModified":"2023-04-10T09:00:00+09:00","datePublished":"2023-04-10T09:00:00+09:00","description":"SaseulJS","headline":"Overview","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/05-overview/"},"url":"http://localhost:4000/posts/05-overview/"}</script>
 <!-- End Jekyll SEO tag -->
 
   
@@ -218,6 +218,10 @@
             
             <div class="post-page-subitem" onclick="location.href='/posts/06-specification/'">
             Specification
+            </div>
+            
+            <div class="post-page-subitem" onclick="location.href='/posts/07-examples/'">
+            Examples
             </div>
             
           </div>
@@ -542,6 +546,33 @@
 
 </div> <!-- .post-meta -->
 
+<!--<div id="toc_top">
+  <div class="toc_top_title">Contents</div>
+  
+  
+  
+  
+  
+  <ul class="inline_toc">
+    
+    
+    <li><a href="#saseuljs">SaseulJS</a></li>
+    
+
+    
+    <li><a href="#dependencies">Dependencies</a></li>
+    
+
+    
+    <li><a href="#installation">Installation</a></li>
+    
+
+    
+    <li><a href="#quick-start">Quick Start</a></li>
+    
+</ul>
+</div>-->
+
 <div class="post-content">
   <h1 id="saseuljs">SaseulJS</h1>
 
@@ -837,12 +868,7 @@ You can also create and register smart contracts that operate on the SASEUL netw
         
         
         
-      <li><a href="/posts/08-operator/">Operator</a></li>
-      
-        
-        
-        
-      <li><a href="/posts/09-system-method/">System Method</a></li>
+      <li><a href="/posts/06-specification/">Specification</a></li>
       
     </ul>
   </div> <!-- #access-lastmod -->
@@ -884,10 +910,16 @@ You can also create and register smart contracts that operate on the SASEUL netw
     
     
     
+      
+        
+        
+
   
     
     
     
+    
+      
     
   
     
@@ -909,20 +941,18 @@ You can also create and register smart contracts that operate on the SASEUL netw
     
     
       
-        
-        
-
+    
+  
+    
+    
+    
+    
   
     
     
     
     
       
-    
-  
-    
-    
-    
     
   
     
@@ -944,13 +974,13 @@ You can also create and register smart contracts that operate on the SASEUL netw
       <a class="post-tag" href="/tags/node/">node</a>
     
       
-      <a class="post-tag" href="/tags/smart-contract/">Smart Contract</a>
-    
-      
       <a class="post-tag" href="/tags/javascript/">javascript</a>
     
       
       <a class="post-tag" href="/tags/sdk/">sdk</a>
+    
+      
+      <a class="post-tag" href="/tags/smart-contract/">Smart Contract</a>
     
 
     </div>
@@ -995,6 +1025,19 @@ You can also create and register smart contracts that operate on the SASEUL netw
 
 
 
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
 
 
   
@@ -1120,10 +1163,6 @@ You can also create and register smart contracts that operate on the SASEUL netw
     
       
       
-        
-        
-        
-      
     
   
     
@@ -1216,6 +1255,47 @@ Browser
       
       
       <div class="card">
+        <a href="/posts/07-examples/">
+          <div class="card-body">
+            <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em class="small"
+    data-ts="1713621600"
+    data-df="ll"
+    >
+  Apr 20, 2024
+</em>
+
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>Examples</h3>
+            <div class="text-muted small">
+              <p>
+                
+
+
+
+
+
+                In a decentralized environment, there is no way to verify whether the information held by a node is up-to-date or not.
+
+Therefore, it is recommended to set multiple endpoints.
+
+For practical code e...
+              </p>
+            </div>
+          </div>
+        </a>
+      </div>
+    
+      
+      
+      <div class="card">
         <a href="/posts/09-system-method/">
           <div class="card-body">
             <!--
@@ -1246,49 +1326,6 @@ Browser
                 Getting Started
 
 SASEUL has built-in smart contracts that is ready-to-run out of the box. In fact, even generating the genesis block of the main chain is done by one of the system smart contracts. ...
-              </p>
-            </div>
-          </div>
-        </a>
-      </div>
-    
-      
-      
-      <div class="card">
-        <a href="/posts/08-operator/">
-          <div class="card-body">
-            <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em class="small"
-    data-ts="1681430400"
-    data-df="ll"
-    >
-  Apr 14, 2023
-</em>
-
-            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>Operator</h3>
-            <div class="text-muted small">
-              <p>
-                
-
-
-
-
-
-                Summary
-
-This document is based on the specification of SASEUL JS. 
-The SASEUL main network is currently using version 0.2.0, and we plan to support additional operators through patches.
-
-
-  A meth...
               </p>
             </div>
           </div>
@@ -1375,10 +1412,16 @@ The SASEUL main network is currently using version 0.2.0, and we plan to support
     
     
     
+      
+        
+        
+
   
     
     
     
+    
+      
     
   
     
@@ -1400,20 +1443,18 @@ The SASEUL main network is currently using version 0.2.0, and we plan to support
     
     
       
-        
-        
-
+    
+  
+    
+    
+    
+    
   
     
     
     
     
       
-    
-  
-    
-    
-    
     
   
     
@@ -1435,13 +1476,13 @@ The SASEUL main network is currently using version 0.2.0, and we plan to support
       <a class="post-tag" href="/tags/node/">node</a>
     
       
-      <a class="post-tag" href="/tags/smart-contract/">Smart Contract</a>
-    
-      
       <a class="post-tag" href="/tags/javascript/">javascript</a>
     
       
       <a class="post-tag" href="/tags/sdk/">sdk</a>
+    
+      
+      <a class="post-tag" href="/tags/smart-contract/">Smart Contract</a>
     
 
     </div>
@@ -1464,7 +1505,7 @@ The SASEUL main network is currently using version 0.2.0, and we plan to support
       <div class="footer-left"></div>
       <div class="footer-right">
         <p class="mb-0">
-          © 2023
+          © 2024
           <a href="https://saseul.com">SASEUL, ArtiFriends Inc.</a>.
           
           <span data-toggle="tooltip" data-placement="top"

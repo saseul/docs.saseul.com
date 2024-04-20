@@ -297,6 +297,35 @@ blockquote {
   }
 }
 
+.inline_toc {
+  > li > a {
+    font-weight: 500;
+  }
+
+  > ul > li {
+    line-height: 1.5em;
+
+    > a {
+      font-size: 0.875em;
+      font-weight: 500;
+    }
+
+    &:first-child {
+      margin-top: 0.25rem;
+    }
+  }
+}
+
+#toc_top {
+  margin-top: 2rem;
+
+  .toc_top_title {
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+}
+
 .hide {
   display: none !important;
 }

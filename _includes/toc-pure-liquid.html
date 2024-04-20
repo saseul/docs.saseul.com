@@ -1,0 +1,34 @@
+{% capture tocWorkspace %}
+{% capture my_toc %}{% endcapture %}
+{% assign nodes = include.html | split: '<h' %}
+{% assign firstHeader = true %}
+{% assign minHeader = include.min_level | plus: 0 %}
+{% assign maxHeader = include.max_level | plus: 0 %}
+{% assign indentLevel = minHeader %}
+{% for node in nodes %}
+{% if node == "" %}
+{% continue %}
+{% endif %}
+{% assign headerLevel = node | replace: '"', '' | slice: 0, 1 | plus: 0 %}
+{% if headerLevel < minHeader or headerLevel > maxHeader %}
+{% continue %}
+{% endif %}
+{% assign html = node | split: '</h' | first %}
+{% assign tag = html | split: '>' | first %}
+{% assign id = html | split: 'id="' | last | split: '"' | first %}
+{% capture my_toc %}{{ my_toc }}
+{% if firstHeader %}
+{% assign firstHeader = false %}
+<ul class="{{ include.class }}">
+    {% endif %}
+    {% if headerLevel > indentLevel %}
+    <ul>
+        {% elsif headerLevel < indentLevel %}
+    </ul>
+    {% endif %}
+    <li><a href="#{{ id }}">{{ html | split: '>' | last }}</a></li>
+    {% endcapture %}
+    {% assign indentLevel = headerLevel %}
+    {% endfor %}
+    {% if !firstHeader %}</ul>{% endif %}
+{% endcapture %}{% assign tocWorkspace = '' %}{{ my_toc | markdownify | strip }}

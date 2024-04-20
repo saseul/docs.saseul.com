@@ -43,8 +43,8 @@
 <meta property="og:locale" content="en" />
 <meta name="description" content="Getting Started" />
 <meta property="og:description" content="Getting Started" />
-<link rel="canonical" href="https://docs.saseul.com/posts/09-system-method/" />
-<meta property="og:url" content="https://docs.saseul.com/posts/09-system-method/" />
+<link rel="canonical" href="http://localhost:4000/posts/09-system-method/" />
+<meta property="og:url" content="http://localhost:4000/posts/09-system-method/" />
 <meta property="og:site_name" content="SASEUL Docs" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2023-04-16T09:00:00+09:00" />
@@ -53,7 +53,7 @@
 <meta name="twitter:site" content="@saseul" />
 <meta name="twitter:creator" content="@ArtiFriends" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"ArtiFriends","url":"https://artifriends.com"},"dateModified":"2023-04-18T03:06:23+09:00","datePublished":"2023-04-16T09:00:00+09:00","description":"Getting Started","headline":"System Method","mainEntityOfPage":{"@type":"WebPage","@id":"https://docs.saseul.com/posts/09-system-method/"},"url":"https://docs.saseul.com/posts/09-system-method/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"ArtiFriends","url":"https://artifriends.com"},"dateModified":"2023-04-16T09:00:00+09:00","datePublished":"2023-04-16T09:00:00+09:00","description":"Getting Started","headline":"System Method","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/09-system-method/"},"url":"http://localhost:4000/posts/09-system-method/"}</script>
 <!-- End Jekyll SEO tag -->
 
   
@@ -218,6 +218,10 @@
             
             <div class="post-page-subitem" onclick="location.href='/posts/06-specification/'">
             Specification
+            </div>
+            
+            <div class="post-page-subitem" onclick="location.href='/posts/07-examples/'">
+            Examples
             </div>
             
           </div>
@@ -1171,26 +1175,6 @@
 
     <!-- lastmod date -->
     
-    <span>
-      Updated
-      <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em class=""
-    data-ts="1681754783"
-    data-df="ll"
-    data-toggle="tooltip" data-placement="bottom">
-  Apr 18, 2023
-</em>
-
-    </span>
-    
 
   
 
@@ -1243,6 +1227,331 @@
   </div> <!-- .d-flex -->
 
 </div> <!-- .post-meta -->
+
+<!--<div id="toc_top">
+  <div class="toc_top_title">Contents</div>
+  
+  
+  
+  
+  
+  <ul class="inline_toc">
+    
+    
+    <li><a href="#getting-started">Getting Started</a></li>
+    
+
+    
+    <li><a href="#system-contracts">System Contracts</a></li>
+    
+
+    
+    <ul>
+        
+    <li><a href="#genesis">Genesis</a></li>
+    
+
+    
+    <ul>
+        
+    <li><a href="#request-parameters">Request Parameters</a></li>
+    
+
+    
+    </ul>
+    
+    <li><a href="#register">Register</a></li>
+    
+
+    
+    <ul>
+        
+    <li><a href="#request-parameters-1">Request Parameters</a></li>
+    
+
+    
+    </ul>
+    
+    <li><a href="#revoke">Revoke</a></li>
+    
+
+    
+    <ul>
+        
+    <li><a href="#request-parameters-2">Request Parameters</a></li>
+    
+
+    
+    </ul>
+    
+    <li><a href="#grant">Grant</a></li>
+    
+
+    
+    <ul>
+        
+    <li><a href="#request-parameters-3">Request Parameters</a></li>
+    
+
+    
+    </ul>
+    
+    <li><a href="#oracle">Oracle</a></li>
+    
+
+    
+    <ul>
+        
+    <li><a href="#request-parameters-4">Request Parameters</a></li>
+    
+
+    
+    </ul>
+    
+    <li><a href="#system-requests">System Requests</a></li>
+    
+
+    
+    <ul>
+        
+    <li><a href="#getblock">GetBlock</a></li>
+    
+
+    
+    <ul>
+        
+    <li><a href="#request-parameters-5">Request Parameters</a></li>
+    
+
+    
+    <li><a href="#return-value">Return value</a></li>
+    
+
+    
+    </ul>
+    
+    <li><a href="#listblock">ListBlock</a></li>
+    
+
+    
+    <ul>
+        
+    <li><a href="#request-parameters-6">Request Parameters</a></li>
+    
+
+    
+    <li><a href="#return-value-1">Return value</a></li>
+    
+
+    
+    </ul>
+    
+    <li><a href="#blockcount">BlockCount</a></li>
+    
+
+    
+    <ul>
+        
+    <li><a href="#request-parameters-7">Request Parameters</a></li>
+    
+
+    
+    <li><a href="#return-value-2">Return value</a></li>
+    
+
+    
+    </ul>
+    
+    <li><a href="#gettransaction">GetTransaction</a></li>
+    
+
+    
+    <ul>
+        
+    <li><a href="#request-parameters-8">Request Parameters</a></li>
+    
+
+    
+    <li><a href="#return-value-3">Return value</a></li>
+    
+
+    
+    </ul>
+    
+    <li><a href="#listtransaction">ListTransaction</a></li>
+    
+
+    
+    <ul>
+        
+    <li><a href="#request-parameters-9">Request Parameters</a></li>
+    
+
+    
+    <li><a href="#return-value-4">Return value</a></li>
+    
+
+    
+    </ul>
+    
+    <li><a href="#transactioncount">TransactionCount</a></li>
+    
+
+    
+    <ul>
+        
+    <li><a href="#request-parameters-10">Request Parameters</a></li>
+    
+
+    
+    <li><a href="#return-value-5">Return value</a></li>
+    
+
+    
+    </ul>
+    
+    <li><a href="#getcode">GetCode</a></li>
+    
+
+    
+    <ul>
+        
+    <li><a href="#request-parameters-11">Request Parameters</a></li>
+    
+
+    
+    <li><a href="#return-value-6">Return value</a></li>
+    
+
+    
+    </ul>
+    
+    <li><a href="#listcode">ListCode</a></li>
+    
+
+    
+    <ul>
+        
+    <li><a href="#request-parameters-12">Request Parameters</a></li>
+    
+
+    
+    <li><a href="#return-value-7">Return value</a></li>
+    
+
+    
+    </ul>
+    
+    <li><a href="#codecount">CodeCount</a></li>
+    
+
+    
+    <ul>
+        
+    <li><a href="#request-parameters-13">Request Parameters</a></li>
+    
+
+    
+    <li><a href="#return-value-8">Return value</a></li>
+    
+
+    
+    </ul>
+    
+    <li><a href="#getresourceblock">GetResourceBlock</a></li>
+    
+
+    
+    <ul>
+        
+    <li><a href="#request-parameters-14">Request Parameters</a></li>
+    
+
+    
+    <li><a href="#return-value-9">Return value</a></li>
+    
+
+    
+    </ul>
+    
+    <li><a href="#listresourceblock">ListResourceBlock</a></li>
+    
+
+    
+    <ul>
+        
+    <li><a href="#request-parameters-15">Request Parameters</a></li>
+    
+
+    
+    <li><a href="#return-value-10">Return value</a></li>
+    
+
+    
+    </ul>
+    
+    <li><a href="#resourceblockcount">ResourceBlockCount</a></li>
+    
+
+    
+    <ul>
+        
+    <li><a href="#request-parameters-16">Request Parameters</a></li>
+    
+
+    
+    <li><a href="#return-value-11">Return value</a></li>
+    
+
+    
+    </ul>
+    
+    <li><a href="#getblocks">GetBlocks</a></li>
+    
+
+    
+    <ul>
+        
+    <li><a href="#request-parameters-17">Request Parameters</a></li>
+    
+
+    
+    <li><a href="#return-value-12">Return value</a></li>
+    
+
+    
+    </ul>
+    
+    <li><a href="#getresourceblocks">GetResourceBlocks</a></li>
+    
+
+    
+    <ul>
+        
+    <li><a href="#request-parameter">Request Parameter</a></li>
+    
+
+    
+    <li><a href="#return-value-13">Return value</a></li>
+    
+
+    
+    </ul>
+    
+    <li><a href="#getresource">GetResource</a></li>
+    
+
+    
+    <ul>
+        
+    <li><a href="#request-parameters-18">Request Parameters</a></li>
+    
+
+    
+    <li><a href="#return-value-14">Return value</a></li>
+    
+</ul></ul></ul></ul>
+</div>-->
 
 <div class="post-content">
   <h1 id="getting-started">Getting Started</h1>
@@ -3057,12 +3366,7 @@
         
         
         
-      <li><a href="/posts/08-operator/">Operator</a></li>
-      
-        
-        
-        
-      <li><a href="/posts/09-system-method/">System Method</a></li>
+      <li><a href="/posts/06-specification/">Specification</a></li>
       
     </ul>
   </div> <!-- #access-lastmod -->
@@ -3104,10 +3408,16 @@
     
     
     
+      
+        
+        
+
   
     
     
     
+    
+      
     
   
     
@@ -3129,20 +3439,18 @@
     
     
       
-        
-        
-
+    
+  
+    
+    
+    
+    
   
     
     
     
     
       
-    
-  
-    
-    
-    
     
   
     
@@ -3164,13 +3472,13 @@
       <a class="post-tag" href="/tags/node/">node</a>
     
       
-      <a class="post-tag" href="/tags/smart-contract/">Smart Contract</a>
-    
-      
       <a class="post-tag" href="/tags/javascript/">javascript</a>
     
       
       <a class="post-tag" href="/tags/sdk/">sdk</a>
+    
+      
+      <a class="post-tag" href="/tags/smart-contract/">Smart Contract</a>
     
 
     </div>
@@ -3223,6 +3531,19 @@
 
 
 
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
 
 
   
@@ -3346,21 +3667,6 @@
   
     
     
-  
-    
-    
-      
-      
-    
-  
-    
-    
-      
-      
-    
-  
-    
-    
       
       
         
@@ -3461,7 +3767,7 @@ The SASEUL main network is currently using version 0.2.0, and we plan to support
       
       
       <div class="card">
-        <a href="/posts/06-specification/">
+        <a href="/posts/07-examples/">
           <div class="card-body">
             <!--
   Date format snippet
@@ -3473,13 +3779,13 @@ The SASEUL main network is currently using version 0.2.0, and we plan to support
 
 
 <em class="small"
-    data-ts="1681171200"
+    data-ts="1713621600"
     data-df="ll"
     >
-  Apr 11, 2023
+  Apr 20, 2024
 </em>
 
-            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>Specification</h3>
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>Examples</h3>
             <div class="text-muted small">
               <p>
                 
@@ -3488,24 +3794,11 @@ The SASEUL main network is currently using version 0.2.0, and we plan to support
 
 
 
-                Quick Start
+                In a decentralized environment, there is no way to verify whether the information held by a node is up-to-date or not.
 
-npm
+Therefore, it is recommended to set multiple endpoints.
 
-$ npm install saseul
-
-
-const SASEUL = require(&#39;saseul&#39;);
-let key = SASEUL.Sign.keyPair();
-console.dir(key);
-... 
-
-
-Browser
-
-...
-
-&amp;lt;script type=&quot;text/javascript&quot; src=&quot;https://cdn...
+For practical code e...
               </p>
             </div>
           </div>
@@ -3531,10 +3824,10 @@ Browser
   
 
   
-  <div class="btn btn-outline-primary disabled"
+  <a href="/posts/07-examples/" class="btn btn-outline-primary"
     prompt="Newer">
-    <p>-</p>
-  </div>
+    <p>Examples</p>
+  </a>
   
 
 </div>
@@ -3592,10 +3885,16 @@ Browser
     
     
     
+      
+        
+        
+
   
     
     
     
+    
+      
     
   
     
@@ -3617,20 +3916,18 @@ Browser
     
     
       
-        
-        
-
+    
+  
+    
+    
+    
+    
   
     
     
     
     
       
-    
-  
-    
-    
-    
     
   
     
@@ -3652,13 +3949,13 @@ Browser
       <a class="post-tag" href="/tags/node/">node</a>
     
       
-      <a class="post-tag" href="/tags/smart-contract/">Smart Contract</a>
-    
-      
       <a class="post-tag" href="/tags/javascript/">javascript</a>
     
       
       <a class="post-tag" href="/tags/sdk/">sdk</a>
+    
+      
+      <a class="post-tag" href="/tags/smart-contract/">Smart Contract</a>
     
 
     </div>
@@ -3681,7 +3978,7 @@ Browser
       <div class="footer-left"></div>
       <div class="footer-right">
         <p class="mb-0">
-          © 2023
+          © 2024
           <a href="https://saseul.com">SASEUL, ArtiFriends Inc.</a>.
           
           <span data-toggle="tooltip" data-placement="top"

@@ -3,6 +3,7 @@ title: Specification
 short_title: Specification
 author: help
 date: 2023-04-11 09:00:00 +0900
+last_modified_at: 2024-04-20 22:00:00 +0900
 categories: [SASEUL JS]
 tags: [sdk, javascript]
 ---
@@ -162,20 +163,49 @@ When a transaction is sent to the network, the network processes the transaction
 
 When a request is sent to the network, the network queries the current state data and returns the result.
 
-## SASEUL.Rpc.endpoint
+## SASEUL.Rpc.endpoint (Deprecated)
 
 Set the endpoint for sending transactions and requests to a node.
+
+Please use the SASEUL.Rpc.endpoints function instead.
 
 ```javascript
 SASEUL.Rpc.endpoint('<ENDPOINT>');
 ```
 
-## SASEUL.Rpc.tracker
+## SASEUL.Rpc.endpoints
 
-Return the tracker information of the node.
+Set the endpoints for sending transactions and requests to nodes.
 
 ```javascript
-SASEUL.Rpc.endpoint('<ENDPOINT>');
+SASEUL.Rpc.endpoints('<ENDPOINT>');
+SASEUL.Rpc.endpoints(["<ENDPOINT1>", "<ENDPOINT2>", "<ENDPOINT3>", ...]);
+```
+
+## SASEUL.Rpc.timeout
+
+Set the timeout duration when sending transactions or requests to nodes.
+
+The default value is 30 seconds.
+
+```javascript
+SASEUL.Rpc.timeout('<milliseconds>');
+```
+
+## SASEUL.Rpc.headers
+
+Set the headers to be used when sending transactions or requests to nodes.
+
+```javascript
+SASEUL.Rpc.headers('<HEADERS>');
+```
+
+## SASEUL.Rpc.tracker
+
+Retrieve tracker information from one of the nodes at the set endpoints.
+
+```javascript
+SASEUL.Rpc.endpoints('<ENDPOINT>');
 SASEUL.Rpc.tracker().then(function (r) { console.dir(r); });
 
 // result:
@@ -192,13 +222,50 @@ SASEUL.Rpc.tracker().then(function (r) { console.dir(r); });
 }
 ```
 
-## SASEUL.Rpc.peer
+## SASEUL.Rpc.trackerFromAll
 
-Return the peer information of the node.
+Collect tracker information from all set endpoints and return the merged tracker information.
 
 ```javascript
-SASEUL.Rpc.endpoint('<ENDPOINT>');
+SASEUL.Rpc.endpoints(["<ENDPOINT1>", "<ENDPOINT2>", "<ENDPOINT3>", ...]);
+SASEUL.Rpc.trackerFromAll().then(function (r) { console.dir(r); });
+
+// result:
+{
+  "peers": {
+    ...
+  },
+  "known_hosts": [
+    ...
+  ]
+}
+```
+
+## SASEUL.Rpc.peer
+
+Retrieve peer information from one of the nodes at the set endpoints.
+
+```javascript
+SASEUL.Rpc.endpoints('<ENDPOINT>');
 SASEUL.Rpc.peer().then(function (r) { console.dir(r); });
+
+// result:
+[
+    {
+        "host": "<ENDPOINT>",
+        "address": "<PEER_ADDRESS>"
+    },
+    ...
+]
+```
+
+## SASEUL.Rpc.peerFromAll
+
+Collect peer information from all set endpoints and return the merged peer information.
+
+```javascript
+SASEUL.Rpc.endpoints(["<ENDPOINT1>", "<ENDPOINT2>", "<ENDPOINT3>", ...]);
+SASEUL.Rpc.peerFromAll().then(function (r) { console.dir(r); });
 
 // result:
 [
@@ -215,7 +282,7 @@ SASEUL.Rpc.peer().then(function (r) { console.dir(r); });
 Check if the node is alive.
 
 ```javascript
-SASEUL.Rpc.endpoint('<ENDPOINT>');
+SASEUL.Rpc.endpoints('<ENDPOINT>');
 SASEUL.Rpc.ping().then(function (r) { console.dir(r); });
 
 // result:
@@ -227,10 +294,10 @@ SASEUL.Rpc.ping().then(function (r) { console.dir(r); });
 
 ## SASEUL.Rpc.round
 
-Return the current chain status of the node.
+Retrieve the current chain status from one of the nodes at the set endpoints.
 
 ```javascript
-SASEUL.Rpc.endpoint('<ENDPOINT>');
+SASEUL.Rpc.endpoints('<ENDPOINT>');
 SASEUL.Rpc.round().then(function (r) { console.dir(r); });
 
 // result:
@@ -247,13 +314,31 @@ SASEUL.Rpc.round().then(function (r) { console.dir(r); });
 }
 ```
 
+## SASEUL.Rpc.bestRound
+
+Retrieve the current chain status from all set endpoints and return the best chain status information.
+
+```javascript
+SASEUL.Rpc.endpoints(["<ENDPOINT1>", "<ENDPOINT2>", "<ENDPOINT3>", ...]);
+SASEUL.Rpc.bestRound().then(function (r) { console.dir(r); });
+
+// result:
+{
+  "main": {
+    ...
+  },
+  "resource": {
+    ...
+  }
+}
+```
+
 ## SASEUL.Rpc.signedRequest
 
 Create a signed request from data and a private key.
 
 ```javascript
-SASEUL.Rpc.endpoint('<ENDPOINT>');
-let obj = SASEUL.Rpc.signedRequest({"type":"GetBalance","address":"<ADDRESS>"}, SASEUL.Sign.privateKey());
+let obj = SASEUL.Rpc.signedRequest({ type : "GetBalance", address: "<ADDRESS>"}, SASEUL.Sign.privateKey());
 console.dir(obj);
 
 // result:
@@ -267,13 +352,29 @@ console.dir(obj);
 }
 ```
 
+## SASEUL.Rpc.simpleRequest
+
+Create an unsigned simple request object.
+
+```javascript
+let obj = SASEUL.Rpc.simpleRequest({ type : "GetBalance", address: "<ADDRESS>"});
+console.dir(obj);
+
+// result:
+{
+    "request": {
+        "type": "GetBalance",
+        ...
+    }
+}
+```
+
 ## SASEUL.Rpc.signedTransaction
 
 Create a signed transaction from data and a private key.
 
 ```javascript
-SASEUL.Rpc.endpoint('<ENDPOINT>');
-let obj = SASEUL.Rpc.signedTransaction({"type":"Send","to":"<ADDRESS>","amount":"1"}, SASEUL.Sign.privateKey());
+let obj = SASEUL.Rpc.signedTransaction({ type: "Send", to: "<ADDRESS>", amount: "<AMOUNT>"}, SASEUL.Sign.privateKey());
 console.dir(obj);
 
 // result:
@@ -289,11 +390,12 @@ console.dir(obj);
 
 ## SASEUL.Rpc.request
 
-Send a signed request to the node and return the result.
+Send a signed request or a simple request to one of the nodes at the set endpoints and return the result.
 
 ```javascript
-SASEUL.Rpc.endpoint('<ENDPOINT>');
-let obj = SASEUL.Rpc.signedRequest({"type":"GetBalance","address":"<ADDRESS>"}, SASEUL.Sign.privateKey());
+let obj = SASEUL.Rpc.signedRequest({ type : "GetBalance", address: "<ADDRESS>"}, SASEUL.Sign.privateKey());
+
+SASEUL.Rpc.endpoints('<ENDPOINT>');
 SASEUL.Rpc.request(obj).then(function (r) { console.dir(r); });
 
 // result:
@@ -305,13 +407,43 @@ SASEUL.Rpc.request(obj).then(function (r) { console.dir(r); });
 }
 ```
 
-## SASEUL.Rpc.sendTransaction
+## SASEUL.Rpc.raceRequest
 
-Send a signed transaction to the node and return the result.
+Send a signed request or a simple request to all set endpoints and return the result from the endpoint that responds the fastest and meets the condition.
 
 ```javascript
-SASEUL.Rpc.endpoint('<ENDPOINT>');
-let obj = SASEUL.Rpc.signedTransaction({"type":"Send","to":"<ADDRESS>","amount":"1"}, SASEUL.Sign.privateKey());
+SASEUL.Rpc.endpoints(["<ENDPOINT1>", "<ENDPOINT2>", "<ENDPOINT3>", ...]);
+SASEUL.Rpc.bestRound().then(results => {
+    let obj = SASEUL.Rpc.simpleRequest({ type: "ListBlock", page: 1, count: 5 });
+    let condition = (blocks) => {
+        let latest = Object.values(blocks).reduce((prev, curr) => curr.height > prev.height ? curr : prev);
+
+        return latest.height >= results.main.height;
+    }
+    
+    SASEUL.Rpc.raceRequest(obj, condition).then(function (r) {
+        console.dir(r);
+    });
+});
+
+// result:
+{
+    "code": 200,
+    "data": {
+        // BLOCK DATAS
+        ...
+    }
+}
+```
+
+## SASEUL.Rpc.sendTransaction
+
+Send a signed transaction to one of the nodes at the set endpoints and return the result.
+
+```javascript
+let obj = SASEUL.Rpc.signedTransaction({ type: "Send", to: "<ADDRESS>", amount: "<AMOUNT>"}, SASEUL.Sign.privateKey());
+
+SASEUL.Rpc.endpoints('<ENDPOINT>');
 SASEUL.Rpc.sendTransaction(obj).then(function (r) { console.dir(r); });
 
 // result:
@@ -321,13 +453,46 @@ SASEUL.Rpc.sendTransaction(obj).then(function (r) { console.dir(r); });
 }
 ```
 
+## SASEUL.Rpc.sendTransactionToAll
+
+Send a signed transaction to all set endpoints and return the result for each endpoint.
+
+```javascript
+let obj = SASEUL.Rpc.signedTransaction({ type: "Send", to: "<ADDRESS>", amount: "<AMOUNT>"}, SASEUL.Sign.privateKey());
+
+SASEUL.Rpc.endpoints(["<ENDPOINT1>", "<ENDPOINT2>", "<ENDPOINT3>", ...]);
+SASEUL.Rpc.sendTransaction(obj).then(function (r) { console.dir(r); });
+
+// result:
+{
+    {
+        "code": 200,
+        "data": ...
+        "endpoint": "<ENDPOINT1>"
+    },
+
+    ...
+}
+```
+
+## SASEUL.Rpc.broadcastLimit
+
+Set the maximum number of simultaneous broadcasts when broadcasting transactions to nodes.
+
+The default value is 32.
+
+```javascript
+SASEUL.Rpc.broadcastLimit('<limit>');
+```
+
 ## SASEUL.Rpc.broadcastTransaction
 
 Broadcast a signed transaction and return the result. The number of times the transaction is broadcast depends on the number of peers of the node.
 
 ```javascript
-SASEUL.Rpc.endpoint('<ENDPOINT>');
-let obj = SASEUL.Rpc.signedTransaction({"type":"Send","to":"<ADDRESS>","amount":"1"}, SASEUL.Sign.privateKey());
+let obj = SASEUL.Rpc.signedTransaction({ type: "Send", to: "<ADDRESS>", amount: "<AMOUNT>"}, SASEUL.Sign.privateKey());
+
+SASEUL.Rpc.endpoints(["<ENDPOINT1>", "<ENDPOINT2>", "<ENDPOINT3>", ...]);
 SASEUL.Rpc.broadcastTransaction(obj).then(function (r) { console.dir(r); });
 
 // result:
@@ -342,103 +507,22 @@ SASEUL.Rpc.broadcastTransaction(obj).then(function (r) { console.dir(r); });
 Estimate the transaction fee. It returns an accurate fee only for valid transaction.
 
 ```javascript
-SASEUL.Rpc.endpoint('<ENDPOINT>');
-let obj = SASEUL.Rpc.signedTransaction({"type":"Send","to":"<ADDRESS>","amount":"1"}, SASEUL.Sign.privateKey());
+let obj = SASEUL.Rpc.signedTransaction({ type : "Send", to: "<ADDRESS>", amount: "<AMOUNT>"}, SASEUL.Sign.privateKey());
+
+SASEUL.Rpc.endpoints(["<ENDPOINT1>", "<ENDPOINT2>", "<ENDPOINT3>", ...]);
 SASEUL.Rpc.estimatedFee(obj).then(function (r) { console.dir(r); });
 
 // result:
 738000000000
 ```
 
-<br>
+# Cryptographic Hash Functions
 
-# Utility functions
+These functions provide essential cryptographic hash operations for the SASEUL network. 
 
-These are functions that may be necessary during the process of data processing based on the SASEUL network.
-
-## SASEUL.Util.time
-
-Return the current time in seconds.
-
-```javascript
-let result = SASEUL.Util.time();
-console.dir(result);
-
-// result:
-1681660939
-```
-
-## SASEUL.Util.utime
-
-Return the current time in microseconds.
-
-```javascript
-let result = SASEUL.Util.utime();
-console.dir(result);
-
-// result:
-1681660939642000
-```
-
-## SASEUL.Util.randomHexString
-
-Generate a random hexadecimal string of a given length.
-
-```javascript
-let result = SASEUL.Util.randomHexString(16);
-console.dir(result);
-
-// result:
-0e1e2770405d168a4fe246fd6469e9da
-```
-
-## SASEUL.Util.hexToByte
-
-Convert a hexadecimal string to a byte array.
-
-```javascript
-let result = SASEUL.Util.hexToByte("0e1e2770405d168a4fe246fd6469e9da");
-console.dir(result);
-
-// result:
-{...}
-```
-
-## SASEUL.Util.byteToHex
-
-Convert a byte array to a hexadecimal string.
-
-```javascript
-let result = SASEUL.Util.byteToHex([...]);
-console.dir(result);
-
-// result:
-4d8ba12d63613dda822a69bc5ac1c589
-```
-
-## SASEUL.Util.stringToByte
-
-Convert a regular string to a byte array.
-
-```javascript
-let result = SASEUL.Util.stringToByte("Lorem ipsum");
-console.dir(result);
-
-// result:
-{...}
-```
-
-## SASEUL.Util.stringToUnicode
-
-Convert a regular string to a Unicode string.
-
-```javascript
-let result = SASEUL.Util.stringToUnicode("다람쥐헌쳇바퀴에타고파");
-console.dir(result);
-
-// result:
-\\ub2e4\\ub78c\\uc950\\ud5cc\\uccc7\\ubc14\\ud034\\uc5d0\\ud0c0\\uace0\\ud30c
-```
+They include generating hash values using SHA-256 and RIPEMD-160 algorithms, 
+converting data to string format, generating checksums, and deriving cryptographic identifiers such as address hashes, 
+smart contract IDs, and transaction hashes. 
 
 ## SASEUL.Enc.string
 
@@ -582,6 +666,96 @@ console.dir(result);
 
 // result:
     true or false
+```
+
+<br>
+
+# Utility functions
+
+These are functions that may be necessary during the process of data processing based on the SASEUL network.
+
+## SASEUL.Util.time
+
+Return the current time in seconds.
+
+```javascript
+let result = SASEUL.Util.time();
+console.dir(result);
+
+// result:
+1681660939
+```
+
+## SASEUL.Util.utime
+
+Return the current time in microseconds.
+
+```javascript
+let result = SASEUL.Util.utime();
+console.dir(result);
+
+// result:
+1681660939642000
+```
+
+## SASEUL.Util.randomHexString
+
+Generate a random hexadecimal string of a given length.
+
+```javascript
+let result = SASEUL.Util.randomHexString(16);
+console.dir(result);
+
+// result:
+0e1e2770405d168a4fe246fd6469e9da
+```
+
+## SASEUL.Util.hexToByte
+
+Convert a hexadecimal string to a byte array.
+
+```javascript
+let result = SASEUL.Util.hexToByte("0e1e2770405d168a4fe246fd6469e9da");
+console.dir(result);
+
+// result:
+{...}
+```
+
+## SASEUL.Util.byteToHex
+
+Convert a byte array to a hexadecimal string.
+
+```javascript
+let result = SASEUL.Util.byteToHex([...]);
+console.dir(result);
+
+// result:
+4d8ba12d63613dda822a69bc5ac1c589
+```
+
+## SASEUL.Util.stringToByte
+
+Convert a regular string to a byte array.
+
+```javascript
+let result = SASEUL.Util.stringToByte("Lorem ipsum");
+console.dir(result);
+
+// result:
+{...}
+```
+
+## SASEUL.Util.stringToUnicode
+
+Convert a regular string to a Unicode string.
+
+```javascript
+let result = SASEUL.Util.stringToUnicode("다람쥐헌쳇바퀴에타고파");
+console.dir(result);
+
+// result:
+\\ub2e4\\ub78c\\uc950\\ud5cc\\uccc7\\ubc14\\ud034\\uc5d0\\ud0c0\\uace0\\ud30c
 ```
 
 <br>

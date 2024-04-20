@@ -43,8 +43,8 @@
 <meta property="og:locale" content="en" />
 <meta name="description" content="SASEUL Smart Contract" />
 <meta property="og:description" content="SASEUL Smart Contract" />
-<link rel="canonical" href="https://docs.saseul.com/posts/07-overview/" />
-<meta property="og:url" content="https://docs.saseul.com/posts/07-overview/" />
+<link rel="canonical" href="http://localhost:4000/posts/07-overview/" />
+<meta property="og:url" content="http://localhost:4000/posts/07-overview/" />
 <meta property="og:site_name" content="SASEUL Docs" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2023-04-13T09:00:00+09:00" />
@@ -53,7 +53,7 @@
 <meta name="twitter:site" content="@saseul" />
 <meta name="twitter:creator" content="@ArtiFriends" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"ArtiFriends","url":"https://artifriends.com"},"dateModified":"2023-04-13T09:00:00+09:00","datePublished":"2023-04-13T09:00:00+09:00","description":"SASEUL Smart Contract","headline":"Overview","mainEntityOfPage":{"@type":"WebPage","@id":"https://docs.saseul.com/posts/07-overview/"},"url":"https://docs.saseul.com/posts/07-overview/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"ArtiFriends","url":"https://artifriends.com"},"dateModified":"2023-04-13T09:00:00+09:00","datePublished":"2023-04-13T09:00:00+09:00","description":"SASEUL Smart Contract","headline":"Overview","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/07-overview/"},"url":"http://localhost:4000/posts/07-overview/"}</script>
 <!-- End Jekyll SEO tag -->
 
   
@@ -218,6 +218,10 @@
             
             <div class="post-page-subitem" onclick="location.href='/posts/06-specification/'">
             Specification
+            </div>
+            
+            <div class="post-page-subitem" onclick="location.href='/posts/07-examples/'">
+            Examples
             </div>
             
           </div>
@@ -577,6 +581,37 @@
 
 </div> <!-- .post-meta -->
 
+<!--<div id="toc_top">
+  <div class="toc_top_title">Contents</div>
+  
+  
+  
+  
+  
+  <ul class="inline_toc">
+    
+    
+    <li><a href="#saseul-smart-contract">SASEUL Smart Contract</a></li>
+    
+
+    
+    <ul>
+        
+    <li><a href="#base-execution-methods">Base execution methods</a></li>
+    
+
+    
+    <li><a href="#base-query-methods">Base query methods</a></li>
+    
+
+    
+    </ul>
+    
+    <li><a href="#rules">Rules</a></li>
+    
+</ul>
+</div>-->
+
 <div class="post-content">
   <h1 id="saseul-smart-contract">SASEUL Smart Contract</h1>
 
@@ -751,12 +786,7 @@ Therefore, we have created six base execution methods and 15 base query methods 
         
         
         
-      <li><a href="/posts/08-operator/">Operator</a></li>
-      
-        
-        
-        
-      <li><a href="/posts/09-system-method/">System Method</a></li>
+      <li><a href="/posts/06-specification/">Specification</a></li>
       
     </ul>
   </div> <!-- #access-lastmod -->
@@ -798,10 +828,16 @@ Therefore, we have created six base execution methods and 15 base query methods 
     
     
     
+      
+        
+        
+
   
     
     
     
+    
+      
     
   
     
@@ -823,20 +859,18 @@ Therefore, we have created six base execution methods and 15 base query methods 
     
     
       
-        
-        
-
+    
+  
+    
+    
+    
+    
   
     
     
     
     
       
-    
-  
-    
-    
-    
     
   
     
@@ -858,13 +892,13 @@ Therefore, we have created six base execution methods and 15 base query methods 
       <a class="post-tag" href="/tags/node/">node</a>
     
       
-      <a class="post-tag" href="/tags/smart-contract/">Smart Contract</a>
-    
-      
       <a class="post-tag" href="/tags/javascript/">javascript</a>
     
       
       <a class="post-tag" href="/tags/sdk/">sdk</a>
+    
+      
+      <a class="post-tag" href="/tags/smart-contract/">Smart Contract</a>
     
 
     </div>
@@ -917,6 +951,19 @@ Therefore, we have created six base execution methods and 15 base query methods 
 
 
 
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
 
 
   
@@ -1042,21 +1089,6 @@ Therefore, we have created six base execution methods and 15 base query methods 
     
       
       
-    
-  
-    
-    
-      
-      
-    
-  
-    
-    
-  
-    
-    
-      
-      
         
         
         
@@ -1154,7 +1186,7 @@ SASEUL has built-in smart contracts that is ready-to-run out of the box. In fact
       
       
       <div class="card">
-        <a href="/posts/06-specification/">
+        <a href="/posts/07-examples/">
           <div class="card-body">
             <!--
   Date format snippet
@@ -1166,13 +1198,13 @@ SASEUL has built-in smart contracts that is ready-to-run out of the box. In fact
 
 
 <em class="small"
-    data-ts="1681171200"
+    data-ts="1713621600"
     data-df="ll"
     >
-  Apr 11, 2023
+  Apr 20, 2024
 </em>
 
-            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>Specification</h3>
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>Examples</h3>
             <div class="text-muted small">
               <p>
                 
@@ -1181,24 +1213,11 @@ SASEUL has built-in smart contracts that is ready-to-run out of the box. In fact
 
 
 
-                Quick Start
+                In a decentralized environment, there is no way to verify whether the information held by a node is up-to-date or not.
 
-npm
+Therefore, it is recommended to set multiple endpoints.
 
-$ npm install saseul
-
-
-const SASEUL = require(&#39;saseul&#39;);
-let key = SASEUL.Sign.keyPair();
-console.dir(key);
-... 
-
-
-Browser
-
-...
-
-&amp;lt;script type=&quot;text/javascript&quot; src=&quot;https://cdn...
+For practical code e...
               </p>
             </div>
           </div>
@@ -1285,10 +1304,16 @@ Browser
     
     
     
+      
+        
+        
+
   
     
     
     
+    
+      
     
   
     
@@ -1310,20 +1335,18 @@ Browser
     
     
       
-        
-        
-
+    
+  
+    
+    
+    
+    
   
     
     
     
     
       
-    
-  
-    
-    
-    
     
   
     
@@ -1345,13 +1368,13 @@ Browser
       <a class="post-tag" href="/tags/node/">node</a>
     
       
-      <a class="post-tag" href="/tags/smart-contract/">Smart Contract</a>
-    
-      
       <a class="post-tag" href="/tags/javascript/">javascript</a>
     
       
       <a class="post-tag" href="/tags/sdk/">sdk</a>
+    
+      
+      <a class="post-tag" href="/tags/smart-contract/">Smart Contract</a>
     
 
     </div>
@@ -1374,7 +1397,7 @@ Browser
       <div class="footer-left"></div>
       <div class="footer-right">
         <p class="mb-0">
-          © 2023
+          © 2024
           <a href="https://saseul.com">SASEUL, ArtiFriends Inc.</a>.
           
           <span data-toggle="tooltip" data-placement="top"

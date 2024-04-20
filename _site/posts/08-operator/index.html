@@ -43,8 +43,8 @@
 <meta property="og:locale" content="en" />
 <meta name="description" content="Summary" />
 <meta property="og:description" content="Summary" />
-<link rel="canonical" href="https://docs.saseul.com/posts/08-operator/" />
-<meta property="og:url" content="https://docs.saseul.com/posts/08-operator/" />
+<link rel="canonical" href="http://localhost:4000/posts/08-operator/" />
+<meta property="og:url" content="http://localhost:4000/posts/08-operator/" />
 <meta property="og:site_name" content="SASEUL Docs" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2023-04-14T09:00:00+09:00" />
@@ -53,7 +53,7 @@
 <meta name="twitter:site" content="@saseul" />
 <meta name="twitter:creator" content="@ArtiFriends" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"ArtiFriends","url":"https://artifriends.com"},"dateModified":"2023-04-18T03:06:23+09:00","datePublished":"2023-04-14T09:00:00+09:00","description":"Summary","headline":"Operator","mainEntityOfPage":{"@type":"WebPage","@id":"https://docs.saseul.com/posts/08-operator/"},"url":"https://docs.saseul.com/posts/08-operator/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"ArtiFriends","url":"https://artifriends.com"},"dateModified":"2023-04-14T09:00:00+09:00","datePublished":"2023-04-14T09:00:00+09:00","description":"Summary","headline":"Operator","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/08-operator/"},"url":"http://localhost:4000/posts/08-operator/"}</script>
 <!-- End Jekyll SEO tag -->
 
   
@@ -218,6 +218,10 @@
             
             <div class="post-page-subitem" onclick="location.href='/posts/06-specification/'">
             Specification
+            </div>
+            
+            <div class="post-page-subitem" onclick="location.href='/posts/07-examples/'">
+            Examples
             </div>
             
           </div>
@@ -1016,26 +1020,6 @@
 
     <!-- lastmod date -->
     
-    <span>
-      Updated
-      <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em class=""
-    data-ts="1681754783"
-    data-df="ll"
-    data-toggle="tooltip" data-placement="bottom">
-  Apr 18, 2023
-</em>
-
-    </span>
-    
 
   
 
@@ -1088,6 +1072,239 @@
   </div> <!-- .d-flex -->
 
 </div> <!-- .post-meta -->
+
+<!--<div id="toc_top">
+  <div class="toc_top_title">Contents</div>
+  
+  
+  
+  
+  
+  <ul class="inline_toc">
+    
+    
+    <li><a href="#summary">Summary</a></li>
+    
+
+    
+    <li><a href="#basicoperator">BasicOperator</a></li>
+    
+
+    
+    <ul>
+        
+    <li><a href="#saseulsmartcontractoperatorcondition">SASEUL.SmartContract.Operator.condition</a></li>
+    
+
+    
+    <li><a href="#saseulsmartcontractoperatorresponse">SASEUL.SmartContract.Operator.response</a></li>
+    
+
+    
+    <li><a href="#saseulsmartcontractoperatorweight">SASEUL.SmartContract.Operator.weight</a></li>
+    
+
+    
+    <li><a href="#saseulsmartcontractoperatorif">SASEUL.SmartContract.Operator.if</a></li>
+    
+
+    
+    <li><a href="#saseulsmartcontractoperatorand">SASEUL.SmartContract.Operator.and</a></li>
+    
+
+    
+    <li><a href="#saseulsmartcontractoperatoror">SASEUL.SmartContract.Operator.or</a></li>
+    
+
+    
+    <li><a href="#saseulsmartcontractoperatorget">SASEUL.SmartContract.Operator.get</a></li>
+    
+
+    
+    </ul>
+    
+    <li><a href="#arithmeticoperator">ArithmeticOperator</a></li>
+    
+
+    
+    <ul>
+        
+    <li><a href="#saseulsmartcontractoperatoradd">SASEUL.SmartContract.Operator.add</a></li>
+    
+
+    
+    <li><a href="#saseulsmartcontractoperatorsub">SASEUL.SmartContract.Operator.sub</a></li>
+    
+
+    
+    <li><a href="#saseulsmartcontractoperatormul">SASEUL.SmartContract.Operator.mul</a></li>
+    
+
+    
+    <li><a href="#saseulsmartcontractoperatordiv">SASEUL.SmartContract.Operator.div</a></li>
+    
+
+    
+    <li><a href="#saseulsmartcontractoperatorprecise_add">SASEUL.SmartContract.Operator.precise_add</a></li>
+    
+
+    
+    <li><a href="#saseulsmartcontractoperatorprecise_sub">SASEUL.SmartContract.Operator.precise_sub</a></li>
+    
+
+    
+    <li><a href="#saseulsmartcontractoperatorprecise_mul">SASEUL.SmartContract.Operator.precise_mul</a></li>
+    
+
+    
+    <li><a href="#saseulsmartcontractoperatorprecise_div">SASEUL.SmartContract.Operator.precise_div</a></li>
+    
+
+    
+    <li><a href="#saseulsmartcontractoperatorscale">SASEUL.SmartContract.Operator.scale</a></li>
+    
+
+    
+    </ul>
+    
+    <li><a href="#castoperator">CastOperator</a></li>
+    
+
+    
+    <ul>
+        
+    <li><a href="#saseulsmartcontractoperatorget_type">SASEUL.SmartContract.Operator.get_type</a></li>
+    
+
+    
+    <li><a href="#saseulsmartcontractoperatoris_numeric">SASEUL.SmartContract.Operator.is_numeric</a></li>
+    
+
+    
+    <li><a href="#saseulsmartcontractoperatoris_int">SASEUL.SmartContract.Operator.is_int</a></li>
+    
+
+    
+    <li><a href="#saseulsmartcontractoperatoris_string">SASEUL.SmartContract.Operator.is_string</a></li>
+    
+
+    
+    <li><a href="#saseulsmartcontractoperatoris_null">SASEUL.SmartContract.Operator.is_null</a></li>
+    
+
+    
+    <li><a href="#saseulsmartcontractoperatoris_bool">SASEUL.SmartContract.Operator.is_bool</a></li>
+    
+
+    
+    <li><a href="#saseulsmartcontractoperatoris_array">SASEUL.SmartContract.Operator.is_array</a></li>
+    
+
+    
+    <li><a href="#saseulsmartcontractoperatoris_double">SASEUL.SmartContract.Operator.is_double</a></li>
+    
+
+    
+    </ul>
+    
+    <li><a href="#comparisonoperator">ComparisonOperator</a></li>
+    
+
+    
+    <ul>
+        
+    <li><a href="#saseulsmartcontractoperatoreq">SASEUL.SmartContract.Operator.eq</a></li>
+    
+
+    
+    <li><a href="#saseulsmartcontractoperatorne">SASEUL.SmartContract.Operator.ne</a></li>
+    
+
+    
+    <li><a href="#saseulsmartcontractoperatorgt">SASEUL.SmartContract.Operator.gt</a></li>
+    
+
+    
+    <li><a href="#saseulsmartcontractoperatorlt">SASEUL.SmartContract.Operator.lt</a></li>
+    
+
+    
+    <li><a href="#saseulsmartcontractoperatorgte">SASEUL.SmartContract.Operator.gte</a></li>
+    
+
+    
+    <li><a href="#saseulsmartcontractoperatorlte">SASEUL.SmartContract.Operator.lte</a></li>
+    
+
+    
+    <li><a href="#saseulsmartcontractoperatorin">SASEUL.SmartContract.Operator.in</a></li>
+    
+
+    
+    </ul>
+    
+    <li><a href="#readwriteoperator">ReadWriteOperator</a></li>
+    
+
+    
+    <ul>
+        
+    <li><a href="#saseulsmartcontractoperatorload_param">SASEUL.SmartContract.Operator.load_param</a></li>
+    
+
+    
+    <li><a href="#saseulsmartcontractoperatorread_universal">SASEUL.SmartContract.Operator.read_universal</a></li>
+    
+
+    
+    <li><a href="#saseulsmartcontractoperatorread_local">SASEUL.SmartContract.Operator.read_local</a></li>
+    
+
+    
+    <li><a href="#saseulsmartcontractoperatorwrite_universal">SASEUL.SmartContract.Operator.write_universal</a></li>
+    
+
+    
+    <li><a href="#saseulsmartcontractoperatorwrite_local">SASEUL.SmartContract.Operator.write_local</a></li>
+    
+
+    
+    </ul>
+    
+    <li><a href="#utiloperator">UtilOperator</a></li>
+    
+
+    
+    <ul>
+        
+    <li><a href="#saseulsmartcontractoperatorconcat">SASEUL.SmartContract.Operator.concat</a></li>
+    
+
+    
+    <li><a href="#saseulsmartcontractoperatorstrlen">SASEUL.SmartContract.Operator.strlen</a></li>
+    
+
+    
+    <li><a href="#saseulsmartcontractoperatorreg_match">SASEUL.SmartContract.Operator.reg_match</a></li>
+    
+
+    
+    <li><a href="#saseulsmartcontractoperatordecode_json">SASEUL.SmartContract.Operator.decode_json</a></li>
+    
+
+    
+    <li><a href="#saseulsmartcontractoperatorhash">SASEUL.SmartContract.Operator.hash</a></li>
+    
+
+    
+    <li><a href="#saseulsmartcontractoperatorshort_hash">SASEUL.SmartContract.Operator.short_hash</a></li>
+    
+
+    
+    <li><a href="#saseulsmartcontractoperatorid_hash">SASEUL.SmartContract.Operator.id_hash</a></li>
+    
+</ul></ul>
+</div>-->
 
 <div class="post-content">
   <h1 id="summary">Summary</h1>
@@ -2361,12 +2578,7 @@ result = op.encode_json({});
         
         
         
-      <li><a href="/posts/08-operator/">Operator</a></li>
-      
-        
-        
-        
-      <li><a href="/posts/09-system-method/">System Method</a></li>
+      <li><a href="/posts/06-specification/">Specification</a></li>
       
     </ul>
   </div> <!-- #access-lastmod -->
@@ -2408,10 +2620,16 @@ result = op.encode_json({});
     
     
     
+      
+        
+        
+
   
     
     
     
+    
+      
     
   
     
@@ -2433,20 +2651,18 @@ result = op.encode_json({});
     
     
       
-        
-        
-
+    
+  
+    
+    
+    
+    
   
     
     
     
     
       
-    
-  
-    
-    
-    
     
   
     
@@ -2468,13 +2684,13 @@ result = op.encode_json({});
       <a class="post-tag" href="/tags/node/">node</a>
     
       
-      <a class="post-tag" href="/tags/smart-contract/">Smart Contract</a>
-    
-      
       <a class="post-tag" href="/tags/javascript/">javascript</a>
     
       
       <a class="post-tag" href="/tags/sdk/">sdk</a>
+    
+      
+      <a class="post-tag" href="/tags/smart-contract/">Smart Contract</a>
     
 
     </div>
@@ -2527,6 +2743,19 @@ result = op.encode_json({});
 
 
 
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
 
 
   
@@ -2652,21 +2881,6 @@ result = op.encode_json({});
     
       
       
-    
-  
-    
-    
-  
-    
-    
-      
-      
-    
-  
-    
-    
-      
-      
         
         
         
@@ -2761,7 +2975,7 @@ SASEUL has built-in smart contracts that is ready-to-run out of the box. In fact
       
       
       <div class="card">
-        <a href="/posts/06-specification/">
+        <a href="/posts/07-examples/">
           <div class="card-body">
             <!--
   Date format snippet
@@ -2773,13 +2987,13 @@ SASEUL has built-in smart contracts that is ready-to-run out of the box. In fact
 
 
 <em class="small"
-    data-ts="1681171200"
+    data-ts="1713621600"
     data-df="ll"
     >
-  Apr 11, 2023
+  Apr 20, 2024
 </em>
 
-            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>Specification</h3>
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>Examples</h3>
             <div class="text-muted small">
               <p>
                 
@@ -2788,24 +3002,11 @@ SASEUL has built-in smart contracts that is ready-to-run out of the box. In fact
 
 
 
-                Quick Start
+                In a decentralized environment, there is no way to verify whether the information held by a node is up-to-date or not.
 
-npm
+Therefore, it is recommended to set multiple endpoints.
 
-$ npm install saseul
-
-
-const SASEUL = require(&#39;saseul&#39;);
-let key = SASEUL.Sign.keyPair();
-console.dir(key);
-... 
-
-
-Browser
-
-...
-
-&amp;lt;script type=&quot;text/javascript&quot; src=&quot;https://cdn...
+For practical code e...
               </p>
             </div>
           </div>
@@ -2892,10 +3093,16 @@ Browser
     
     
     
+      
+        
+        
+
   
     
     
     
+    
+      
     
   
     
@@ -2917,20 +3124,18 @@ Browser
     
     
       
-        
-        
-
+    
+  
+    
+    
+    
+    
   
     
     
     
     
       
-    
-  
-    
-    
-    
     
   
     
@@ -2952,13 +3157,13 @@ Browser
       <a class="post-tag" href="/tags/node/">node</a>
     
       
-      <a class="post-tag" href="/tags/smart-contract/">Smart Contract</a>
-    
-      
       <a class="post-tag" href="/tags/javascript/">javascript</a>
     
       
       <a class="post-tag" href="/tags/sdk/">sdk</a>
+    
+      
+      <a class="post-tag" href="/tags/smart-contract/">Smart Contract</a>
     
 
     </div>
@@ -2981,7 +3186,7 @@ Browser
       <div class="footer-left"></div>
       <div class="footer-right">
         <p class="mb-0">
-          © 2023
+          © 2024
           <a href="https://saseul.com">SASEUL, ArtiFriends Inc.</a>.
           
           <span data-toggle="tooltip" data-placement="top"

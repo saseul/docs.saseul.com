@@ -1,0 +1,9 @@
+<div id="toc_top">
+  <div class="toc_top_title">Contents</div>
+  {% assign my_min = page.toc_min | default: 1 %}
+  {% assign my_max = page.toc_max | default: 3 %}
+  {% assign my_name = page.url | default: "unnamed" %}
+  {% capture my_toc %}{% include toc-pure-liquid.html html=content sanitize=true class="inline_toc" id="toc_top_" min_level=my_min max_level=my_max %}{% endcapture %}
+  {% assign my_toc = my_toc | replace: "id=\"toc_top_", "id=\"toc_top_" %}
+  {{ my_toc }}
+</div>

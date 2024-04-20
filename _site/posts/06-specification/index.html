@@ -43,8 +43,8 @@
 <meta property="og:locale" content="en" />
 <meta name="description" content="Quick Start" />
 <meta property="og:description" content="Quick Start" />
-<link rel="canonical" href="https://docs.saseul.com/posts/06-specification/" />
-<meta property="og:url" content="https://docs.saseul.com/posts/06-specification/" />
+<link rel="canonical" href="http://localhost:4000/posts/06-specification/" />
+<meta property="og:url" content="http://localhost:4000/posts/06-specification/" />
 <meta property="og:site_name" content="SASEUL Docs" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2023-04-11T09:00:00+09:00" />
@@ -53,7 +53,7 @@
 <meta name="twitter:site" content="@saseul" />
 <meta name="twitter:creator" content="@ArtiFriends" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"ArtiFriends","url":"https://artifriends.com"},"dateModified":"2023-04-11T09:00:00+09:00","datePublished":"2023-04-11T09:00:00+09:00","description":"Quick Start","headline":"Specification","mainEntityOfPage":{"@type":"WebPage","@id":"https://docs.saseul.com/posts/06-specification/"},"url":"https://docs.saseul.com/posts/06-specification/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"ArtiFriends","url":"https://artifriends.com"},"dateModified":"2024-04-20T22:00:00+09:00","datePublished":"2023-04-11T09:00:00+09:00","description":"Quick Start","headline":"Specification","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/06-specification/"},"url":"http://localhost:4000/posts/06-specification/"}</script>
 <!-- End Jekyll SEO tag -->
 
   
@@ -218,6 +218,10 @@
             
             <div class="post-page-subitem active" onclick="location.href='/posts/06-specification/'">
             Specification
+            </div>
+            
+            <div class="post-page-subitem" onclick="location.href='/posts/07-examples/'">
+            Examples
             </div>
             
           </div>
@@ -957,6 +961,126 @@
       
 
     
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
 
     
 
@@ -1052,6 +1176,26 @@
 
     <!-- lastmod date -->
     
+    <span>
+      Updated
+      <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em class=""
+    data-ts="1713618000"
+    data-df="ll"
+    data-toggle="tooltip" data-placement="bottom">
+  Apr 20, 2024
+</em>
+
+    </span>
+    
 
   
 
@@ -1096,14 +1240,283 @@
 
 <!-- return element -->
 <span class="readtime" data-toggle="tooltip" data-placement="bottom"
-  title="1621 words">
-  <em>9 min</em> read</span>
+  title="2175 words">
+  <em>12 min</em> read</span>
 
     </div>
 
   </div> <!-- .d-flex -->
 
 </div> <!-- .post-meta -->
+
+<!--<div id="toc_top">
+  <div class="toc_top_title">Contents</div>
+  
+  
+  
+  
+  
+  <ul class="inline_toc">
+    
+    
+    <li><a href="#quick-start">Quick Start</a></li>
+    
+
+    
+    <ul>
+        
+    <li><a href="#npm">npm</a></li>
+    
+
+    
+    <li><a href="#browser">Browser</a></li>
+    
+
+    
+    </ul>
+    
+    <li><a href="#generating-key-pair-address-and-signature">Generating Key pair, Address and Signature</a></li>
+    
+
+    
+    <ul>
+        
+    <li><a href="#saseulsignkeypair">SASEUL.Sign.keyPair</a></li>
+    
+
+    
+    <li><a href="#saseulsignprivatekey">SASEUL.Sign.privateKey</a></li>
+    
+
+    
+    <li><a href="#saseulsignpublickey">SASEUL.Sign.publicKey</a></li>
+    
+
+    
+    <li><a href="#saseulsignaddress">SASEUL.Sign.address</a></li>
+    
+
+    
+    <li><a href="#saseulsignaddressvalidity">SASEUL.Sign.addressValidity</a></li>
+    
+
+    
+    <li><a href="#saseulsignsignature">SASEUL.Sign.signature</a></li>
+    
+
+    
+    <li><a href="#saseulsignsignaturevalidity">SASEUL.Sign.signatureValidity</a></li>
+    
+
+    
+    <li><a href="#saseulsignkeyvalidity">SASEUL.Sign.keyValidity</a></li>
+    
+
+    
+    </ul>
+    
+    <li><a href="#creating-and-sending-transactions-and-requests">Creating and Sending Transactions and Requests</a></li>
+    
+
+    
+    <ul>
+        
+    <li><a href="#saseulrpcendpoint-deprecated">SASEUL.Rpc.endpoint (Deprecated)</a></li>
+    
+
+    
+    <li><a href="#saseulrpcendpoints">SASEUL.Rpc.endpoints</a></li>
+    
+
+    
+    <li><a href="#saseulrpctimeout">SASEUL.Rpc.timeout</a></li>
+    
+
+    
+    <li><a href="#saseulrpcheaders">SASEUL.Rpc.headers</a></li>
+    
+
+    
+    <li><a href="#saseulrpctracker">SASEUL.Rpc.tracker</a></li>
+    
+
+    
+    <li><a href="#saseulrpctrackerfromall">SASEUL.Rpc.trackerFromAll</a></li>
+    
+
+    
+    <li><a href="#saseulrpcpeer">SASEUL.Rpc.peer</a></li>
+    
+
+    
+    <li><a href="#saseulrpcpeerfromall">SASEUL.Rpc.peerFromAll</a></li>
+    
+
+    
+    <li><a href="#saseulrpcping">SASEUL.Rpc.ping</a></li>
+    
+
+    
+    <li><a href="#saseulrpcround">SASEUL.Rpc.round</a></li>
+    
+
+    
+    <li><a href="#saseulrpcbestround">SASEUL.Rpc.bestRound</a></li>
+    
+
+    
+    <li><a href="#saseulrpcsignedrequest">SASEUL.Rpc.signedRequest</a></li>
+    
+
+    
+    <li><a href="#saseulrpcsimplerequest">SASEUL.Rpc.simpleRequest</a></li>
+    
+
+    
+    <li><a href="#saseulrpcsignedtransaction">SASEUL.Rpc.signedTransaction</a></li>
+    
+
+    
+    <li><a href="#saseulrpcrequest">SASEUL.Rpc.request</a></li>
+    
+
+    
+    <li><a href="#saseulrpcracerequest">SASEUL.Rpc.raceRequest</a></li>
+    
+
+    
+    <li><a href="#saseulrpcsendtransaction">SASEUL.Rpc.sendTransaction</a></li>
+    
+
+    
+    <li><a href="#saseulrpcsendtransactiontoall">SASEUL.Rpc.sendTransactionToAll</a></li>
+    
+
+    
+    <li><a href="#saseulrpcbroadcastlimit">SASEUL.Rpc.broadcastLimit</a></li>
+    
+
+    
+    <li><a href="#saseulrpcbroadcasttransaction">SASEUL.Rpc.broadcastTransaction</a></li>
+    
+
+    
+    <li><a href="#saseulrpcestimatedfee">SASEUL.Rpc.estimatedFee</a></li>
+    
+
+    
+    </ul>
+    
+    <li><a href="#cryptographic-hash-functions">Cryptographic Hash Functions</a></li>
+    
+
+    
+    <ul>
+        
+    <li><a href="#saseulencstring">SASEUL.Enc.string</a></li>
+    
+
+    
+    <li><a href="#saseulenchash">SASEUL.Enc.hash</a></li>
+    
+
+    
+    <li><a href="#saseulencshorthash">SASEUL.Enc.shortHash</a></li>
+    
+
+    
+    <li><a href="#saseulencchecksum">SASEUL.Enc.checksum</a></li>
+    
+
+    
+    <li><a href="#saseulenchextime">SASEUL.Enc.hextime</a></li>
+    
+
+    
+    <li><a href="#saseulenctimehash">SASEUL.Enc.timeHash</a></li>
+    
+
+    
+    <li><a href="#saseulenctimehashvalidity">SASEUL.Enc.timeHashValidity</a></li>
+    
+
+    
+    <li><a href="#saseulencidhash">SASEUL.Enc.idHash</a></li>
+    
+
+    
+    <li><a href="#saseulencidhashvalidity">SASEUL.Enc.idHashValidity</a></li>
+    
+
+    
+    <li><a href="#saseulenccid">SASEUL.Enc.cid</a></li>
+    
+
+    
+    <li><a href="#saseulenctxhash">SASEUL.Enc.txHash</a></li>
+    
+
+    
+    <li><a href="#saseulencishex">SASEUL.Enc.isHex</a></li>
+    
+
+    
+    </ul>
+    
+    <li><a href="#utility-functions">Utility functions</a></li>
+    
+
+    
+    <ul>
+        
+    <li><a href="#saseulutiltime">SASEUL.Util.time</a></li>
+    
+
+    
+    <li><a href="#saseulutilutime">SASEUL.Util.utime</a></li>
+    
+
+    
+    <li><a href="#saseulutilrandomhexstring">SASEUL.Util.randomHexString</a></li>
+    
+
+    
+    <li><a href="#saseulutilhextobyte">SASEUL.Util.hexToByte</a></li>
+    
+
+    
+    <li><a href="#saseulutilbytetohex">SASEUL.Util.byteToHex</a></li>
+    
+
+    
+    <li><a href="#saseulutilstringtobyte">SASEUL.Util.stringToByte</a></li>
+    
+
+    
+    <li><a href="#saseulutilstringtounicode">SASEUL.Util.stringToUnicode</a></li>
+    
+
+    
+    </ul>
+    
+    <li><a href="#create-and-register-smart-contracts">Create and register smart contracts</a></li>
+    
+
+    
+    <ul>
+        
+    <li><a href="#saseulsmartcontractoperator">SASEUL.SmartContract.Operator</a></li>
+    
+
+    
+    <li><a href="#saseulsmartcontractmethod">SASEUL.SmartContract.Method</a></li>
+    
+
+    
+    <li><a href="#saseulsmartcontractcontract">SASEUL.SmartContract.Contract</a></li>
+    
+</ul></ul>
+</div>-->
 
 <div class="post-content">
   <h1 id="quick-start">Quick Start</h1>
@@ -1335,9 +1748,11 @@ You can hash the public key generated by the ed25519 algorithm as follows to gen
 
 <p>When a request is sent to the network, the network queries the current state data and returns the result.</p>
 
-<h2 id="saseulrpcendpoint"><span class="mr-2">SASEUL.Rpc.endpoint</span><a href="#saseulrpcendpoint" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<h2 id="saseulrpcendpoint-deprecated"><span class="mr-2">SASEUL.Rpc.endpoint (Deprecated)</span><a href="#saseulrpcendpoint-deprecated" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>Set the endpoint for sending transactions and requests to a node.</p>
+
+<p>Please use the SASEUL.Rpc.endpoints function instead.</p>
 
 <div class="language-javascript highlighter-rouge"><div class="code-header">
         <span data-label-text="JavaScript"><i class="fas fa-code small"></i></span>
@@ -1345,9 +1760,43 @@ You can hash the public key generated by the ed25519 algorithm as follows to gen
 </pre></td><td class="rouge-code"><pre><span class="nx">SASEUL</span><span class="p">.</span><span class="nx">Rpc</span><span class="p">.</span><span class="nx">endpoint</span><span class="p">(</span><span class="dl">'</span><span class="s1">&lt;ENDPOINT&gt;</span><span class="dl">'</span><span class="p">);</span>
 </pre></td></tr></tbody></table></code></div></div>
 
+<h2 id="saseulrpcendpoints"><span class="mr-2">SASEUL.Rpc.endpoints</span><a href="#saseulrpcendpoints" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<p>Set the endpoints for sending transactions and requests to nodes.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre><span class="nx">SASEUL</span><span class="p">.</span><span class="nx">Rpc</span><span class="p">.</span><span class="nx">endpoints</span><span class="p">(</span><span class="dl">'</span><span class="s1">&lt;ENDPOINT&gt;</span><span class="dl">'</span><span class="p">);</span>
+<span class="nx">SASEUL</span><span class="p">.</span><span class="nx">Rpc</span><span class="p">.</span><span class="nx">endpoints</span><span class="p">([</span><span class="dl">"</span><span class="s2">&lt;ENDPOINT1&gt;</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">&lt;ENDPOINT2&gt;</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">&lt;ENDPOINT3&gt;</span><span class="dl">"</span><span class="p">,</span> <span class="p">...]);</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<h2 id="saseulrpctimeout"><span class="mr-2">SASEUL.Rpc.timeout</span><a href="#saseulrpctimeout" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<p>Set the timeout duration when sending transactions or requests to nodes.</p>
+
+<p>The default value is 30 seconds.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="nx">SASEUL</span><span class="p">.</span><span class="nx">Rpc</span><span class="p">.</span><span class="nx">timeout</span><span class="p">(</span><span class="dl">'</span><span class="s1">&lt;milliseconds&gt;</span><span class="dl">'</span><span class="p">);</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<h2 id="saseulrpcheaders"><span class="mr-2">SASEUL.Rpc.headers</span><a href="#saseulrpcheaders" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<p>Set the headers to be used when sending transactions or requests to nodes.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="nx">SASEUL</span><span class="p">.</span><span class="nx">Rpc</span><span class="p">.</span><span class="nx">headers</span><span class="p">(</span><span class="dl">'</span><span class="s1">&lt;HEADERS&gt;</span><span class="dl">'</span><span class="p">);</span>
+</pre></td></tr></tbody></table></code></div></div>
+
 <h2 id="saseulrpctracker"><span class="mr-2">SASEUL.Rpc.tracker</span><a href="#saseulrpctracker" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<p>Return the tracker information of the node.</p>
+<p>Retrieve tracker information from one of the nodes at the set endpoints.</p>
 
 <div class="language-javascript highlighter-rouge"><div class="code-header">
         <span data-label-text="JavaScript"><i class="fas fa-code small"></i></span>
@@ -1366,7 +1815,7 @@ You can hash the public key generated by the ed25519 algorithm as follows to gen
 13
 14
 15
-</pre></td><td class="rouge-code"><pre><span class="nx">SASEUL</span><span class="p">.</span><span class="nx">Rpc</span><span class="p">.</span><span class="nx">endpoint</span><span class="p">(</span><span class="dl">'</span><span class="s1">&lt;ENDPOINT&gt;</span><span class="dl">'</span><span class="p">);</span>
+</pre></td><td class="rouge-code"><pre><span class="nx">SASEUL</span><span class="p">.</span><span class="nx">Rpc</span><span class="p">.</span><span class="nx">endpoints</span><span class="p">(</span><span class="dl">'</span><span class="s1">&lt;ENDPOINT&gt;</span><span class="dl">'</span><span class="p">);</span>
 <span class="nx">SASEUL</span><span class="p">.</span><span class="nx">Rpc</span><span class="p">.</span><span class="nx">tracker</span><span class="p">().</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">r</span><span class="p">)</span> <span class="p">{</span> <span class="nx">console</span><span class="p">.</span><span class="nx">dir</span><span class="p">(</span><span class="nx">r</span><span class="p">);</span> <span class="p">});</span>
 
 <span class="c1">// result:</span>
@@ -1383,9 +1832,9 @@ You can hash the public key generated by the ed25519 algorithm as follows to gen
 <span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<h2 id="saseulrpcpeer"><span class="mr-2">SASEUL.Rpc.peer</span><a href="#saseulrpcpeer" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<h2 id="saseulrpctrackerfromall"><span class="mr-2">SASEUL.Rpc.trackerFromAll</span><a href="#saseulrpctrackerfromall" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<p>Return the peer information of the node.</p>
+<p>Collect tracker information from all set endpoints and return the merged tracker information.</p>
 
 <div class="language-javascript highlighter-rouge"><div class="code-header">
         <span data-label-text="JavaScript"><i class="fas fa-code small"></i></span>
@@ -1400,8 +1849,70 @@ You can hash the public key generated by the ed25519 algorithm as follows to gen
 9
 10
 11
-</pre></td><td class="rouge-code"><pre><span class="nx">SASEUL</span><span class="p">.</span><span class="nx">Rpc</span><span class="p">.</span><span class="nx">endpoint</span><span class="p">(</span><span class="dl">'</span><span class="s1">&lt;ENDPOINT&gt;</span><span class="dl">'</span><span class="p">);</span>
+12
+</pre></td><td class="rouge-code"><pre><span class="nx">SASEUL</span><span class="p">.</span><span class="nx">Rpc</span><span class="p">.</span><span class="nx">endpoints</span><span class="p">([</span><span class="dl">"</span><span class="s2">&lt;ENDPOINT1&gt;</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">&lt;ENDPOINT2&gt;</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">&lt;ENDPOINT3&gt;</span><span class="dl">"</span><span class="p">,</span> <span class="p">...]);</span>
+<span class="nx">SASEUL</span><span class="p">.</span><span class="nx">Rpc</span><span class="p">.</span><span class="nx">trackerFromAll</span><span class="p">().</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">r</span><span class="p">)</span> <span class="p">{</span> <span class="nx">console</span><span class="p">.</span><span class="nx">dir</span><span class="p">(</span><span class="nx">r</span><span class="p">);</span> <span class="p">});</span>
+
+<span class="c1">// result:</span>
+<span class="p">{</span>
+  <span class="dl">"</span><span class="s2">peers</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="p">...</span>
+  <span class="p">},</span>
+  <span class="dl">"</span><span class="s2">known_hosts</span><span class="dl">"</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">...</span>
+  <span class="p">]</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<h2 id="saseulrpcpeer"><span class="mr-2">SASEUL.Rpc.peer</span><a href="#saseulrpcpeer" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<p>Retrieve peer information from one of the nodes at the set endpoints.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+</pre></td><td class="rouge-code"><pre><span class="nx">SASEUL</span><span class="p">.</span><span class="nx">Rpc</span><span class="p">.</span><span class="nx">endpoints</span><span class="p">(</span><span class="dl">'</span><span class="s1">&lt;ENDPOINT&gt;</span><span class="dl">'</span><span class="p">);</span>
 <span class="nx">SASEUL</span><span class="p">.</span><span class="nx">Rpc</span><span class="p">.</span><span class="nx">peer</span><span class="p">().</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">r</span><span class="p">)</span> <span class="p">{</span> <span class="nx">console</span><span class="p">.</span><span class="nx">dir</span><span class="p">(</span><span class="nx">r</span><span class="p">);</span> <span class="p">});</span>
+
+<span class="c1">// result:</span>
+<span class="p">[</span>
+    <span class="p">{</span>
+        <span class="dl">"</span><span class="s2">host</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">&lt;ENDPOINT&gt;</span><span class="dl">"</span><span class="p">,</span>
+        <span class="dl">"</span><span class="s2">address</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">&lt;PEER_ADDRESS&gt;</span><span class="dl">"</span>
+    <span class="p">},</span>
+    <span class="p">...</span>
+<span class="p">]</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<h2 id="saseulrpcpeerfromall"><span class="mr-2">SASEUL.Rpc.peerFromAll</span><a href="#saseulrpcpeerfromall" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<p>Collect peer information from all set endpoints and return the merged peer information.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+</pre></td><td class="rouge-code"><pre><span class="nx">SASEUL</span><span class="p">.</span><span class="nx">Rpc</span><span class="p">.</span><span class="nx">endpoints</span><span class="p">([</span><span class="dl">"</span><span class="s2">&lt;ENDPOINT1&gt;</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">&lt;ENDPOINT2&gt;</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">&lt;ENDPOINT3&gt;</span><span class="dl">"</span><span class="p">,</span> <span class="p">...]);</span>
+<span class="nx">SASEUL</span><span class="p">.</span><span class="nx">Rpc</span><span class="p">.</span><span class="nx">peerFromAll</span><span class="p">().</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">r</span><span class="p">)</span> <span class="p">{</span> <span class="nx">console</span><span class="p">.</span><span class="nx">dir</span><span class="p">(</span><span class="nx">r</span><span class="p">);</span> <span class="p">});</span>
 
 <span class="c1">// result:</span>
 <span class="p">[</span>
@@ -1427,7 +1938,7 @@ You can hash the public key generated by the ed25519 algorithm as follows to gen
 6
 7
 8
-</pre></td><td class="rouge-code"><pre><span class="nx">SASEUL</span><span class="p">.</span><span class="nx">Rpc</span><span class="p">.</span><span class="nx">endpoint</span><span class="p">(</span><span class="dl">'</span><span class="s1">&lt;ENDPOINT&gt;</span><span class="dl">'</span><span class="p">);</span>
+</pre></td><td class="rouge-code"><pre><span class="nx">SASEUL</span><span class="p">.</span><span class="nx">Rpc</span><span class="p">.</span><span class="nx">endpoints</span><span class="p">(</span><span class="dl">'</span><span class="s1">&lt;ENDPOINT&gt;</span><span class="dl">'</span><span class="p">);</span>
 <span class="nx">SASEUL</span><span class="p">.</span><span class="nx">Rpc</span><span class="p">.</span><span class="nx">ping</span><span class="p">().</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">r</span><span class="p">)</span> <span class="p">{</span> <span class="nx">console</span><span class="p">.</span><span class="nx">dir</span><span class="p">(</span><span class="nx">r</span><span class="p">);</span> <span class="p">});</span>
 
 <span class="c1">// result:</span>
@@ -1439,7 +1950,7 @@ You can hash the public key generated by the ed25519 algorithm as follows to gen
 
 <h2 id="saseulrpcround"><span class="mr-2">SASEUL.Rpc.round</span><a href="#saseulrpcround" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<p>Return the current chain status of the node.</p>
+<p>Retrieve the current chain status from one of the nodes at the set endpoints.</p>
 
 <div class="language-javascript highlighter-rouge"><div class="code-header">
         <span data-label-text="JavaScript"><i class="fas fa-code small"></i></span>
@@ -1458,7 +1969,7 @@ You can hash the public key generated by the ed25519 algorithm as follows to gen
 13
 14
 15
-</pre></td><td class="rouge-code"><pre><span class="nx">SASEUL</span><span class="p">.</span><span class="nx">Rpc</span><span class="p">.</span><span class="nx">endpoint</span><span class="p">(</span><span class="dl">'</span><span class="s1">&lt;ENDPOINT&gt;</span><span class="dl">'</span><span class="p">);</span>
+</pre></td><td class="rouge-code"><pre><span class="nx">SASEUL</span><span class="p">.</span><span class="nx">Rpc</span><span class="p">.</span><span class="nx">endpoints</span><span class="p">(</span><span class="dl">'</span><span class="s1">&lt;ENDPOINT&gt;</span><span class="dl">'</span><span class="p">);</span>
 <span class="nx">SASEUL</span><span class="p">.</span><span class="nx">Rpc</span><span class="p">.</span><span class="nx">round</span><span class="p">().</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">r</span><span class="p">)</span> <span class="p">{</span> <span class="nx">console</span><span class="p">.</span><span class="nx">dir</span><span class="p">(</span><span class="nx">r</span><span class="p">);</span> <span class="p">});</span>
 
 <span class="c1">// result:</span>
@@ -1471,6 +1982,38 @@ You can hash the public key generated by the ed25519 algorithm as follows to gen
     <span class="dl">"</span><span class="s2">resource</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
         <span class="p">...</span>
     <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<h2 id="saseulrpcbestround"><span class="mr-2">SASEUL.Rpc.bestRound</span><a href="#saseulrpcbestround" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<p>Retrieve the current chain status from all set endpoints and return the best chain status information.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+</pre></td><td class="rouge-code"><pre><span class="nx">SASEUL</span><span class="p">.</span><span class="nx">Rpc</span><span class="p">.</span><span class="nx">endpoints</span><span class="p">([</span><span class="dl">"</span><span class="s2">&lt;ENDPOINT1&gt;</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">&lt;ENDPOINT2&gt;</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">&lt;ENDPOINT3&gt;</span><span class="dl">"</span><span class="p">,</span> <span class="p">...]);</span>
+<span class="nx">SASEUL</span><span class="p">.</span><span class="nx">Rpc</span><span class="p">.</span><span class="nx">bestRound</span><span class="p">().</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">r</span><span class="p">)</span> <span class="p">{</span> <span class="nx">console</span><span class="p">.</span><span class="nx">dir</span><span class="p">(</span><span class="nx">r</span><span class="p">);</span> <span class="p">});</span>
+
+<span class="c1">// result:</span>
+<span class="p">{</span>
+  <span class="dl">"</span><span class="s2">main</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="p">...</span>
+  <span class="p">},</span>
+  <span class="dl">"</span><span class="s2">resource</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="p">...</span>
   <span class="p">}</span>
 <span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
@@ -1493,9 +2036,7 @@ You can hash the public key generated by the ed25519 algorithm as follows to gen
 10
 11
 12
-13
-</pre></td><td class="rouge-code"><pre><span class="nx">SASEUL</span><span class="p">.</span><span class="nx">Rpc</span><span class="p">.</span><span class="nx">endpoint</span><span class="p">(</span><span class="dl">'</span><span class="s1">&lt;ENDPOINT&gt;</span><span class="dl">'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">obj</span> <span class="o">=</span> <span class="nx">SASEUL</span><span class="p">.</span><span class="nx">Rpc</span><span class="p">.</span><span class="nx">signedRequest</span><span class="p">({</span><span class="dl">"</span><span class="s2">type</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">GetBalance</span><span class="dl">"</span><span class="p">,</span><span class="dl">"</span><span class="s2">address</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">&lt;ADDRESS&gt;</span><span class="dl">"</span><span class="p">},</span> <span class="nx">SASEUL</span><span class="p">.</span><span class="nx">Sign</span><span class="p">.</span><span class="nx">privateKey</span><span class="p">());</span>
+</pre></td><td class="rouge-code"><pre><span class="kd">let</span> <span class="nx">obj</span> <span class="o">=</span> <span class="nx">SASEUL</span><span class="p">.</span><span class="nx">Rpc</span><span class="p">.</span><span class="nx">signedRequest</span><span class="p">({</span> <span class="na">type</span> <span class="p">:</span> <span class="dl">"</span><span class="s2">GetBalance</span><span class="dl">"</span><span class="p">,</span> <span class="na">address</span><span class="p">:</span> <span class="dl">"</span><span class="s2">&lt;ADDRESS&gt;</span><span class="dl">"</span><span class="p">},</span> <span class="nx">SASEUL</span><span class="p">.</span><span class="nx">Sign</span><span class="p">.</span><span class="nx">privateKey</span><span class="p">());</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">dir</span><span class="p">(</span><span class="nx">obj</span><span class="p">);</span>
 
 <span class="c1">// result:</span>
@@ -1506,6 +2047,34 @@ You can hash the public key generated by the ed25519 algorithm as follows to gen
     <span class="p">},</span>
     <span class="dl">"</span><span class="s2">public_key</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">...</span><span class="dl">"</span><span class="p">,</span>
     <span class="dl">"</span><span class="s2">signature</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">...</span><span class="dl">"</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<h2 id="saseulrpcsimplerequest"><span class="mr-2">SASEUL.Rpc.simpleRequest</span><a href="#saseulrpcsimplerequest" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<p>Create an unsigned simple request object.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</pre></td><td class="rouge-code"><pre><span class="kd">let</span> <span class="nx">obj</span> <span class="o">=</span> <span class="nx">SASEUL</span><span class="p">.</span><span class="nx">Rpc</span><span class="p">.</span><span class="nx">simpleRequest</span><span class="p">({</span> <span class="na">type</span> <span class="p">:</span> <span class="dl">"</span><span class="s2">GetBalance</span><span class="dl">"</span><span class="p">,</span> <span class="na">address</span><span class="p">:</span> <span class="dl">"</span><span class="s2">&lt;ADDRESS&gt;</span><span class="dl">"</span><span class="p">});</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">dir</span><span class="p">(</span><span class="nx">obj</span><span class="p">);</span>
+
+<span class="c1">// result:</span>
+<span class="p">{</span>
+    <span class="dl">"</span><span class="s2">request</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="dl">"</span><span class="s2">type</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">GetBalance</span><span class="dl">"</span><span class="p">,</span>
+        <span class="p">...</span>
+    <span class="p">}</span>
 <span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
@@ -1527,9 +2096,7 @@ You can hash the public key generated by the ed25519 algorithm as follows to gen
 10
 11
 12
-13
-</pre></td><td class="rouge-code"><pre><span class="nx">SASEUL</span><span class="p">.</span><span class="nx">Rpc</span><span class="p">.</span><span class="nx">endpoint</span><span class="p">(</span><span class="dl">'</span><span class="s1">&lt;ENDPOINT&gt;</span><span class="dl">'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">obj</span> <span class="o">=</span> <span class="nx">SASEUL</span><span class="p">.</span><span class="nx">Rpc</span><span class="p">.</span><span class="nx">signedTransaction</span><span class="p">({</span><span class="dl">"</span><span class="s2">type</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">Send</span><span class="dl">"</span><span class="p">,</span><span class="dl">"</span><span class="s2">to</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">&lt;ADDRESS&gt;</span><span class="dl">"</span><span class="p">,</span><span class="dl">"</span><span class="s2">amount</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">1</span><span class="dl">"</span><span class="p">},</span> <span class="nx">SASEUL</span><span class="p">.</span><span class="nx">Sign</span><span class="p">.</span><span class="nx">privateKey</span><span class="p">());</span>
+</pre></td><td class="rouge-code"><pre><span class="kd">let</span> <span class="nx">obj</span> <span class="o">=</span> <span class="nx">SASEUL</span><span class="p">.</span><span class="nx">Rpc</span><span class="p">.</span><span class="nx">signedTransaction</span><span class="p">({</span> <span class="na">type</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Send</span><span class="dl">"</span><span class="p">,</span> <span class="na">to</span><span class="p">:</span> <span class="dl">"</span><span class="s2">&lt;ADDRESS&gt;</span><span class="dl">"</span><span class="p">,</span> <span class="na">amount</span><span class="p">:</span> <span class="dl">"</span><span class="s2">&lt;AMOUNT&gt;</span><span class="dl">"</span><span class="p">},</span> <span class="nx">SASEUL</span><span class="p">.</span><span class="nx">Sign</span><span class="p">.</span><span class="nx">privateKey</span><span class="p">());</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">dir</span><span class="p">(</span><span class="nx">obj</span><span class="p">);</span>
 
 <span class="c1">// result:</span>
@@ -1545,7 +2112,7 @@ You can hash the public key generated by the ed25519 algorithm as follows to gen
 
 <h2 id="saseulrpcrequest"><span class="mr-2">SASEUL.Rpc.request</span><a href="#saseulrpcrequest" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<p>Send a signed request to the node and return the result.</p>
+<p>Send a signed request or a simple request to one of the nodes at the set endpoints and return the result.</p>
 
 <div class="language-javascript highlighter-rouge"><div class="code-header">
         <span data-label-text="JavaScript"><i class="fas fa-code small"></i></span>
@@ -1560,8 +2127,10 @@ You can hash the public key generated by the ed25519 algorithm as follows to gen
 9
 10
 11
-</pre></td><td class="rouge-code"><pre><span class="nx">SASEUL</span><span class="p">.</span><span class="nx">Rpc</span><span class="p">.</span><span class="nx">endpoint</span><span class="p">(</span><span class="dl">'</span><span class="s1">&lt;ENDPOINT&gt;</span><span class="dl">'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">obj</span> <span class="o">=</span> <span class="nx">SASEUL</span><span class="p">.</span><span class="nx">Rpc</span><span class="p">.</span><span class="nx">signedRequest</span><span class="p">({</span><span class="dl">"</span><span class="s2">type</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">GetBalance</span><span class="dl">"</span><span class="p">,</span><span class="dl">"</span><span class="s2">address</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">&lt;ADDRESS&gt;</span><span class="dl">"</span><span class="p">},</span> <span class="nx">SASEUL</span><span class="p">.</span><span class="nx">Sign</span><span class="p">.</span><span class="nx">privateKey</span><span class="p">());</span>
+12
+</pre></td><td class="rouge-code"><pre><span class="kd">let</span> <span class="nx">obj</span> <span class="o">=</span> <span class="nx">SASEUL</span><span class="p">.</span><span class="nx">Rpc</span><span class="p">.</span><span class="nx">signedRequest</span><span class="p">({</span> <span class="na">type</span> <span class="p">:</span> <span class="dl">"</span><span class="s2">GetBalance</span><span class="dl">"</span><span class="p">,</span> <span class="na">address</span><span class="p">:</span> <span class="dl">"</span><span class="s2">&lt;ADDRESS&gt;</span><span class="dl">"</span><span class="p">},</span> <span class="nx">SASEUL</span><span class="p">.</span><span class="nx">Sign</span><span class="p">.</span><span class="nx">privateKey</span><span class="p">());</span>
+
+<span class="nx">SASEUL</span><span class="p">.</span><span class="nx">Rpc</span><span class="p">.</span><span class="nx">endpoints</span><span class="p">(</span><span class="dl">'</span><span class="s1">&lt;ENDPOINT&gt;</span><span class="dl">'</span><span class="p">);</span>
 <span class="nx">SASEUL</span><span class="p">.</span><span class="nx">Rpc</span><span class="p">.</span><span class="nx">request</span><span class="p">(</span><span class="nx">obj</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">r</span><span class="p">)</span> <span class="p">{</span> <span class="nx">console</span><span class="p">.</span><span class="nx">dir</span><span class="p">(</span><span class="nx">r</span><span class="p">);</span> <span class="p">});</span>
 
 <span class="c1">// result:</span>
@@ -1573,9 +2142,9 @@ You can hash the public key generated by the ed25519 algorithm as follows to gen
 <span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<h2 id="saseulrpcsendtransaction"><span class="mr-2">SASEUL.Rpc.sendTransaction</span><a href="#saseulrpcsendtransaction" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<h2 id="saseulrpcracerequest"><span class="mr-2">SASEUL.Rpc.raceRequest</span><a href="#saseulrpcracerequest" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<p>Send a signed transaction to the node and return the result.</p>
+<p>Send a signed request or a simple request to all set endpoints and return the result from the endpoint that responds the fastest and meets the condition.</p>
 
 <div class="language-javascript highlighter-rouge"><div class="code-header">
         <span data-label-text="JavaScript"><i class="fas fa-code small"></i></span>
@@ -1588,8 +2157,62 @@ You can hash the public key generated by the ed25519 algorithm as follows to gen
 7
 8
 9
-</pre></td><td class="rouge-code"><pre><span class="nx">SASEUL</span><span class="p">.</span><span class="nx">Rpc</span><span class="p">.</span><span class="nx">endpoint</span><span class="p">(</span><span class="dl">'</span><span class="s1">&lt;ENDPOINT&gt;</span><span class="dl">'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">obj</span> <span class="o">=</span> <span class="nx">SASEUL</span><span class="p">.</span><span class="nx">Rpc</span><span class="p">.</span><span class="nx">signedTransaction</span><span class="p">({</span><span class="dl">"</span><span class="s2">type</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">Send</span><span class="dl">"</span><span class="p">,</span><span class="dl">"</span><span class="s2">to</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">&lt;ADDRESS&gt;</span><span class="dl">"</span><span class="p">,</span><span class="dl">"</span><span class="s2">amount</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">1</span><span class="dl">"</span><span class="p">},</span> <span class="nx">SASEUL</span><span class="p">.</span><span class="nx">Sign</span><span class="p">.</span><span class="nx">privateKey</span><span class="p">());</span>
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+</pre></td><td class="rouge-code"><pre><span class="nx">SASEUL</span><span class="p">.</span><span class="nx">Rpc</span><span class="p">.</span><span class="nx">endpoints</span><span class="p">([</span><span class="dl">"</span><span class="s2">&lt;ENDPOINT1&gt;</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">&lt;ENDPOINT2&gt;</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">&lt;ENDPOINT3&gt;</span><span class="dl">"</span><span class="p">,</span> <span class="p">...]);</span>
+<span class="nx">SASEUL</span><span class="p">.</span><span class="nx">Rpc</span><span class="p">.</span><span class="nx">bestRound</span><span class="p">().</span><span class="nx">then</span><span class="p">(</span><span class="nx">results</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">obj</span> <span class="o">=</span> <span class="nx">SASEUL</span><span class="p">.</span><span class="nx">Rpc</span><span class="p">.</span><span class="nx">simpleRequest</span><span class="p">({</span> <span class="na">type</span><span class="p">:</span> <span class="dl">"</span><span class="s2">ListBlock</span><span class="dl">"</span><span class="p">,</span> <span class="na">page</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="na">count</span><span class="p">:</span> <span class="mi">5</span> <span class="p">});</span>
+    <span class="kd">let</span> <span class="nx">condition</span> <span class="o">=</span> <span class="p">(</span><span class="nx">blocks</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="kd">let</span> <span class="nx">latest</span> <span class="o">=</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">values</span><span class="p">(</span><span class="nx">blocks</span><span class="p">).</span><span class="nx">reduce</span><span class="p">((</span><span class="nx">prev</span><span class="p">,</span> <span class="nx">curr</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">curr</span><span class="p">.</span><span class="nx">height</span> <span class="o">&gt;</span> <span class="nx">prev</span><span class="p">.</span><span class="nx">height</span> <span class="p">?</span> <span class="nx">curr</span> <span class="p">:</span> <span class="nx">prev</span><span class="p">);</span>
+
+        <span class="k">return</span> <span class="nx">latest</span><span class="p">.</span><span class="nx">height</span> <span class="o">&gt;=</span> <span class="nx">results</span><span class="p">.</span><span class="nx">main</span><span class="p">.</span><span class="nx">height</span><span class="p">;</span>
+    <span class="p">}</span>
+    
+    <span class="nx">SASEUL</span><span class="p">.</span><span class="nx">Rpc</span><span class="p">.</span><span class="nx">raceRequest</span><span class="p">(</span><span class="nx">obj</span><span class="p">,</span> <span class="nx">condition</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">r</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">dir</span><span class="p">(</span><span class="nx">r</span><span class="p">);</span>
+    <span class="p">});</span>
+<span class="p">});</span>
+
+<span class="c1">// result:</span>
+<span class="p">{</span>
+    <span class="dl">"</span><span class="s2">code</span><span class="dl">"</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">data</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="c1">// BLOCK DATAS</span>
+        <span class="p">...</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<h2 id="saseulrpcsendtransaction"><span class="mr-2">SASEUL.Rpc.sendTransaction</span><a href="#saseulrpcsendtransaction" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<p>Send a signed transaction to one of the nodes at the set endpoints and return the result.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</pre></td><td class="rouge-code"><pre><span class="kd">let</span> <span class="nx">obj</span> <span class="o">=</span> <span class="nx">SASEUL</span><span class="p">.</span><span class="nx">Rpc</span><span class="p">.</span><span class="nx">signedTransaction</span><span class="p">({</span> <span class="na">type</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Send</span><span class="dl">"</span><span class="p">,</span> <span class="na">to</span><span class="p">:</span> <span class="dl">"</span><span class="s2">&lt;ADDRESS&gt;</span><span class="dl">"</span><span class="p">,</span> <span class="na">amount</span><span class="p">:</span> <span class="dl">"</span><span class="s2">&lt;AMOUNT&gt;</span><span class="dl">"</span><span class="p">},</span> <span class="nx">SASEUL</span><span class="p">.</span><span class="nx">Sign</span><span class="p">.</span><span class="nx">privateKey</span><span class="p">());</span>
+
+<span class="nx">SASEUL</span><span class="p">.</span><span class="nx">Rpc</span><span class="p">.</span><span class="nx">endpoints</span><span class="p">(</span><span class="dl">'</span><span class="s1">&lt;ENDPOINT&gt;</span><span class="dl">'</span><span class="p">);</span>
 <span class="nx">SASEUL</span><span class="p">.</span><span class="nx">Rpc</span><span class="p">.</span><span class="nx">sendTransaction</span><span class="p">(</span><span class="nx">obj</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">r</span><span class="p">)</span> <span class="p">{</span> <span class="nx">console</span><span class="p">.</span><span class="nx">dir</span><span class="p">(</span><span class="nx">r</span><span class="p">);</span> <span class="p">});</span>
 
 <span class="c1">// result:</span>
@@ -1597,6 +2220,56 @@ You can hash the public key generated by the ed25519 algorithm as follows to gen
     <span class="dl">"</span><span class="s2">code</span><span class="dl">"</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span>
     <span class="dl">"</span><span class="s2">data</span><span class="dl">"</span><span class="p">:</span> <span class="p">...</span>
 <span class="p">}</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<h2 id="saseulrpcsendtransactiontoall"><span class="mr-2">SASEUL.Rpc.sendTransactionToAll</span><a href="#saseulrpcsendtransactiontoall" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<p>Send a signed transaction to all set endpoints and return the result for each endpoint.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+</pre></td><td class="rouge-code"><pre><span class="kd">let</span> <span class="nx">obj</span> <span class="o">=</span> <span class="nx">SASEUL</span><span class="p">.</span><span class="nx">Rpc</span><span class="p">.</span><span class="nx">signedTransaction</span><span class="p">({</span> <span class="na">type</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Send</span><span class="dl">"</span><span class="p">,</span> <span class="na">to</span><span class="p">:</span> <span class="dl">"</span><span class="s2">&lt;ADDRESS&gt;</span><span class="dl">"</span><span class="p">,</span> <span class="na">amount</span><span class="p">:</span> <span class="dl">"</span><span class="s2">&lt;AMOUNT&gt;</span><span class="dl">"</span><span class="p">},</span> <span class="nx">SASEUL</span><span class="p">.</span><span class="nx">Sign</span><span class="p">.</span><span class="nx">privateKey</span><span class="p">());</span>
+
+<span class="nx">SASEUL</span><span class="p">.</span><span class="nx">Rpc</span><span class="p">.</span><span class="nx">endpoints</span><span class="p">([</span><span class="dl">"</span><span class="s2">&lt;ENDPOINT1&gt;</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">&lt;ENDPOINT2&gt;</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">&lt;ENDPOINT3&gt;</span><span class="dl">"</span><span class="p">,</span> <span class="p">...]);</span>
+<span class="nx">SASEUL</span><span class="p">.</span><span class="nx">Rpc</span><span class="p">.</span><span class="nx">sendTransaction</span><span class="p">(</span><span class="nx">obj</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">r</span><span class="p">)</span> <span class="p">{</span> <span class="nx">console</span><span class="p">.</span><span class="nx">dir</span><span class="p">(</span><span class="nx">r</span><span class="p">);</span> <span class="p">});</span>
+
+<span class="c1">// result:</span>
+<span class="p">{</span>
+    <span class="p">{</span>
+        <span class="dl">"</span><span class="s2">code</span><span class="dl">"</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span>
+        <span class="dl">"</span><span class="s2">data</span><span class="dl">"</span><span class="p">:</span> <span class="p">...</span>
+        <span class="dl">"</span><span class="s2">endpoint</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">&lt;ENDPOINT1&gt;</span><span class="dl">"</span>
+    <span class="p">},</span>
+
+    <span class="p">...</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<h2 id="saseulrpcbroadcastlimit"><span class="mr-2">SASEUL.Rpc.broadcastLimit</span><a href="#saseulrpcbroadcastlimit" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<p>Set the maximum number of simultaneous broadcasts when broadcasting transactions to nodes.</p>
+
+<p>The default value is 32.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="nx">SASEUL</span><span class="p">.</span><span class="nx">Rpc</span><span class="p">.</span><span class="nx">broadcastLimit</span><span class="p">(</span><span class="dl">'</span><span class="s1">&lt;limit&gt;</span><span class="dl">'</span><span class="p">);</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <h2 id="saseulrpcbroadcasttransaction"><span class="mr-2">SASEUL.Rpc.broadcastTransaction</span><a href="#saseulrpcbroadcasttransaction" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
@@ -1614,8 +2287,10 @@ You can hash the public key generated by the ed25519 algorithm as follows to gen
 7
 8
 9
-</pre></td><td class="rouge-code"><pre><span class="nx">SASEUL</span><span class="p">.</span><span class="nx">Rpc</span><span class="p">.</span><span class="nx">endpoint</span><span class="p">(</span><span class="dl">'</span><span class="s1">&lt;ENDPOINT&gt;</span><span class="dl">'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">obj</span> <span class="o">=</span> <span class="nx">SASEUL</span><span class="p">.</span><span class="nx">Rpc</span><span class="p">.</span><span class="nx">signedTransaction</span><span class="p">({</span><span class="dl">"</span><span class="s2">type</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">Send</span><span class="dl">"</span><span class="p">,</span><span class="dl">"</span><span class="s2">to</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">&lt;ADDRESS&gt;</span><span class="dl">"</span><span class="p">,</span><span class="dl">"</span><span class="s2">amount</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">1</span><span class="dl">"</span><span class="p">},</span> <span class="nx">SASEUL</span><span class="p">.</span><span class="nx">Sign</span><span class="p">.</span><span class="nx">privateKey</span><span class="p">());</span>
+10
+</pre></td><td class="rouge-code"><pre><span class="kd">let</span> <span class="nx">obj</span> <span class="o">=</span> <span class="nx">SASEUL</span><span class="p">.</span><span class="nx">Rpc</span><span class="p">.</span><span class="nx">signedTransaction</span><span class="p">({</span> <span class="na">type</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Send</span><span class="dl">"</span><span class="p">,</span> <span class="na">to</span><span class="p">:</span> <span class="dl">"</span><span class="s2">&lt;ADDRESS&gt;</span><span class="dl">"</span><span class="p">,</span> <span class="na">amount</span><span class="p">:</span> <span class="dl">"</span><span class="s2">&lt;AMOUNT&gt;</span><span class="dl">"</span><span class="p">},</span> <span class="nx">SASEUL</span><span class="p">.</span><span class="nx">Sign</span><span class="p">.</span><span class="nx">privateKey</span><span class="p">());</span>
+
+<span class="nx">SASEUL</span><span class="p">.</span><span class="nx">Rpc</span><span class="p">.</span><span class="nx">endpoints</span><span class="p">([</span><span class="dl">"</span><span class="s2">&lt;ENDPOINT1&gt;</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">&lt;ENDPOINT2&gt;</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">&lt;ENDPOINT3&gt;</span><span class="dl">"</span><span class="p">,</span> <span class="p">...]);</span>
 <span class="nx">SASEUL</span><span class="p">.</span><span class="nx">Rpc</span><span class="p">.</span><span class="nx">broadcastTransaction</span><span class="p">(</span><span class="nx">obj</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">r</span><span class="p">)</span> <span class="p">{</span> <span class="nx">console</span><span class="p">.</span><span class="nx">dir</span><span class="p">(</span><span class="nx">r</span><span class="p">);</span> <span class="p">});</span>
 
 <span class="c1">// result:</span>
@@ -1637,145 +2312,23 @@ You can hash the public key generated by the ed25519 algorithm as follows to gen
 4
 5
 6
-</pre></td><td class="rouge-code"><pre><span class="nx">SASEUL</span><span class="p">.</span><span class="nx">Rpc</span><span class="p">.</span><span class="nx">endpoint</span><span class="p">(</span><span class="dl">'</span><span class="s1">&lt;ENDPOINT&gt;</span><span class="dl">'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">obj</span> <span class="o">=</span> <span class="nx">SASEUL</span><span class="p">.</span><span class="nx">Rpc</span><span class="p">.</span><span class="nx">signedTransaction</span><span class="p">({</span><span class="dl">"</span><span class="s2">type</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">Send</span><span class="dl">"</span><span class="p">,</span><span class="dl">"</span><span class="s2">to</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">&lt;ADDRESS&gt;</span><span class="dl">"</span><span class="p">,</span><span class="dl">"</span><span class="s2">amount</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">1</span><span class="dl">"</span><span class="p">},</span> <span class="nx">SASEUL</span><span class="p">.</span><span class="nx">Sign</span><span class="p">.</span><span class="nx">privateKey</span><span class="p">());</span>
+7
+</pre></td><td class="rouge-code"><pre><span class="kd">let</span> <span class="nx">obj</span> <span class="o">=</span> <span class="nx">SASEUL</span><span class="p">.</span><span class="nx">Rpc</span><span class="p">.</span><span class="nx">signedTransaction</span><span class="p">({</span> <span class="na">type</span> <span class="p">:</span> <span class="dl">"</span><span class="s2">Send</span><span class="dl">"</span><span class="p">,</span> <span class="na">to</span><span class="p">:</span> <span class="dl">"</span><span class="s2">&lt;ADDRESS&gt;</span><span class="dl">"</span><span class="p">,</span> <span class="na">amount</span><span class="p">:</span> <span class="dl">"</span><span class="s2">&lt;AMOUNT&gt;</span><span class="dl">"</span><span class="p">},</span> <span class="nx">SASEUL</span><span class="p">.</span><span class="nx">Sign</span><span class="p">.</span><span class="nx">privateKey</span><span class="p">());</span>
+
+<span class="nx">SASEUL</span><span class="p">.</span><span class="nx">Rpc</span><span class="p">.</span><span class="nx">endpoints</span><span class="p">([</span><span class="dl">"</span><span class="s2">&lt;ENDPOINT1&gt;</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">&lt;ENDPOINT2&gt;</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">&lt;ENDPOINT3&gt;</span><span class="dl">"</span><span class="p">,</span> <span class="p">...]);</span>
 <span class="nx">SASEUL</span><span class="p">.</span><span class="nx">Rpc</span><span class="p">.</span><span class="nx">estimatedFee</span><span class="p">(</span><span class="nx">obj</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">r</span><span class="p">)</span> <span class="p">{</span> <span class="nx">console</span><span class="p">.</span><span class="nx">dir</span><span class="p">(</span><span class="nx">r</span><span class="p">);</span> <span class="p">});</span>
 
 <span class="c1">// result:</span>
 <span class="mi">738000000000</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<p><br /></p>
+<h1 id="cryptographic-hash-functions">Cryptographic Hash Functions</h1>
 
-<h1 id="utility-functions">Utility functions</h1>
+<p>These functions provide essential cryptographic hash operations for the SASEUL network.</p>
 
-<p>These are functions that may be necessary during the process of data processing based on the SASEUL network.</p>
-
-<h2 id="saseulutiltime"><span class="mr-2">SASEUL.Util.time</span><a href="#saseulutiltime" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
-
-<p>Return the current time in seconds.</p>
-
-<div class="language-javascript highlighter-rouge"><div class="code-header">
-        <span data-label-text="JavaScript"><i class="fas fa-code small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-</pre></td><td class="rouge-code"><pre><span class="kd">let</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">SASEUL</span><span class="p">.</span><span class="nx">Util</span><span class="p">.</span><span class="nx">time</span><span class="p">();</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">dir</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
-
-<span class="c1">// result:</span>
-<span class="mi">1681660939</span>
-</pre></td></tr></tbody></table></code></div></div>
-
-<h2 id="saseulutilutime"><span class="mr-2">SASEUL.Util.utime</span><a href="#saseulutilutime" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
-
-<p>Return the current time in microseconds.</p>
-
-<div class="language-javascript highlighter-rouge"><div class="code-header">
-        <span data-label-text="JavaScript"><i class="fas fa-code small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-</pre></td><td class="rouge-code"><pre><span class="kd">let</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">SASEUL</span><span class="p">.</span><span class="nx">Util</span><span class="p">.</span><span class="nx">utime</span><span class="p">();</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">dir</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
-
-<span class="c1">// result:</span>
-<span class="mi">1681660939642000</span>
-</pre></td></tr></tbody></table></code></div></div>
-
-<h2 id="saseulutilrandomhexstring"><span class="mr-2">SASEUL.Util.randomHexString</span><a href="#saseulutilrandomhexstring" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
-
-<p>Generate a random hexadecimal string of a given length.</p>
-
-<div class="language-javascript highlighter-rouge"><div class="code-header">
-        <span data-label-text="JavaScript"><i class="fas fa-code small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-</pre></td><td class="rouge-code"><pre><span class="kd">let</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">SASEUL</span><span class="p">.</span><span class="nx">Util</span><span class="p">.</span><span class="nx">randomHexString</span><span class="p">(</span><span class="mi">16</span><span class="p">);</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">dir</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
-
-<span class="c1">// result:</span>
-<span class="mi">0</span><span class="nx">e1e2770405d168a4fe246fd6469e9da</span>
-</pre></td></tr></tbody></table></code></div></div>
-
-<h2 id="saseulutilhextobyte"><span class="mr-2">SASEUL.Util.hexToByte</span><a href="#saseulutilhextobyte" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
-
-<p>Convert a hexadecimal string to a byte array.</p>
-
-<div class="language-javascript highlighter-rouge"><div class="code-header">
-        <span data-label-text="JavaScript"><i class="fas fa-code small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-</pre></td><td class="rouge-code"><pre><span class="kd">let</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">SASEUL</span><span class="p">.</span><span class="nx">Util</span><span class="p">.</span><span class="nx">hexToByte</span><span class="p">(</span><span class="dl">"</span><span class="s2">0e1e2770405d168a4fe246fd6469e9da</span><span class="dl">"</span><span class="p">);</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">dir</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
-
-<span class="c1">// result:</span>
-<span class="p">{...}</span>
-</pre></td></tr></tbody></table></code></div></div>
-
-<h2 id="saseulutilbytetohex"><span class="mr-2">SASEUL.Util.byteToHex</span><a href="#saseulutilbytetohex" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
-
-<p>Convert a byte array to a hexadecimal string.</p>
-
-<div class="language-javascript highlighter-rouge"><div class="code-header">
-        <span data-label-text="JavaScript"><i class="fas fa-code small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-</pre></td><td class="rouge-code"><pre><span class="kd">let</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">SASEUL</span><span class="p">.</span><span class="nx">Util</span><span class="p">.</span><span class="nx">byteToHex</span><span class="p">([...]);</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">dir</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
-
-<span class="c1">// result:</span>
-<span class="mi">4</span><span class="nx">d8ba12d63613dda822a69bc5ac1c589</span>
-</pre></td></tr></tbody></table></code></div></div>
-
-<h2 id="saseulutilstringtobyte"><span class="mr-2">SASEUL.Util.stringToByte</span><a href="#saseulutilstringtobyte" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
-
-<p>Convert a regular string to a byte array.</p>
-
-<div class="language-javascript highlighter-rouge"><div class="code-header">
-        <span data-label-text="JavaScript"><i class="fas fa-code small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-</pre></td><td class="rouge-code"><pre><span class="kd">let</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">SASEUL</span><span class="p">.</span><span class="nx">Util</span><span class="p">.</span><span class="nx">stringToByte</span><span class="p">(</span><span class="dl">"</span><span class="s2">Lorem ipsum</span><span class="dl">"</span><span class="p">);</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">dir</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
-
-<span class="c1">// result:</span>
-<span class="p">{...}</span>
-</pre></td></tr></tbody></table></code></div></div>
-
-<h2 id="saseulutilstringtounicode"><span class="mr-2">SASEUL.Util.stringToUnicode</span><a href="#saseulutilstringtounicode" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
-
-<p>Convert a regular string to a Unicode string.</p>
-
-<div class="language-javascript highlighter-rouge"><div class="code-header">
-        <span data-label-text="JavaScript"><i class="fas fa-code small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-</pre></td><td class="rouge-code"><pre><span class="kd">let</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">SASEUL</span><span class="p">.</span><span class="nx">Util</span><span class="p">.</span><span class="nx">stringToUnicode</span><span class="p">(</span><span class="dl">"</span><span class="s2">다람쥐헌쳇바퀴에타고파</span><span class="dl">"</span><span class="p">);</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">dir</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
-
-<span class="c1">// result:</span>
-<span class="err">\\</span><span class="nx">ub2e4</span><span class="err">\\</span><span class="nx">ub78c</span><span class="err">\\</span><span class="nx">uc950</span><span class="err">\\</span><span class="nx">ud5cc</span><span class="err">\\</span><span class="nx">uccc7</span><span class="err">\\</span><span class="nx">ubc14</span><span class="err">\\</span><span class="nx">ud034</span><span class="err">\\</span><span class="nx">uc5d0</span><span class="err">\\</span><span class="nx">ud0c0</span><span class="err">\\</span><span class="nx">uace0</span><span class="err">\\</span><span class="nx">ud30c</span>
-</pre></td></tr></tbody></table></code></div></div>
+<p>They include generating hash values using SHA-256 and RIPEMD-160 algorithms, 
+converting data to string format, generating checksums, and deriving cryptographic identifiers such as address hashes, 
+smart contract IDs, and transaction hashes.</p>
 
 <h2 id="saseulencstring"><span class="mr-2">SASEUL.Enc.string</span><a href="#saseulencstring" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
@@ -1991,6 +2544,138 @@ You can hash the public key generated by the ed25519 algorithm as follows to gen
 
 <span class="c1">// result:</span>
     <span class="kc">true</span> <span class="nx">or</span> <span class="kc">false</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<p><br /></p>
+
+<h1 id="utility-functions">Utility functions</h1>
+
+<p>These are functions that may be necessary during the process of data processing based on the SASEUL network.</p>
+
+<h2 id="saseulutiltime"><span class="mr-2">SASEUL.Util.time</span><a href="#saseulutiltime" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<p>Return the current time in seconds.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre><span class="kd">let</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">SASEUL</span><span class="p">.</span><span class="nx">Util</span><span class="p">.</span><span class="nx">time</span><span class="p">();</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">dir</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
+
+<span class="c1">// result:</span>
+<span class="mi">1681660939</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<h2 id="saseulutilutime"><span class="mr-2">SASEUL.Util.utime</span><a href="#saseulutilutime" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<p>Return the current time in microseconds.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre><span class="kd">let</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">SASEUL</span><span class="p">.</span><span class="nx">Util</span><span class="p">.</span><span class="nx">utime</span><span class="p">();</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">dir</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
+
+<span class="c1">// result:</span>
+<span class="mi">1681660939642000</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<h2 id="saseulutilrandomhexstring"><span class="mr-2">SASEUL.Util.randomHexString</span><a href="#saseulutilrandomhexstring" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<p>Generate a random hexadecimal string of a given length.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre><span class="kd">let</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">SASEUL</span><span class="p">.</span><span class="nx">Util</span><span class="p">.</span><span class="nx">randomHexString</span><span class="p">(</span><span class="mi">16</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">dir</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
+
+<span class="c1">// result:</span>
+<span class="mi">0</span><span class="nx">e1e2770405d168a4fe246fd6469e9da</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<h2 id="saseulutilhextobyte"><span class="mr-2">SASEUL.Util.hexToByte</span><a href="#saseulutilhextobyte" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<p>Convert a hexadecimal string to a byte array.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre><span class="kd">let</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">SASEUL</span><span class="p">.</span><span class="nx">Util</span><span class="p">.</span><span class="nx">hexToByte</span><span class="p">(</span><span class="dl">"</span><span class="s2">0e1e2770405d168a4fe246fd6469e9da</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">dir</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
+
+<span class="c1">// result:</span>
+<span class="p">{...}</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<h2 id="saseulutilbytetohex"><span class="mr-2">SASEUL.Util.byteToHex</span><a href="#saseulutilbytetohex" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<p>Convert a byte array to a hexadecimal string.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre><span class="kd">let</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">SASEUL</span><span class="p">.</span><span class="nx">Util</span><span class="p">.</span><span class="nx">byteToHex</span><span class="p">([...]);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">dir</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
+
+<span class="c1">// result:</span>
+<span class="mi">4</span><span class="nx">d8ba12d63613dda822a69bc5ac1c589</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<h2 id="saseulutilstringtobyte"><span class="mr-2">SASEUL.Util.stringToByte</span><a href="#saseulutilstringtobyte" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<p>Convert a regular string to a byte array.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre><span class="kd">let</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">SASEUL</span><span class="p">.</span><span class="nx">Util</span><span class="p">.</span><span class="nx">stringToByte</span><span class="p">(</span><span class="dl">"</span><span class="s2">Lorem ipsum</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">dir</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
+
+<span class="c1">// result:</span>
+<span class="p">{...}</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<h2 id="saseulutilstringtounicode"><span class="mr-2">SASEUL.Util.stringToUnicode</span><a href="#saseulutilstringtounicode" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<p>Convert a regular string to a Unicode string.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre><span class="kd">let</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">SASEUL</span><span class="p">.</span><span class="nx">Util</span><span class="p">.</span><span class="nx">stringToUnicode</span><span class="p">(</span><span class="dl">"</span><span class="s2">다람쥐헌쳇바퀴에타고파</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">dir</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
+
+<span class="c1">// result:</span>
+<span class="err">\\</span><span class="nx">ub2e4</span><span class="err">\\</span><span class="nx">ub78c</span><span class="err">\\</span><span class="nx">uc950</span><span class="err">\\</span><span class="nx">ud5cc</span><span class="err">\\</span><span class="nx">uccc7</span><span class="err">\\</span><span class="nx">ubc14</span><span class="err">\\</span><span class="nx">ud034</span><span class="err">\\</span><span class="nx">uc5d0</span><span class="err">\\</span><span class="nx">ud0c0</span><span class="err">\\</span><span class="nx">uace0</span><span class="err">\\</span><span class="nx">ud30c</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p><br /></p>
@@ -2285,12 +2970,7 @@ However, this page only provides a simple specification, and for detailed contra
         
         
         
-      <li><a href="/posts/08-operator/">Operator</a></li>
-      
-        
-        
-        
-      <li><a href="/posts/09-system-method/">System Method</a></li>
+      <li><a href="/posts/06-specification/">Specification</a></li>
       
     </ul>
   </div> <!-- #access-lastmod -->
@@ -2332,10 +3012,16 @@ However, this page only provides a simple specification, and for detailed contra
     
     
     
+      
+        
+        
+
   
     
     
     
+    
+      
     
   
     
@@ -2357,20 +3043,18 @@ However, this page only provides a simple specification, and for detailed contra
     
     
       
-        
-        
-
+    
+  
+    
+    
+    
+    
   
     
     
     
     
       
-    
-  
-    
-    
-    
     
   
     
@@ -2392,13 +3076,13 @@ However, this page only provides a simple specification, and for detailed contra
       <a class="post-tag" href="/tags/node/">node</a>
     
       
-      <a class="post-tag" href="/tags/smart-contract/">Smart Contract</a>
-    
-      
       <a class="post-tag" href="/tags/javascript/">javascript</a>
     
       
       <a class="post-tag" href="/tags/sdk/">sdk</a>
+    
+      
+      <a class="post-tag" href="/tags/smart-contract/">Smart Contract</a>
     
 
     </div>
@@ -2451,6 +3135,19 @@ However, this page only provides a simple specification, and for detailed contra
 
 
 
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
 
 
   
@@ -2576,10 +3273,6 @@ However, this page only provides a simple specification, and for detailed contra
     
       
       
-        
-        
-        
-      
     
   
     
@@ -2641,6 +3334,47 @@ You can use this toolkit to create and send transactions and requests to the SAS
       
       
       <div class="card">
+        <a href="/posts/07-examples/">
+          <div class="card-body">
+            <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em class="small"
+    data-ts="1713621600"
+    data-df="ll"
+    >
+  Apr 20, 2024
+</em>
+
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>Examples</h3>
+            <div class="text-muted small">
+              <p>
+                
+
+
+
+
+
+                In a decentralized environment, there is no way to verify whether the information held by a node is up-to-date or not.
+
+Therefore, it is recommended to set multiple endpoints.
+
+For practical code e...
+              </p>
+            </div>
+          </div>
+        </a>
+      </div>
+    
+      
+      
+      <div class="card">
         <a href="/posts/09-system-method/">
           <div class="card-body">
             <!--
@@ -2671,49 +3405,6 @@ You can use this toolkit to create and send transactions and requests to the SAS
                 Getting Started
 
 SASEUL has built-in smart contracts that is ready-to-run out of the box. In fact, even generating the genesis block of the main chain is done by one of the system smart contracts. ...
-              </p>
-            </div>
-          </div>
-        </a>
-      </div>
-    
-      
-      
-      <div class="card">
-        <a href="/posts/08-operator/">
-          <div class="card-body">
-            <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em class="small"
-    data-ts="1681430400"
-    data-df="ll"
-    >
-  Apr 14, 2023
-</em>
-
-            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>Operator</h3>
-            <div class="text-muted small">
-              <p>
-                
-
-
-
-
-
-                Summary
-
-This document is based on the specification of SASEUL JS. 
-The SASEUL main network is currently using version 0.2.0, and we plan to support additional operators through patches.
-
-
-  A meth...
               </p>
             </div>
           </div>
@@ -2800,10 +3491,16 @@ The SASEUL main network is currently using version 0.2.0, and we plan to support
     
     
     
+      
+        
+        
+
   
     
     
     
+    
+      
     
   
     
@@ -2825,20 +3522,18 @@ The SASEUL main network is currently using version 0.2.0, and we plan to support
     
     
       
-        
-        
-
+    
+  
+    
+    
+    
+    
   
     
     
     
     
       
-    
-  
-    
-    
-    
     
   
     
@@ -2860,13 +3555,13 @@ The SASEUL main network is currently using version 0.2.0, and we plan to support
       <a class="post-tag" href="/tags/node/">node</a>
     
       
-      <a class="post-tag" href="/tags/smart-contract/">Smart Contract</a>
-    
-      
       <a class="post-tag" href="/tags/javascript/">javascript</a>
     
       
       <a class="post-tag" href="/tags/sdk/">sdk</a>
+    
+      
+      <a class="post-tag" href="/tags/smart-contract/">Smart Contract</a>
     
 
     </div>
@@ -2889,7 +3584,7 @@ The SASEUL main network is currently using version 0.2.0, and we plan to support
       <div class="footer-left"></div>
       <div class="footer-right">
         <p class="mb-0">
-          © 2023
+          © 2024
           <a href="https://saseul.com">SASEUL, ArtiFriends Inc.</a>.
           
           <span data-toggle="tooltip" data-placement="top"
