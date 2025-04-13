@@ -2,10 +2,10 @@
   
   {
     "title": "SDK",
-    "url": "/posts/02-sdk/",
+    "url": "/posts/12-sdk/",
     "categories": "Updates",
     "tags": "updates, sdk, javascript, node",
-    "date": "2024-04-21 01:30:00 +0900",
+    "date": "2024-05-02 09:00:00 +0900",
     
 
 
@@ -19,10 +19,10 @@
   
   {
     "title": "Block Explorer",
-    "url": "/posts/01-explorer/",
+    "url": "/posts/11-explorer/",
     "categories": "Updates",
     "tags": "updates, explorer",
-    "date": "2024-04-21 01:00:00 +0900",
+    "date": "2024-05-01 09:00:00 +0900",
     
 
 
@@ -35,11 +35,11 @@
   },
   
   {
-    "title": "Examples",
-    "url": "/posts/07-examples/",
-    "categories": "SASEUL JS",
-    "tags": "sdk, javascript",
-    "date": "2024-04-20 23:00:00 +0900",
+    "title": "Transaction Creation & Signing",
+    "url": "/posts/15-transactions/",
+    "categories": "Advanced: Main-net",
+    "tags": "javascript, sdk, main-net, sl, transaction, signing, check-balance",
+    "date": "2024-04-03 09:00:00 +0900",
     
 
 
@@ -47,16 +47,50 @@
 
 
     
-    "snippet": "In a decentralized environment, there is no way to verify whether the information held by a node is up-to-date or not.Therefore, it is recommended to set multiple endpoints.For practical code examp...",
-    "content": "In a decentralized environment, there is no way to verify whether the information held by a node is up-to-date or not.Therefore, it is recommended to set multiple endpoints.For practical code examples, please refer to the example files in SASEUL JS Github.Quick Start (Exploring Block data)Set the endpoint, then inquire the round information, and request the block information that meets the conditions.Refer to the System Method section for the methods you can use as a default.SASEUL.Rpc.endpoints([\"&lt;ENDPOINT1&gt;\", \"&lt;ENDPOINT2&gt;\", \"&lt;ENDPOINT3&gt;\", ...]);SASEUL.Rpc.bestRound().then(results =&gt; {    let obj = SASEUL.Rpc.simpleRequest({ type: \"ListBlock\", page: 1, count: 5 });    let condition = (blocks) =&gt; {        let latest = Object.values(blocks).reduce((prev, curr) =&gt; curr.height &gt; prev.height ? curr : prev);        return latest.height &gt;= results.main.height;    }        SASEUL.Rpc.raceRequest(obj, condition).then(function (r) {        console.dir(r);    });});// result:{    \"code\": 200,    \"data\": {        // BLOCK DATAS        ...    }}Checking Balance and TransferThe SASEUL Main Network essentially provides functions related to cryptocurrency.This currency is expressed as SL, and SL is used as a fee when sending a Transaction or registering and changing a Contract in the network.For Methods related to SL, please refer to the Method list of Explorer - Contracts.SASEUL.Rpc.endpoints([\"&lt;ENDPOINT1&gt;\", \"&lt;ENDPOINT2&gt;\", \"&lt;ENDPOINT3&gt;\", ...]);let private_key = \"&lt;YOUR_PRIVATE_KEY&gt;\";let public_key = SASEUL.Sign.publicKey(private_key);let from_address = SASEUL.Sign.address(public_key);let to_address = \"&lt;TO_ADDRESS&gt;\";let amount = \"&lt;AMOUNT&gt;\"; // number // Get Balancelet obj = SASEUL.Rpc.simpleRequest({ type: \"GetBalance\", address: from_address });SASEUL.Rpc.raceRequest(obj).then(function (r) {     console.dir(r); // check SL balance});// Send SLobj = SASEUL.Rpc.signedTransaction({ type : \"Send\", to: to_address, amount: amount}, private_key);SASEUL.Rpc.broadcastTransaction(obj).then(function (r) { console.dir(r); });Checking Mined Resources and RefiningThe SASEUL Main Network stores the contribution to block creation in the form of Resource.Resource can be refined into SL using a “Refine” contract.For related methods, refer to the System Method section and the Method list from Explorer - Contracts.SASEUL.Rpc.endpoints([\"&lt;ENDPOINT1&gt;\", \"&lt;ENDPOINT2&gt;\", \"&lt;ENDPOINT3&gt;\", ...]);let private_key = \"&lt;YOUR_PRIVATE_KEY&gt;\";let public_key = SASEUL.Sign.publicKey(private_key);let address = SASEUL.Sign.address(public_key);// Get Resourcelet obj = SASEUL.Rpc.simpleRequest({ type: \"GetResource\", address: address });SASEUL.Rpc.raceRequest(obj).then(function (r) {     console.dir(r); // Check resource amount});// Refineobj = SASEUL.Rpc.signedTransaction({ type : \"Refine\", amount: \"&lt;REFINE_AMOUNT&gt;\"}, private_key);SASEUL.Rpc.broadcastTransaction(obj).then(function (r) { console.dir(r); });Writing and Deploying Smart ContractsOn the SASEUL Main Network, anyone can deploy a Smart Contract as long as they have SL.Since functions related to the Smart Contract do not work in a browser environment, use the functions in a Node.js environment.The test network endpoint for testing is test.saseul.net. [(Testnet Explorer)(https://explorer.saseul.com/test-net.html?ic=tx&amp;ia=list)]For detailed Contract syntax, refer to the Smart Contract section and the code in Sample Contract Github.const SASEUL = require('saseul');let op = SASEUL.SmartContract.Operator;function mint(writer, space) {    let condition, err_msg, update;    let method = new SASEUL.SmartContract.Method({        \"type\": \"contract\",        \"name\": \"Mint\",        \"version\": \"1\",        \"space\": space,        \"writer\": writer,    });    method.addParameter({\"name\": \"name\", \"type\": \"string\", \"maxlength\": 80, \"requirements\": true});    method.addParameter({\"name\": \"symbol\", \"type\": \"string\", \"maxlength\": 20, \"requirements\": true});    method.addParameter({\"name\": \"amount\", \"type\": \"string\", \"maxlength\": 80, \"requirements\": true});    method.addParameter({\"name\": \"decimal\", \"type\": \"int\", \"maxlength\": 2, \"requirements\": true});    let from = op.load_param('from');    let name = op.load_param('name');    let symbol = op.load_param('symbol');    let amount = op.load_param('amount');    let decimal = op.load_param('decimal');    let info = op.read_universal('info', '00');    // info === null    condition = op.eq(info, null);    err_msg = 'The token can only be issued once.';    method.addExecution(op.condition(condition, err_msg));    // writer === from    condition = op.eq(writer, from);    err_msg = 'You are not the contract writer.';    method.addExecution(op.condition(condition, err_msg));    // amount &gt; 0    condition = op.gt(amount, '0');    err_msg = 'The amount must be greater than 0.';    method.addExecution(op.condition(condition, err_msg));    // decimal &gt;= 0    condition = op.gte(decimal, '0');    err_msg = 'The decimal must be greater than or equal to 0.';    method.addExecution(op.condition(condition, err_msg));    // save info    update = op.write_universal('info', '00', {        \"name\": name,        \"symbol\": symbol,        \"total_supply\": amount,        \"decimal\": decimal,    });    method.addExecution(update);    // from balance = amount;    update = op.write_universal('balance', from, amount);    method.addExecution(update);    return method;}let private_key = \"&lt;YOUR_PRIVATE_KEY&gt;\";let public_key = SASEUL.Sign.publicKey(private_key);let address = SASEUL.Sign.address(public_key);let space = \"&lt;SPACE_NAME&gt;\";SASEUL.Rpc.endpoints([\"&lt;ENDPOINT1&gt;\", \"&lt;ENDPOINT2&gt;\", \"&lt;ENDPOINT3&gt;\", ...]);let contract = new SASEUL.SmartContract.Contract(address, space);contract.addMethod(mint(address, space));contract.publish(private_key);"
+    "snippet": "IntroductionTo register a transaction on the blockchain, you must construct a JSON-formatted object matching the required method, sign it with your private key, and then propagate it to a node. Onc...",
+    "content": "IntroductionTo register a transaction on the blockchain, you must construct a JSON-formatted object matching the required method, sign it with your private key, and then propagate it to a node. Once broadcast, the transaction is verified by the network and recorded on the blockchain.With SASEUL JS, these steps become significantly simpler. It provides tools to automatically build the necessary transaction fields, securely sign them using your private key, and transmit the signed data to the node. This allows you to focus on core transaction logic while ensuring safe and efficient processing.If you need detailed information on SASEUL JS—particularly around transaction creation, signing, broadcasting, and verification—please refer to the post linked below. In particular, be sure to review the “Creating and Sending Transactions and Requests” section to understand how to construct, sign, and propagate transactions, as well as confirm their status on the network. The link provides a comprehensive API reference, example code snippets, and essential guidelines for secure and efficient usage.  SASEUL JS Specification (Through the above link, you can check API references, usage examples for each function, and considerations for proper usage.)Notes on Creating Transactions  SL supports up to 18 decimal places. To avoid precision issues, large amounts must be handled as strings.  For example, 1 SL should be written as amount: '1000000000000000000'.  Always ensure your code correctly processes these string-based amounts to prevent floating-point errors.SL Contract &amp; ExamplesThe SL contract is designed to facilitate various functions, such as converting mining contributions into SL or transferring SL, through methods like Refine, Send, Deposit, Approve, and Cancel. Specific parameters and internal logic required by each method can be confirmed using the contract details on the Explorer or by reviewing the code on GitHub.  SASEUL Explorer: SL Contracts  Github: Contract codesRefer to the following Send example to learn how to create and sign transactions in an actual environment. This step-by-step demonstration will help you better understand how to effectively utilize each method.Installing SASEUL JSUse npm install saseul to install.Sending SLGenerate a private key for the sender.If the key is invalid or missing, the transaction is rejected.Refer to the code below for details:/** * send-sl.js * * A simple example of creating and sending a transaction * using the SASEUL library in a Node.js environment. * * If you need to connect to different nodes, you can add or replace * addresses in the 'endpoints' array below. */const SASEUL = require('saseul');// Generate key pairs for sender and receiverlet from_keypair = SASEUL.Sign.keyPair();let to_keypair = SASEUL.Sign.keyPair();// Private key of the sender for signinglet from_private_key = from_keypair.private_key;// Receiver's addresslet to_address = to_keypair.address;// Transaction details// type: transaction type// to: recipient address// amount: amount to be transferredlet tx = {    type: \"Send\",    to: to_address,    amount: \"100000\"};// Sign the transactionlet signed_tx = SASEUL.Rpc.signedTransaction(tx, from_private_key);// Node endpoints to connect tolet endpoints = [    'test.saseul.net',];// Set endpointsSASEUL.Rpc.endpoints(endpoints);// Broadcast the signed transaction and log the response or errorSASEUL.Rpc.broadcastTransaction(signed_tx)    .then(response =&gt; {        console.dir(response);    })    .catch(error =&gt; {        console.dir(error);    });Obtaining SL via the Testnet FaucetOn the testnet, you can use Faucet to get SL. This method is unavailable on the mainnet.Refer to the code below for details:/** * faucet-sl.js * * Demonstrates how to request SL on the testnet using the Faucet method. * This will not work on the mainnet. */const SASEUL = require('saseul');// Generate a new key pairlet keypair = SASEUL.Sign.keyPair();// Private key of the sender for signinglet private_key = keypair.private_key;// Log the generated keypairconsole.log(\"Generated keypair: \");console.dir(keypair);// Prepare the Faucet transactionlet tx = {    type: \"Faucet\",};// Sign the transaction using the private keylet signed_tx = SASEUL.Rpc.signedTransaction(tx, private_key);// Node endpoints to connect tolet endpoints = [    'test.saseul.net',];// Set endpointsSASEUL.Rpc.endpoints(endpoints);// Broadcast the signed transaction and log the response or errorSASEUL.Rpc.broadcastTransaction(signed_tx)    .then(response =&gt; {        console.dir(response);    })    .catch(error =&gt; {        console.dir(error);    });However, please note that the Faucet method does not exist on the mainnet, so this code will not work there.Checking BalanceYou can retrieve SL balance for a given address, typically using GetBalance.Refer to the code below for details:/** * getbalance.js * * Get the SL balance for a given address on the testnet. */const SASEUL = require('saseul');// Generate a new key pair if you don't already have onelet keypair = SASEUL.Sign.keyPair();// Use the generated address or replace it with your existing addresslet address = keypair.address;// let address = '&lt;your_existing_address&gt;';console.log(\"Address: \", address);// Create a request object to retrieve the balancelet req = {    type: \"GetBalance\",    address: address,};// Sign the request with a random private keylet signed_req = SASEUL.Rpc.signedRequest(req, SASEUL.Sign.privateKey());// Node endpoints to connect tolet endpoints = [    'test.saseul.net',];// Set endpointsSASEUL.Rpc.endpoints(endpoints);// Send the request and log the balance or any errorsSASEUL.Rpc.raceRequest(signed_req)    .then(response =&gt; {        console.dir(response);    })    .catch(error =&gt; {        console.dir(error);    });This code demonstrates a simple method to query the SL balance associated with a particular address.Make sure you replace any placeholder addresses with your actual address,and review any relevant library documentation for additional configuration or setup steps.Checking Transaction StatusUse GetTransaction to confirm if a transaction is successfully recorded.Refer to the code below for details:/** * get-transaction.js * * Demonstrates a testnet flow: * 1) Request SL from the Faucet * 2) Check the Faucet transaction status * 3) Retrieve the sender's balance * 4) Send SL to another address * 5) Check the Send transaction status * 6) Retrieve both final balances */const SASEUL = require('saseul');(async () =&gt; {    // Set testnet endpoints    const endpoints = ['test.saseul.net'];    SASEUL.Rpc.endpoints(endpoints);    // Generate two key pairs: sender (from_keypair) and recipient (to_keypair)    const from_keypair = SASEUL.Sign.keyPair();    const to_keypair = SASEUL.Sign.keyPair();    // Extract private key and addresses    const from_private_key = from_keypair.private_key;    const from_address = from_keypair.address;    const to_address = to_keypair.address;    console.log(\"Sender address (Faucet requested):\", from_address);    console.log(\"Recipient address:\", to_address);    // 1) Prepare Faucet transaction (to get SL)    const faucet_tx = {        type: \"Faucet\",        from: from_address,        timestamp: SASEUL.Util.uceiltime() + 1000000    };    const faucet_txhash = SASEUL.Enc.txHash(faucet_tx);    const signed_faucet_tx = SASEUL.Rpc.signedTransaction(faucet_tx, from_private_key);    console.log(\"Faucet transaction hash:\", faucet_txhash);    // Broadcast Faucet transaction    try {        const response = await SASEUL.Rpc.broadcastTransaction(signed_faucet_tx);        console.log(\"Faucet broadcast response:\");        console.dir(response);    } catch (error) {        throw new Error(error);    }    // 2) Check Faucet transaction status    const get_faucet = {        type: \"GetTransaction\",        target: faucet_txhash,    };    const signed_get_faucet = SASEUL.Rpc.signedRequest(get_faucet, SASEUL.Sign.privateKey());    let faucet_found = false;    for (let i = 0; i &lt; 10; i++) {        try {            const response = await SASEUL.Rpc.raceRequest(signed_get_faucet);            if (response &amp;&amp; response.data &amp;&amp; response.data.transaction) {                console.log(\"Faucet transaction found:\");                console.dir(response);                faucet_found = true;                break;            } else {                await new Promise(resolve =&gt; setTimeout(resolve, 3000));            }        } catch (error) {            throw new Error(error);        }    }    if (!faucet_found) {        throw new Error('Could not find Faucet transaction after 10 attempts.');    }    // 3) Retrieve the sender's balance    const balance_1 = {        type: \"GetBalance\",        address: from_address,    };    const signed_balance_1 = SASEUL.Rpc.signedRequest(balance_1, SASEUL.Sign.privateKey());    try {        const response = await SASEUL.Rpc.raceRequest(signed_balance_1);        console.log(\"Sender's balance after Faucet:\");        console.dir(response);    } catch (error) {        throw new Error(error);    }    // 4) Prepare Send transaction (transfer SL to recipient)    const send_tx = {        type: \"Send\",        from: from_address,        to: to_address,        amount: '1234' + '000000000000000000',  // Example amount        timestamp: SASEUL.Util.uceiltime() + 1000000    };    const send_txhash = SASEUL.Enc.txHash(send_tx);    const signed_send_tx = SASEUL.Rpc.signedTransaction(send_tx, from_private_key);    console.log(\"Send transaction hash:\", send_txhash);    // Broadcast Send transaction    try {        const response = await SASEUL.Rpc.broadcastTransaction(signed_send_tx);        console.log(\"Send broadcast response:\");        console.dir(response);    } catch (error) {        throw new Error(error);    }    // 5) Check Send transaction status    const get_send = {        type: \"GetTransaction\",        target: send_txhash,    };    const signed_get_send = SASEUL.Rpc.signedRequest(get_send, SASEUL.Sign.privateKey());    let send_found = false;    for (let i = 0; i &lt; 10; i++) {        try {            const response = await SASEUL.Rpc.raceRequest(signed_get_send);            if (response &amp;&amp; response.data &amp;&amp; response.data.transaction) {                console.log(\"Send transaction found:\");                console.dir(response);                send_found = true;                break;            } else {                await new Promise(resolve =&gt; setTimeout(resolve, 3000));            }        } catch (error) {            throw new Error(error);        }    }    if (!send_found) {        throw new Error('Could not find Send transaction after 10 attempts.');    }    // 6) Retrieve final balances of both addresses    const balance_2 = {        type: \"GetBalance\",        address: from_address,    };    const signed_balance_2 = SASEUL.Rpc.signedRequest(balance_2, SASEUL.Sign.privateKey());    try {        const response = await SASEUL.Rpc.raceRequest(signed_balance_2);        console.log(\"Final balance of sender:\", from_address);        console.dir(response);    } catch (error) {        throw new Error(error);    }    const balance_3 = {        type: \"GetBalance\",        address: to_address,    };    const signed_balance_3 = SASEUL.Rpc.signedRequest(balance_3, SASEUL.Sign.privateKey());    try {        const response = await SASEUL.Rpc.raceRequest(signed_balance_3);        console.log(\"Final balance of recipient:\", to_address);        console.dir(response);    } catch (error) {        throw new Error(error);    }})();"
+  },
+  
+  {
+    "title": "Accounts Management",
+    "url": "/posts/14-accounts/",
+    "categories": "Advanced: Main-net",
+    "tags": "javascript, sdk, main-net, sl, accounts",
+    "date": "2024-04-02 09:00:00 +0900",
+    
+
+
+
+
+
+    
+    "snippet": "IntroductionSASEUL JS makes it easy to generate a private key, a public key, and an address. These key pairs constitute a single address, and by creating multiple private keys from a seed, you can ...",
+    "content": "IntroductionSASEUL JS makes it easy to generate a private key, a public key, and an address. These key pairs constitute a single address, and by creating multiple private keys from a seed, you can effectively manage multiple accounts.If you need detailed information on SASEUL JS—such as supported methods, parameters, sample responses, and usage tips—please refer to the post linked below. In particular, be sure to review the “Generating Key Pair, Address and Signature” section to gain a clearer understanding of how to generate cryptographic keys and handle address creation and digital signatures. The link provides a comprehensive API reference, example code snippets, and important guidelines for using SASEUL JS safely and effectively.  SASEUL JS Specification (Through the above link, you can check API references, usage examples for each function, and considerations for proper usage.)For additional clarity, you may also explore how SASEUL JS can handle cryptographic operations and manage multiple key pairs to streamline your account management process.Cryptographic Algorithm Diagram and ExamplesBelow is a conceptual diagram illustrating the cryptographic algorithms employed by SASEUL JS. This overview can help you understand how key generation, encryption, and address creation operate under the hood.Installing SASEUL JSUse npm install saseul to install.Generating Keys and Verifying AddressesExamples show how to generate key pairs, validate addresses, and handle each component.Make sure you implement secure storage for private keys.Refer to the code below for details:/** * generate-keypairs.js * * This example demonstrates how to generate key pairs, * validate addresses, and handle each component (private key, public key, and address). */const SASEUL = require('saseul');// Generate an all-in-one key pair// This gives you a private key, public key, and address at once.let keypairs = SASEUL.Sign.keyPair();console.log(\"Private Key (combined):\", keypairs.private_key);console.log(\"Public Key (combined):\", keypairs.public_key);console.log(\"Address (combined):\", keypairs.address);// Alternatively, generate each item separately// 1. Private keylet private_key = SASEUL.Sign.privateKey();// 2. Public key (requires private key as input)let public_key = SASEUL.Sign.publicKey(private_key);// 3. Address (requires public key as input)let address = SASEUL.Sign.address(public_key);console.log(\"Private Key (separate):\", private_key);console.log(\"Public Key (separate):\", public_key);console.log(\"Address (separate):\", address);// Validate addresses// 1. Check a correct addressconsole.log(\"Is valid address:\", SASEUL.Sign.addressValidity(address));// 2. Check an incorrect addressconsole.log(\"Is valid address:\", SASEUL.Sign.addressValidity(\"fc981d82177c3fdc1a41304691d8e53da71eb6848932\"));Generating Keys with a SeedAn example shows how to generate multiple key pairs from a single seed. In production,always store private keys securely.Refer to the code below for details:/** * seed-to-keypairs.js * * This example shows how to generate multiple key pairs from a seed. * If you want to generate more key pairs, you can reduce the seed length * and increase the pad length in the loop index (e.g., padStart()) * to allow for a larger range of values. */const SASEUL = require('saseul');// Generate a random 60-character hexadecimal string to use as the seedlet seed = SASEUL.Sign.privateKey().slice(0, -4);// Create multiple key pairs by appending an index to the seedfor (let i = 0; i &lt; 5; i++) {    // Combine the seed with a 4-digit hexadecimal index    let base = seed + i.toString(16).padStart(4, '0');    // Hash the combined string to derive a private key    let private_key = SASEUL.Enc.hash(base);    // Generate the public key from the private key    let public_key = SASEUL.Sign.publicKey(private_key);    // Generate the address from the public key    let address = SASEUL.Sign.address(public_key);    console.log(\"Derived Private Key:\", private_key);    console.log(\"Derived Public Key:\", public_key);    console.log(\"Derived Address:\", address);}For actual working example files, please refer to the following GitHub link:  Github: SASEUL JS Examples"
+  },
+  
+  {
+    "title": "SL",
+    "url": "/posts/13-sl/",
+    "categories": "Advanced: Main-net",
+    "tags": "javascript, sdk, main-net, sl",
+    "date": "2024-04-01 09:00:00 +0900",
+    
+
+
+
+
+
+    
+    "snippet": "IntroductionThank you for visiting the SASEUL Mainnet documentation. This project was launched to demonstrate that the so-called “blockchain trilemma”—the difficulty of simultaneously achieving dec...",
+    "content": "IntroductionThank you for visiting the SASEUL Mainnet documentation. This project was launched to demonstrate that the so-called “blockchain trilemma”—the difficulty of simultaneously achieving decentralization, scalability, and security—has indeed been resolved. SASEUL Mainnet maintains complete decentralization while offering high scalability and robust security, effectively dispelling any doubts about the feasibility of such a blockchain.All of this has been made possible by the SASEUL Engine. By utilizing the SASEUL Engine, anyone can construct a network that overcomes the blockchain trilemma. SASEUL Mainnet stands as the first and most representative example of this achievement.In addition, SL is a digital resource minted in proportion to each node’s contribution within SASEUL Mainnet. Network participants pay a certain amount of SL to propagate transactions, through which rewards and incentives for network operations are distributed.In particular, this document explains how users can issue, transfer, and query SL based on the smart contracts deployed on SASEUL Mainnet. It also covers how transaction records and contribution data for each node are stored and verified. By exploring these details, readers will gain an understanding of the record structure and verification processes of the SASEUL Mainnet, as well as how to effectively utilize SL.Finally, the document provides systematic guidance on building a fully decentralized blockchain environment by integrating the SASEUL Engine with SASEUL Mainnet. We hope this material serves as a valuable reference for anyone interested in implementing or examining SASEUL Mainnet.The SL logic is implemented as a Smart Contract. The details and base code are available at:  Block Explorer (SL Contracts)  SASEUL Github (Sample Contracts)Basic SL Design  Network participants refine their contribution points into SL.  Every time they serve as a validator, they earn at least 2,000 contribution points.  The SL obtained through refining decreases by 27/32 at specific intervals (about every four years).  SL supports 18 decimal places; handle amounts as strings (e.g., “1000000000000000000” for 1 SL).  Fees (paid in SL) are reconverted into a Resource and rewarded to validators."
   },
   
   {
     "title": "System Method",
-    "url": "/posts/09-system-method/",
+    "url": "/posts/10-system-method/",
     "categories": "Smart Contract",
-    "tags": "Smart Contract",
-    "date": "2023-04-16 09:00:00 +0900",
+    "tags": "smart contract",
+    "date": "2023-03-03 09:00:00 +0900",
     
 
 
@@ -70,10 +104,10 @@
   
   {
     "title": "Operator",
-    "url": "/posts/08-operator/",
+    "url": "/posts/09-operator/",
     "categories": "Smart Contract",
-    "tags": "Smart Contract",
-    "date": "2023-04-14 09:00:00 +0900",
+    "tags": "smart contract",
+    "date": "2023-03-02 09:00:00 +0900",
     
 
 
@@ -87,10 +121,10 @@
   
   {
     "title": "Overview",
-    "url": "/posts/07-overview/",
+    "url": "/posts/08-overview/",
     "categories": "Smart Contract",
-    "tags": "Smart Contract",
-    "date": "2023-04-13 09:00:00 +0900",
+    "tags": "smart contract",
+    "date": "2023-03-01 09:00:00 +0900",
     
 
 
@@ -103,11 +137,28 @@
   },
   
   {
+    "title": "Examples",
+    "url": "/posts/07-examples/",
+    "categories": "SASEUL JS",
+    "tags": "sdk, javascript",
+    "date": "2023-02-03 09:00:00 +0900",
+    
+
+
+
+
+
+    
+    "snippet": "In a decentralized environment, there is no way to verify whether the information held by a node is up-to-date or not.Therefore, it is recommended to set multiple endpoints.For practical code examp...",
+    "content": "In a decentralized environment, there is no way to verify whether the information held by a node is up-to-date or not.Therefore, it is recommended to set multiple endpoints.For practical code examples, please refer to the example files in SASEUL JS Github.Quick Start (Exploring Block data)Set the endpoint, then inquire the round information, and request the block information that meets the conditions.Refer to the System Method section for the methods you can use as a default.SASEUL.Rpc.endpoints([\"&lt;ENDPOINT1&gt;\", \"&lt;ENDPOINT2&gt;\", \"&lt;ENDPOINT3&gt;\", ...]);SASEUL.Rpc.bestRound().then(results =&gt; {    let obj = SASEUL.Rpc.simpleRequest({ type: \"ListBlock\", page: 1, count: 5 });    let condition = (blocks) =&gt; {        let latest = Object.values(blocks).reduce((prev, curr) =&gt; curr.height &gt; prev.height ? curr : prev);        return latest.height &gt;= results.main.height;    }        SASEUL.Rpc.raceRequest(obj, condition).then(function (r) {        console.dir(r);    });});// result:{    \"code\": 200,    \"data\": {        // BLOCK DATAS        ...    }}Checking Balance and TransferThe SASEUL Main Network essentially provides functions related to cryptocurrency.This currency is expressed as SL, and SL is used as a fee when sending a Transaction or registering and changing a Contract in the network.For Methods related to SL, please refer to the Method list of Explorer - Contracts.SASEUL.Rpc.endpoints([\"&lt;ENDPOINT1&gt;\", \"&lt;ENDPOINT2&gt;\", \"&lt;ENDPOINT3&gt;\", ...]);let private_key = \"&lt;YOUR_PRIVATE_KEY&gt;\";let public_key = SASEUL.Sign.publicKey(private_key);let from_address = SASEUL.Sign.address(public_key);let to_address = \"&lt;TO_ADDRESS&gt;\";let amount = \"&lt;AMOUNT&gt;\"; // number // Get Balancelet obj = SASEUL.Rpc.simpleRequest({ type: \"GetBalance\", address: from_address });SASEUL.Rpc.raceRequest(obj).then(function (r) {     console.dir(r); // check SL balance});// Send SLobj = SASEUL.Rpc.signedTransaction({ type : \"Send\", to: to_address, amount: amount}, private_key);SASEUL.Rpc.broadcastTransaction(obj).then(function (r) { console.dir(r); });Checking Mined Resources and RefiningThe SASEUL Main Network stores the contribution to block creation in the form of Resource.Resource can be refined into SL using a “Refine” contract.For related methods, refer to the System Method section and the Method list from Explorer - Contracts.SASEUL.Rpc.endpoints([\"&lt;ENDPOINT1&gt;\", \"&lt;ENDPOINT2&gt;\", \"&lt;ENDPOINT3&gt;\", ...]);let private_key = \"&lt;YOUR_PRIVATE_KEY&gt;\";let public_key = SASEUL.Sign.publicKey(private_key);let address = SASEUL.Sign.address(public_key);// Get Resourcelet obj = SASEUL.Rpc.simpleRequest({ type: \"GetResource\", address: address });SASEUL.Rpc.raceRequest(obj).then(function (r) {     console.dir(r); // Check resource amount});// Refineobj = SASEUL.Rpc.signedTransaction({ type : \"Refine\", amount: \"&lt;REFINE_AMOUNT&gt;\"}, private_key);SASEUL.Rpc.broadcastTransaction(obj).then(function (r) { console.dir(r); });Writing and Deploying Smart ContractsOn the SASEUL Main Network, anyone can deploy a Smart Contract as long as they have SL.Since functions related to the Smart Contract do not work in a browser environment, use the functions in a Node.js environment.The test network endpoint for testing is test.saseul.net. [(Testnet Explorer)(https://explorer.saseul.com/test-net.html?ic=tx&amp;ia=list)]For detailed Contract syntax, refer to the Smart Contract section and the code in Sample Contract Github.const SASEUL = require('saseul');let op = SASEUL.SmartContract.Operator;function mint(writer, space) {    let condition, err_msg, update;    let method = new SASEUL.SmartContract.Method({        \"type\": \"contract\",        \"name\": \"Mint\",        \"version\": \"1\",        \"space\": space,        \"writer\": writer,    });    method.addParameter({\"name\": \"name\", \"type\": \"string\", \"maxlength\": 80, \"requirements\": true});    method.addParameter({\"name\": \"symbol\", \"type\": \"string\", \"maxlength\": 20, \"requirements\": true});    method.addParameter({\"name\": \"amount\", \"type\": \"string\", \"maxlength\": 80, \"requirements\": true});    method.addParameter({\"name\": \"decimal\", \"type\": \"int\", \"maxlength\": 2, \"requirements\": true});    let from = op.load_param('from');    let name = op.load_param('name');    let symbol = op.load_param('symbol');    let amount = op.load_param('amount');    let decimal = op.load_param('decimal');    let info = op.read_universal('info', '00');    // info === null    condition = op.eq(info, null);    err_msg = 'The token can only be issued once.';    method.addExecution(op.condition(condition, err_msg));    // writer === from    condition = op.eq(writer, from);    err_msg = 'You are not the contract writer.';    method.addExecution(op.condition(condition, err_msg));    // amount &gt; 0    condition = op.gt(amount, '0');    err_msg = 'The amount must be greater than 0.';    method.addExecution(op.condition(condition, err_msg));    // decimal &gt;= 0    condition = op.gte(decimal, '0');    err_msg = 'The decimal must be greater than or equal to 0.';    method.addExecution(op.condition(condition, err_msg));    // save info    update = op.write_universal('info', '00', {        \"name\": name,        \"symbol\": symbol,        \"total_supply\": amount,        \"decimal\": decimal,    });    method.addExecution(update);    // from balance = amount;    update = op.write_universal('balance', from, amount);    method.addExecution(update);    return method;}let private_key = \"&lt;YOUR_PRIVATE_KEY&gt;\";let public_key = SASEUL.Sign.publicKey(private_key);let address = SASEUL.Sign.address(public_key);let space = \"&lt;SPACE_NAME&gt;\";SASEUL.Rpc.endpoints([\"&lt;ENDPOINT1&gt;\", \"&lt;ENDPOINT2&gt;\", \"&lt;ENDPOINT3&gt;\", ...]);let contract = new SASEUL.SmartContract.Contract(address, space);contract.addMethod(mint(address, space));contract.publish(private_key);"
+  },
+  
+  {
     "title": "Specification",
     "url": "/posts/06-specification/",
     "categories": "SASEUL JS",
     "tags": "sdk, javascript",
-    "date": "2023-04-11 09:00:00 +0900",
+    "date": "2023-02-02 09:00:00 +0900",
     
 
 
@@ -120,11 +171,11 @@
   },
   
   {
-    "title": "Overview",
+    "title": "Quick Start",
     "url": "/posts/05-overview/",
     "categories": "SASEUL JS",
     "tags": "sdk, javascript",
-    "date": "2023-04-10 09:00:00 +0900",
+    "date": "2023-02-01 09:00:00 +0900",
     
 
 
@@ -141,7 +192,7 @@
     "url": "/posts/04-rpc-api/",
     "categories": "Node",
     "tags": "node",
-    "date": "2023-04-07 09:00:00 +0900",
+    "date": "2023-01-04 09:00:00 +0900",
     
 
 
@@ -158,7 +209,7 @@
     "url": "/posts/03-command-line-interface/",
     "categories": "Node",
     "tags": "node",
-    "date": "2023-04-06 09:00:00 +0900",
+    "date": "2023-01-03 09:00:00 +0900",
     
 
 
@@ -175,7 +226,7 @@
     "url": "/posts/02-installation/",
     "categories": "Node",
     "tags": "node",
-    "date": "2023-04-04 09:00:00 +0900",
+    "date": "2023-01-02 09:00:00 +0900",
     
 
 
@@ -192,7 +243,7 @@
     "url": "/posts/01-overview/",
     "categories": "Node",
     "tags": "node",
-    "date": "2023-04-03 09:00:00 +0900",
+    "date": "2023-01-01 09:00:00 +0900",
     
 
 

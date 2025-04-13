@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>SASEUL Docs</title>
   <subtitle>SASEUL development documentation | docs.saseul.com</subtitle>
-  <updated>2024-04-21T01:59:55+09:00</updated>
+  <updated>2025-04-13T19:27:18+09:00</updated>
   <author>
     <name>SASEUL, ArtiFriends Inc.</name>
     <uri>http://localhost:4000/</uri>
@@ -13,7 +13,7 @@
   <link rel="alternate" type="text/html" hreflang="en"
     href="http://localhost:4000/"/>
   <generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator>
-  <rights> © 2024 SASEUL, ArtiFriends Inc. </rights>
+  <rights> © 2025 SASEUL, ArtiFriends Inc. </rights>
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
@@ -21,13 +21,13 @@
   
   <entry>
     <title>SDK</title>
-    <link href="http://localhost:4000/posts/02-sdk/" rel="alternate" type="text/html" title="SDK" />
-    <published>2024-04-21T01:30:00+09:00</published>
+    <link href="http://localhost:4000/posts/12-sdk/" rel="alternate" type="text/html" title="SDK" />
+    <published>2024-05-02T09:00:00+09:00</published>
   
     <updated>2024-04-21T01:30:00+09:00</updated>
   
-    <id>http://localhost:4000/posts/02-sdk/</id>
-    <content src="http://localhost:4000/posts/02-sdk/" />
+    <id>http://localhost:4000/posts/12-sdk/</id>
+    <content src="http://localhost:4000/posts/12-sdk/" />
     <author>
       <name>help</name>
     </author>
@@ -72,13 +72,13 @@ v2.8.0 (2024. 4. 19)
   
   <entry>
     <title>Block Explorer</title>
-    <link href="http://localhost:4000/posts/01-explorer/" rel="alternate" type="text/html" title="Block Explorer" />
-    <published>2024-04-21T01:00:00+09:00</published>
+    <link href="http://localhost:4000/posts/11-explorer/" rel="alternate" type="text/html" title="Block Explorer" />
+    <published>2024-05-01T09:00:00+09:00</published>
   
     <updated>2024-04-21T01:00:00+09:00</updated>
   
-    <id>http://localhost:4000/posts/01-explorer/</id>
-    <content src="http://localhost:4000/posts/01-explorer/" />
+    <id>http://localhost:4000/posts/11-explorer/</id>
+    <content src="http://localhost:4000/posts/11-explorer/" />
     <author>
       <name>help</name>
     </author>
@@ -118,21 +118,21 @@ v1.5.16 (2024. 4. 12)
 
   
   <entry>
-    <title>Examples</title>
-    <link href="http://localhost:4000/posts/07-examples/" rel="alternate" type="text/html" title="Examples" />
-    <published>2024-04-20T23:00:00+09:00</published>
+    <title>Transaction Creation &amp; Signing</title>
+    <link href="http://localhost:4000/posts/15-transactions/" rel="alternate" type="text/html" title="Transaction Creation &amp; Signing" />
+    <published>2024-04-03T09:00:00+09:00</published>
   
-    <updated>2024-04-20T23:00:00+09:00</updated>
+    <updated>2025-04-09T01:30:00+09:00</updated>
   
-    <id>http://localhost:4000/posts/07-examples/</id>
-    <content src="http://localhost:4000/posts/07-examples/" />
+    <id>http://localhost:4000/posts/15-transactions/</id>
+    <content src="http://localhost:4000/posts/15-transactions/" />
     <author>
       <name>help</name>
     </author>
 
   
     
-    <category term="SASEUL JS" />
+    <category term="Advanced: Main-net" />
     
   
 
@@ -144,15 +144,15 @@ v1.5.16 (2024. 4. 12)
 
 
 
-      In a decentralized environment, there is no way to verify whether the information held by a node is up-to-date or not.
+      Introduction
 
-Therefore, it is recommended to set multiple endpoints.
+To register a transaction on the blockchain, 
+you must construct a JSON-formatted object matching the required method, 
+sign it with your private key, and then propagate it to a node. 
+Once broadcast, the transaction is verified by the network and recorded on the blockchain.
 
-For practical code examples, please refer to the example files in SASEUL JS Github.
-
-Quick Start (Exploring Block data)
-
-Set the endpoint, then inquire the round information, and request the block information that meets ...
+With SASEUL JS, these steps become significantly simpler. 
+It provides tools to automatically build the ne...
     </summary>
   
 
@@ -160,21 +160,21 @@ Set the endpoint, then inquire the round information, and request the block info
 
   
   <entry>
-    <title>System Method</title>
-    <link href="http://localhost:4000/posts/09-system-method/" rel="alternate" type="text/html" title="System Method" />
-    <published>2023-04-16T09:00:00+09:00</published>
+    <title>Accounts Management</title>
+    <link href="http://localhost:4000/posts/14-accounts/" rel="alternate" type="text/html" title="Accounts Management" />
+    <published>2024-04-02T09:00:00+09:00</published>
   
-    <updated>2023-04-18T03:06:23+09:00</updated>
+    <updated>2025-04-09T00:30:00+09:00</updated>
   
-    <id>http://localhost:4000/posts/09-system-method/</id>
-    <content src="http://localhost:4000/posts/09-system-method/" />
+    <id>http://localhost:4000/posts/14-accounts/</id>
+    <content src="http://localhost:4000/posts/14-accounts/" />
     <author>
       <name>help</name>
     </author>
 
   
     
-    <category term="Smart Contract" />
+    <category term="Advanced: Main-net" />
     
   
 
@@ -186,13 +186,14 @@ Set the endpoint, then inquire the round information, and request the block info
 
 
 
-      Getting Started
+      Introduction
 
-SASEUL has built-in smart contracts that is ready-to-run out of the box. In fact, even generating the genesis block of the main chain is done by one of the system smart contracts. These system contracts and requests provides developers basic interfaces on SASEUL blockchain.
+SASEUL JS makes it easy to generate a private key, a public key, and an address. 
+These key pairs constitute a single address, and by creating multiple private keys from a seed, 
+you can effectively manage multiple accounts.
 
-System Contracts
-
-Executing system contracts commit transactions based on the registered codes and end u...
+If you need detailed information on SASEUL JS—such as supported methods, parameters, sample responses, 
+and usage tips—please refer to the post linked below....
     </summary>
   
 
@@ -200,21 +201,21 @@ Executing system contracts commit transactions based on the registered codes and
 
   
   <entry>
-    <title>Operator</title>
-    <link href="http://localhost:4000/posts/08-operator/" rel="alternate" type="text/html" title="Operator" />
-    <published>2023-04-14T09:00:00+09:00</published>
+    <title>SL</title>
+    <link href="http://localhost:4000/posts/13-sl/" rel="alternate" type="text/html" title="SL" />
+    <published>2024-04-01T09:00:00+09:00</published>
   
-    <updated>2023-04-18T03:07:59+09:00</updated>
+    <updated>2025-04-09T00:00:00+09:00</updated>
   
-    <id>http://localhost:4000/posts/08-operator/</id>
-    <content src="http://localhost:4000/posts/08-operator/" />
+    <id>http://localhost:4000/posts/13-sl/</id>
+    <content src="http://localhost:4000/posts/13-sl/" />
     <author>
       <name>help</name>
     </author>
 
   
     
-    <category term="Smart Contract" />
+    <category term="Advanced: Main-net" />
     
   
 
@@ -226,16 +227,14 @@ Executing system contracts commit transactions based on the registered codes and
 
 
 
-      Summary
+      Introduction
 
-This document is based on the specification of SASEUL JS. 
-The SASEUL main network is currently using version 0.2.0, and we plan to support additional operators through patches.
-
-
-  A method is a collection of operators.
-  A method is executed only when the “condition” statement is true.
-  Execution methods can modify status data through the “update” statement.
-  Query methods can defi...
+Thank you for visiting the SASEUL Mainnet documentation. 
+This project was launched to demonstrate that the so-called 
+“blockchain trilemma”—the difficulty of simultaneously achieving 
+decentralization, scalability, and security—has indeed been resolved. 
+SASEUL Mainnet maintains complete decentralization while offering high scalability and robust security, 
+effectively dispelling...
     </summary>
   
 
