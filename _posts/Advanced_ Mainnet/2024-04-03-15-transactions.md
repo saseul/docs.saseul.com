@@ -7,6 +7,7 @@ posted: 2025-04-09 01:30:00 +0900
 last_modified_at: 2025-04-09 01:30:00 +0900
 categories: ["Advanced: Main-net"]
 tags: [javascript, sdk, main-net, sl, transaction, signing, check-balance]
+pin: true
 ---
 
 # Introduction
