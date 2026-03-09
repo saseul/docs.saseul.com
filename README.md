@@ -1,24 +1,31 @@
-### SASEUL Developer Guide
+# SASEUL Docs
 
-````shell
-$ bundle clean --force
-$ bundle
-$ bundle exec jekyll serve
-````
+Official developer documentation for [SASEUL](https://saseul.com) — a peer-to-peer blockchain engine.
 
-### Skin
+## Requirements
 
-Source: https://github.com/cotes2020/jekyll-theme-chirpy
+- Ruby ≥ 2.6
+- Bundler
+- Jekyll ≥ 4.3
 
-### Modifications
+## Development
 
-- modified: _includes/topbar.html
-- modified: _includes/footer.html
-- modified: _includes/sidebar.html
-- modified: _includes/js-selector.html
-- modified: _layouts/home.html
-- modified: assets/img/favicons/*
-- modified: assets/css/style.scss
-- added: assets/fonts/*
-- added: _sass/custom.scss
-- added: _javascript/commons/custom.js
+```shell
+bundle clean --force
+bundle
+bundle exec jekyll serve
+```
+
+Site will be available at `http://localhost:4000`.
+
+## Build
+
+```shell
+JEKYLL_ENV=production bundle exec jekyll build
+```
+
+Static files are generated in `_site/`.
+
+## Theme
+
+Based on [Chirpy](https://github.com/cotes2020/jekyll-theme-chirpy) by cotes2020.

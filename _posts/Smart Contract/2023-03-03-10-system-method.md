@@ -6,7 +6,7 @@ date: 2023-03-03 09:00:00 +0900
 posted: 2023-04-16 09:00:00 +0900
 last_modified_at: 2023-04-16 09:00:00 +0900
 categories: [Smart Contract]
-tags: [smart contract]
+tags: [smart-contract, system-method, built-in, token, storage]
 ---
 
 Getting Started

@@ -6,7 +6,7 @@ date: 2023-02-02 09:00:00 +0900
 posted: 2023-04-11 09:00:00 +0900
 last_modified_at: 2024-04-20 22:00:00 +0900
 categories: [SASEUL JS]
-tags: [sdk, javascript]
+tags: [sdk, javascript, api-reference, specification, cryptography]
 ---
 
 # Quick Start
