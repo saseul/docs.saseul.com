@@ -64,8 +64,6 @@ saseul-script help
 |:---|:---|
 | `tracker` | Manage peers and update tracker data. |
 | `data` | Manage blockchain data and status. |
-| `genesis` | Genesis a new network and resource chain. |
-| `refine` | Generate a Refine transaction. |
 
 ### Transactions & Requests
 
@@ -73,6 +71,7 @@ saseul-script help
 |:---|:---|
 | `sendtransaction` | Broadcast a transaction to the network. |
 | `localrequest` | Execute a smart contract method using local node data. |
+| `refine` | Convert accumulated resource into SL tokens. |
 
 <br>
 
@@ -489,28 +488,6 @@ saseul-script wallet import [options]
 
 <br>
 
-# Network Setup
-
-## genesis
-
-Create a new network and resource chain. This command is intended for launching a separate SASEUL network. For details, please contact the SASEUL team.
-
-```bash
-saseul-script genesis
-```
-
-<br>
-
-## refine
-
-Convert accumulated resource (mining rewards) into SL tokens.
-
-```bash
-saseul-script refine
-```
-
-<br>
-
 # Transactions & Requests
 
 ## sendtransaction
@@ -566,4 +543,14 @@ saseul-script localrequest --method GetBalance
 {
     "balance": "10000000000000000000"
 }
+```
+
+<br>
+
+## refine
+
+Convert accumulated resource (mining rewards) into SL tokens.
+
+```bash
+saseul-script refine
 ```
