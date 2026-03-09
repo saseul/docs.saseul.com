@@ -10,8 +10,6 @@ tags: [node, installation, docker, setup, getting-started]
 pin: true
 ---
 
-# Installation
-
 This guide walks through installing and configuring a SASEUL node
 from scratch.
 
