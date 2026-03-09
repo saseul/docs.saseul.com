@@ -67,11 +67,11 @@ saseul-script help
 
 ### Transactions & Requests
 
-| Command | Description |
-|:---|:---|
-| `sendtransaction` | Broadcast a transaction to the network. |
+| Command | Description                                            |
+|:---|:-------------------------------------------------------|
+| `sendtransaction` | Broadcast a transaction to the network.                |
 | `localrequest` | Execute a smart contract method using local node data. |
-| `refine` | Convert accumulated resource into SL tokens. |
+| `refine` | Convert accumulated resource into SL.                  |
 
 <br>
 
@@ -507,7 +507,7 @@ saseul-script sendtransaction [options]
 
 Running without options displays the available methods.
 
-Example — send SL tokens:
+Example — send SL:
 
 ```bash
 saseul-script sendtransaction --method Send \
@@ -549,7 +549,7 @@ saseul-script localrequest --method GetBalance
 
 ## refine
 
-Convert accumulated resource (mining rewards) into SL tokens.
+Convert accumulated resource (mining rewards) into SL.
 
 ```bash
 saseul-script refine
