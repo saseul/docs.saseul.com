@@ -7,6 +7,7 @@ posted: 2023-04-06 09:00:00 +0900
 last_modified_at: 2026-03-09 09:00:00 +0900
 categories: [Node]
 tags: [node, cli, commands, configuration]
+pin: true
 ---
 
 # Getting Started
